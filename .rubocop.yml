@@ -1,0 +1,41 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Max: 31
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/GuardClause:
+  Enabled: false
+
+Style/SignalException:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Style/PerlBackrefs:
+  Enabled: false
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
