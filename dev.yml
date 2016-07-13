@@ -1,0 +1,11 @@
+# This is an internal file for Shopify. Please ignore
+
+name: oktakit
+
+up:
+  - ruby: 2.3.1
+  - bundler
+
+commands:
+  test: bundle exec rspec
+  console: bin/console

@@ -26,7 +26,7 @@ require 'oktakit'
 
 module TestClient
   extend RSpec::SharedContext
-  let(:client) { Oktakit::Client.new(token: test_oktakit_token) }
+  let(:client) { Oktakit::Client.new(token: test_okta_token, organization: 'shopify') }
 end
 
 RSpec.configure do |config|
@@ -34,5 +34,5 @@ RSpec.configure do |config|
 end
 
 def test_okta_token
-  ENV.fetch 'OKTA_TEST_TOKEN', 'x' * 40
+  ENV.fetch('OKTA_TEST_TOKEN', 'x' * 40)
 end

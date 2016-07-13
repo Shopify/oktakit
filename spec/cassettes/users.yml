@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://my-okta.okta.com/api/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 13 Jul 2016 20:41:32 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4anekBXCRGzIqZFFH0FPwAAD6s
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468442537'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://my-okta.okta.com/api/v1/users?limit=200>; rel="self", <https://my-okta.okta.com/api/v1/users?after=12345&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=147FD2A4357B5BC644D0D926EACDCC28;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"12345","status":"ACTIVE","created":"2016-06-14T16:56:18.000Z","activated":"2016-06-14T16:56:18.000Z","statusChanged":"2016-06-14T16:56:18.000Z","lastLogin":"2016-07-06T02:28:35.000Z","lastUpdated":"2016-06-14T16:56:18.000Z","passwordChanged":"2016-06-14T16:56:18.000Z","profile":{"firstName":"Julian","lastName":"Nadeau","login":"email@example.com","mobilePhone":"","email":"email@example.com","secondEmail":null,"title":"","organization":"","manager":"","department":"","costCenter":"","ssh_public_keys":"","primaryPhone":"","streetAddress":"","city":"","state":"","zipCode":"","countryCode":""},"credentials":{"password":{},"recovery_question":{"question":"This is a question?"},"provider":{"type":"OKTA","name":"OKTA"}}}]'
+  recorded_at: Wed, 13 Jul 2016 20:41:32 GMT

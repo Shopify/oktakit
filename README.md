@@ -22,9 +22,8 @@ And then execute:
 `Oktakit` follow the same patterns as [`Octokit`](https://github.com/octokit/octokit.rb), if you are familiar with it you should feel right at home.
 
 ```ruby
-client = Oktakit.new(token: 't0k3n')
-organization = client.organization('my-great-org')
-agents = organization.rels[:agents].get.data
+client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
+agents = client.rels[:agents].get.data
 ```
 
 ## Development
