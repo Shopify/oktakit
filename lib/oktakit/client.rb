@@ -1,8 +1,11 @@
 require 'sawyer'
 require 'oktakit/response/raise_error'
+require 'oktakit/client/users'
 
 module Oktakit
   class Client
+    include Users
+
     # Header keys that can be passed in options hash to {#get},{#head}
     CONVENIENCE_HEADERS = Set.new([:accept, :content_type])
 
@@ -15,7 +18,7 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token)
+    def initialize(token:, organization:)
       @token = token
       @organization = organization
     end
@@ -76,13 +79,6 @@ module Oktakit
 
     attr_reader :last_response
 
-    # Fetch the root resource for the API
-    #
-    # @return [Sawyer::Resource]
-    def root
-      get('/')
-    end
-
     private
 
     def request(method, path, data, options = {})
@@ -94,7 +90,8 @@ module Oktakit
         end
       end
 
-      @last_response = response = sawyer_agent.call(method, URI::Parser.new.escape(path.to_s), data, options)
+      uri = URI::Parser.new.escape("/api/v1/" + path.to_s)
+      @last_response = response = sawyer_agent.call(method, uri, data, options)
       response.data
     end
 
@@ -115,7 +112,7 @@ module Oktakit
     end
 
     def api_endpoint
-      "https://#{organization}.okta.com/api/v1/"
+      "https://#{@organization}.okta.com/api/v1/"
     end
 
     def parse_query_and_convenience_headers(options)
@@ -126,7 +123,7 @@ module Oktakit
         end
       end
       query = options.delete(:query)
-      opts = {query: options}
+      opts = { query: options }
       opts[:query].merge!(query) if query && query.is_a?(Hash)
       opts[:headers] = headers unless headers.empty?
 
