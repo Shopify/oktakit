@@ -1,0 +1,177 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/roles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:19:05 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cEqekF-t6HOvQdBAXujgAABsk
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468466378'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=06E6C9C05700EF161BE40540AB8B1041;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:19:05 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/user_id/roles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:25:50 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cGPrr8O12L419F@flqFAAAA1w
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468466810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=5E8BEB0A84FD0B3C4EFD44C0FDDD4F1B;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:25:50 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/user_id/roles
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:26:25 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cGYbr8O12L419F@flsbAAAA3k
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1190'
+      x-rate-limit-reset:
+      - '1468466810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=CF7F27E02822D42D2B2D913161349133;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: "[]"
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:26:24 GMT
+recorded_with: VCR 2.9.3

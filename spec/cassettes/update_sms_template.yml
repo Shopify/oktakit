@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://okta-test.okta.com/api/v1/templates/sms/cst6o2l24rIv1tC840h7
+    body:
+      encoding: UTF-8
+      string: '{"name":"Custom","type":"SMS_VERIFY_CODE","template":"Your ${org.name}
+        code is: ${code}","translations":{"es":"${org.name}: ${code}.","fr":"${org.name}:
+        ${code}.","it":"${org.name}: ${code}."}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:04:22 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4eb5eXAfLU1ttNceQf9AQAAA5c
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468505122'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=073F20142F40487BE87E9FDBD44A0D5C;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"cst6o2l24rIv1tC840h7","name":"Custom","type":"SMS_VERIFY_CODE","template":"Your
+        ${org.name} code is: ${code}","created":"2016-07-14T14:01:29.000Z","lastUpdated":"2016-07-14T14:04:22.000Z"}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:04:22 GMT
+recorded_with: VCR 3.0.3

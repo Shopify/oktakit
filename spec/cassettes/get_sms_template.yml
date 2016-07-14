@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/templates/sms/cst6o2l24rIv1tC840h7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:02:23 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4ebb@XAfLU1ttNceQf0jgAAA0k
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468504949'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=FB1CB518F74E189A6CC4D939CC3F7A3C;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6ImNzdDZvMmwyNHJJdjF0Qzg0MGg3IiwibmFtZSI6IkN1c3RvbSIs
+        InR5cGUiOiJTTVNfVkVSSUZZX0NPREUiLCJ0ZW1wbGF0ZSI6IiR7b3JnLm5h
+        bWV9OiB5b3VyIHZlcmlmaWNhdGlvbiBjb2RlIGlzICR7Y29kZX0iLCJjcmVh
+        dGVkIjoiMjAxNi0wNy0xNFQxNDowMToyOS4wMDBaIiwibGFzdFVwZGF0ZWQi
+        OiIyMDE2LTA3LTE0VDE0OjAxOjI5LjAwMFoiLCJ0cmFuc2xhdGlvbnMiOnsi
+        aXQiOiIke29yZy5uYW1lfTogaWwgY29kaWNlIGRpIHZlcmlmaWNhIMOoICR7
+        Y29kZX0iLCJmciI6IiR7b3JnLm5hbWV9OiB2b3RyZSBjb2RlIGRlIHbDqXJp
+        ZmljYXRpb24gZXN0ICR7Y29kZX0iLCJlcyI6IiR7b3JnLm5hbWV9OiBlbCBj
+        w7NkaWdvIGRlIHZlcmlmaWNhY2nDs24gZXMgJHtjb2RlfSJ9fQ==
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:02:23 GMT
+recorded_with: VCR 3.0.3

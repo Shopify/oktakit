@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7
+    body:
+      encoding: UTF-8
+      string: '{"profile":{"firstName":"Other Bob","lastName":"User","email":"example@example.com","login":"example@example.com"}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 13:38:13 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4eVxSGXJLimuAsnJGfkeQAABvc
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468503542'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=93A2FB7C8B61024BACCECB0CBAFF4FA9;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"00u6o0w6tyuPVEeZr0h7","status":"PROVISIONED","created":"2016-07-14T13:29:56.000Z","activated":"2016-07-14T13:34:22.000Z","statusChanged":"2016-07-14T13:35:35.000Z","lastLogin":null,"lastUpdated":"2016-07-14T13:38:13.000Z","passwordChanged":"2016-07-14T13:29:56.000Z","profile":{"mobilePhone":null,"email":"example@example.com","secondEmail":null,"login":"example@example.com","firstName":"Other
+        Bob","lastName":"User"},"credentials":{"recovery_question":{"question":"How
+        much wood could a woodchuck chuck?"},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7/lifecycle/suspend","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7/lifecycle/reset_password","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7/lifecycle/deactivate","method":"POST"}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 13:38:13 GMT
+recorded_with: VCR 3.0.3

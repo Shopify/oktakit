@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:45:53 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cK8ZvGkV-gh7GEhdltvwAAACs
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1197'
+      x-rate-limit-reset:
+      - '1468468011'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/apps?limit=20>; rel="self"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=ED33D64E6AE7F544D15A7CF6EB50E21D;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"0oa6nnkxqzSHZVPsq0h7","name":"googleappsadmin","label":"Google
+        Apps Admin","status":"ACTIVE","lastUpdated":"2016-07-14T03:17:59.000Z","created":"2016-07-14T03:17:55.000Z","accessibility":{"selfService":false,"errorRedirectUrl":null,"loginRedirectUrl":null},"visibility":{"autoSubmitToolbar":true,"hide":{"iOS":false,"web":false},"appLinks":{"login":true}},"features":[],"signOnMode":"BROWSER_PLUGIN","credentials":{"scheme":"EDIT_USERNAME_AND_PASSWORD","userNameTemplate":{"template":"${source.login}","type":"BUILT_IN"},"revealPassword":true,"signing":{}},"settings":{"app":{},"notifications":{"vpn":{"network":{"connection":"DISABLED"},"message":null,"helpUrl":null}}},"_links":{"logo":[{"name":"medium","href":"https://op1static.oktacdn.com/assets/img/logos/googleappsadmin.ed642a59bf96a5a59bb1175aeb6cc0bb.png","type":"image/png"}],"appLinks":[{"name":"login","href":"https://okta-test.okta.com/home/googleappsadmin/0oa6nnkxqzSHZVPsq0h7/337","type":"text/html"}],"users":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nnkxqzSHZVPsq0h7/users"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nnkxqzSHZVPsq0h7/lifecycle/deactivate"},"groups":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nnkxqzSHZVPsq0h7/groups"}}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:45:53 GMT
+recorded_with: VCR 2.9.3

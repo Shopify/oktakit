@@ -86,8 +86,8 @@ module Oktakit
       # @return [Hash<Sawyer::Resource>] Application User with user profile mappings applied
       # @see http://developer.okta.com/docs/api/resources/apps.html#assign-user-to-application-for-sso--provisioning
       # @example
-      #   Oktakit.assign_user_to_application_for_sso__provisioning('app_id')
-      def assign_user_to_application_for_sso__provisioning(app_id, options = {})
+      #   Oktakit.assign_user_to_application_for_sso_provisioning('app_id')
+      def assign_user_to_application_for_sso_provisioning(app_id, options = {})
         post("/apps/#{app_id}/users", options)
       end
 
@@ -218,7 +218,7 @@ module Oktakit
       # @example
       #   Oktakit.preview_saml_metadata_for_application('app_id')
       def preview_saml_metadata_for_application(app_id, options = {})
-        get("/apps/#{app_id}/sso/saml/metadata", options)
+        get("/apps/#{app_id}/sso/saml/metadata", options.merge(accept: 'application/xml'))
       end
     end
   end

@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:15 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cZyyGXJLimuAsnJGeicgAABuQ
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1189'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/groups?limit=10000>; rel="self"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=49B8BDE6FF1B0E6697836D13AD468F5A;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"00g6nm9yt5VEl6xYd0h7","created":"2016-07-14T03:14:40.000Z","lastUpdated":"2016-07-14T03:14:54.000Z","lastMembershipUpdated":"2016-07-14T03:14:40.000Z","objectClass":["okta:user_group"],"type":"OKTA_GROUP","profile":{"name":"Default","description":""},"_links":{"logo":[{"name":"medium","href":"https://op1static.oktacdn.com/assets/img/logos/groups/okta-medium.d7fb831bc4e7e1a5d8bd35dfaf405d9e.png","type":"image/png"},{"name":"large","href":"https://op1static.oktacdn.com/assets/img/logos/groups/okta-large.511fcb0de9da185b52589cb14d581c2c.png","type":"image/png"}],"users":{"href":"https://okta-test.okta.com/api/v1/groups/00g6nm9yt5VEl6xYd0h7/users"},"apps":{"href":"https://okta-test.okta.com/api/v1/groups/00g6nm9yt5VEl6xYd0h7/apps"}}},{"id":"00g6nlr57d3iv9dMd0h7","created":"2016-07-14T02:56:17.000Z","lastUpdated":"2016-07-14T02:56:17.000Z","lastMembershipUpdated":"2016-07-14T03:20:53.000Z","objectClass":["okta:user_group"],"type":"BUILT_IN","profile":{"name":"Everyone","description":"All
+        users in your organization"},"_links":{"logo":[{"name":"medium","href":"https://op1static.oktacdn.com/assets/img/logos/groups/okta-medium.d7fb831bc4e7e1a5d8bd35dfaf405d9e.png","type":"image/png"},{"name":"large","href":"https://op1static.oktacdn.com/assets/img/logos/groups/okta-large.511fcb0de9da185b52589cb14d581c2c.png","type":"image/png"}],"users":{"href":"https://okta-test.okta.com/api/v1/groups/00g6nlr57d3iv9dMd0h7/users"},"apps":{"href":"https://okta-test.okta.com/api/v1/groups/00g6nlr57d3iv9dMd0h7/apps"}}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:15 GMT
+recorded_with: VCR 3.0.3

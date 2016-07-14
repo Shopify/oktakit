@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/roles/ra16nlr5esxo0o0TI0h7/targets/groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:38:23 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cJL5vGkV-gh7GEhdllNwAAAHA
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468467537'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D622B292E51FA8742B7E689D485FB745;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"00g1emaKYZTWRYYRRTSK","objectClass":["okta:user_group"],"profile":{"name":"West Coast Users","description":"Straight Outta Compton"},"_links":{"logo":[{"href":"https://example.okta.com/img/logos/groups/okta-medium.png","name":"medium","type":"image/png"},{"href":"https://example.okta.com/img/logos/groups/okta-large.png","name":"large","type":"image/png"}],"users":{"href":"https://example.okta.com/api/v1/groups/00g1emaKYZTWRYYRRTSK/users"},"apps":{"href":"https://example.okta.com/api/v1/groups/00g1emaKYZTWRYYRRTSK/apps"}}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:38:23 GMT
+recorded_with: VCR 2.9.3

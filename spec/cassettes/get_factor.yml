@@ -1,0 +1,154 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/api/v1/users/user_id/factors/factor_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 405
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:11 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000022","errorSummary":"The endpoint does not support
+        the provided HTTP method","errorLink":"E0000022","errorId":"oae9XB0M7zbR0OSI__yrvBFlw","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:11 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/user_id/factors/factor_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:50:09 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4emoeXAfLU1ttNceQfMJQAAA8g
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468507869'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=F8EDB1E81A82740D4D39B8FFB72A0FDD;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errorCode":"E0000007","errorSummary":"Not found: Resource not found:
+        user_id (User)","errorLink":"E0000007","errorId":"oaem9AddnKAQ9qw0JYjs-6ATQ","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:50:09 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:56:13 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4eoDZ9thkP2wy3aoVI3PQAAAho
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468508233'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=22E426ADB6B069361398D4FB951AB9EE;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"mbl6o3uhd97Rc2PM70h7","factorType":"sms","provider":"OKTA","vendorName":"OKTA","status":"PENDING_ACTIVATION","created":"2016-07-14T14:55:15.000Z","lastUpdated":"2016-07-14T14:55:15.000Z","profile":{"phoneNumber":"+16134561234"},"_links":{"activate":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7/lifecycle/activate","hints":{"allow":["POST"]}},"resend":[{"name":"sms","href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7/resend","hints":{"allow":["POST"]}}],"self":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7","hints":{"allow":["GET"]}},"user":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7","hints":{"allow":["GET"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:56:13 GMT
+recorded_with: VCR 3.0.3

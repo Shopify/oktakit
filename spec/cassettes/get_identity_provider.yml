@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/idps/0oa62bfdjnK55Z5x80h7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:17 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cZzSGXJLimuAsnJGeikQAABtQ
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1181'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=85023C0BE0522A6FC4BC77007A8C8D7E;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"0oa62bfdjnK55Z5x80h7","type":"LINKEDIN","name":"LinkedIn","status":"ACTIVE","created":"2016-03-24T23:23:59.000Z","lastUpdated":"2016-03-24T23:23:59.000Z","protocol":{"type":"OAUTH2","endpoints":{"authorization":{"url":"https://www.linkedin.com/uas/oauth2/authorization","binding":"HTTP-REDIRECT"},"token":{"url":"https://www.linkedin.com/uas/oauth2/accessToken","binding":"HTTP-POST"}},"scopes":["r_basicprofile","r_emailaddress"],"credentials":{"client":{"client_id":"your-client-id","client_secret":"your-client-secret"}}},"policy":{"provisioning":{"action":"AUTO","profileMaster":true,"groups":{"action":"NONE"}},"accountLink":{"filter":null,"action":"AUTO"},"subject":{"userNameTemplate":{"template":"idpuser.userPrincipalName"},"filter":null,"matchType":"USERNAME"},"maxClockSkew":0},"_links":{"authorize":{"href":"https://your-domain.okta.com/oauth2/v1/authorize?idp=0oa62bfdjnK55Z5x80h7&          client_id={clientId}&response_type={responseType}&response_mode={responseMode}&          scope={scopes}&redirect_uri={redirectUri}&state={state}","templated":true,"hints":{"allow":["GET"]}},"clientRedirectUri":{"href":"https://your-domain.okta.com/oauth2/v1/authorize/callback","hints":{"allow":["POST"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:17 GMT
+
+recorded_with: VCR 3.0.3

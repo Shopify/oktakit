@@ -8,7 +8,7 @@ module Oktakit
       # @example
       #   Oktakit.get_factor('user_id', 'factor_id')
       def get_factor(user_id, factor_id, options = {})
-        get("/api/v1/users/#{user_id}/factors/#{factor_id}", options)
+        get("/users/#{user_id}/factors/#{factor_id}", options)
       end
 
       # List Enrolled Factors
@@ -18,7 +18,7 @@ module Oktakit
       # @example
       #   Oktakit.list_enrolled_factors('user_id')
       def list_enrolled_factors(user_id, options = {})
-        get("/api/v1/users/#{user_id}/factors", options)
+        get("/users/#{user_id}/factors", options)
       end
 
       # List Factors to Enroll
@@ -28,7 +28,7 @@ module Oktakit
       # @example
       #   Oktakit.list_factors_to_enroll('user_id')
       def list_factors_to_enroll(user_id, options = {})
-        get("/api/v1/users/#{user_id}/factors/catalog", options)
+        get("/users/#{user_id}/factors/catalog", options)
       end
 
       # List Security Questions
@@ -38,7 +38,7 @@ module Oktakit
       # @example
       #   Oktakit.list_security_questions('user_id')
       def list_security_questions(user_id, options = {})
-        get("/api/v1/users/#{user_id}/factors/questions", options)
+        get("/users/#{user_id}/factors/questions", options)
       end
 
       # Enroll Factor
@@ -48,7 +48,7 @@ module Oktakit
       # @example
       #   Oktakit.enroll_factor('id')
       def enroll_factor(id, options = {})
-        post("/api/v1/users/#{id}/factors", options)
+        post("/users/#{id}/factors", options)
       end
 
       # Activate Factor
@@ -68,7 +68,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_factor('user_id', 'factor_id')
       def reset_factor(user_id, factor_id, options = {})
-        delete("/api/v1/users/#{user_id}/factors/#{factor_id}", options)
+        delete("/users/#{user_id}/factors/#{factor_id}", options)
       end
 
       # Verify Security Question Factor

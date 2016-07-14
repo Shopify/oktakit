@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors
+    body:
+      encoding: UTF-8
+      string: '{"factorType":"sms","provider":"OKTA","profile":{"phoneNumber":"+1-613-456-1234"}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:55:15 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4en0g7SELDyJL1gVC5gFwAAAIw
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468508153'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=77FD4DB67DD15DB708A102AC9AA3FE5B;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"mbl6o3uhd97Rc2PM70h7","factorType":"sms","provider":"OKTA","vendorName":"OKTA","status":"PENDING_ACTIVATION","created":"2016-07-14T14:55:15.000Z","lastUpdated":"2016-07-14T14:55:15.000Z","profile":{"phoneNumber":"+16134561234"},"_links":{"activate":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7/lifecycle/activate","hints":{"allow":["POST"]}},"resend":[{"name":"sms","href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7/resend","hints":{"allow":["POST"]}}],"self":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7","hints":{"allow":["GET"]}},"user":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7","hints":{"allow":["GET"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:55:15 GMT
+recorded_with: VCR 3.0.3

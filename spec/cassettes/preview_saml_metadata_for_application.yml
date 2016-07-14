@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/sso/saml/metadata?q=akml95AVptFeCi4zm0g3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/xml
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:42:36 GMT
+      server:
+      - nginx
+      content-type:
+      - application/xml
+      content-length:
+      - '2303'
+      x-okta-request-id:
+      - V4cYPOXAfLU1ttNceQff9gAAA20
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468471416'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      accept-charset:
+      - big5, big5-hkscs, euc-jp, euc-kr, gb18030, gb2312, gbk, ibm-thai, ibm00858,
+        ibm01140, ibm01141, ibm01142, ibm01143, ibm01144, ibm01145, ibm01146, ibm01147,
+        ibm01148, ibm01149, ibm037, ibm1026, ibm1047, ibm273, ibm277, ibm278, ibm280,
+        ibm284, ibm285, ibm290, ibm297, ibm420, ibm424, ibm437, ibm500, ibm775, ibm850,
+        ibm852, ibm855, ibm857, ibm860, ibm861, ibm862, ibm863, ibm864, ibm865, ibm866,
+        ibm868, ibm869, ibm870, ibm871, ibm918, iso-2022-cn, iso-2022-jp, iso-2022-jp-2,
+        iso-2022-kr, iso-8859-1, iso-8859-13, iso-8859-15, iso-8859-2, iso-8859-3,
+        iso-8859-4, iso-8859-5, iso-8859-6, iso-8859-7, iso-8859-8, iso-8859-9, jis_x0201,
+        jis_x0212-1990, koi8-r, koi8-u, shift_jis, tis-620, us-ascii, utf-16, utf-16be,
+        utf-16le, utf-32, utf-32be, utf-32le, utf-8, windows-1250, windows-1251, windows-1252,
+        windows-1253, windows-1254, windows-1255, windows-1256, windows-1257, windows-1258,
+        windows-31j, x-big5-hkscs-2001, x-big5-solaris, x-compound_text, x-euc-jp-linux,
+        x-euc-tw, x-eucjp-open, x-ibm1006, x-ibm1025, x-ibm1046, x-ibm1097, x-ibm1098,
+        x-ibm1112, x-ibm1122, x-ibm1123, x-ibm1124, x-ibm1364, x-ibm1381, x-ibm1383,
+        x-ibm300, x-ibm33722, x-ibm737, x-ibm833, x-ibm834, x-ibm856, x-ibm874, x-ibm875,
+        x-ibm921, x-ibm922, x-ibm930, x-ibm933, x-ibm935, x-ibm937, x-ibm939, x-ibm942,
+        x-ibm942c, x-ibm943, x-ibm943c, x-ibm948, x-ibm949, x-ibm949c, x-ibm950, x-ibm964,
+        x-ibm970, x-iscii91, x-iso-2022-cn-cns, x-iso-2022-cn-gb, x-iso-8859-11, x-jis0208,
+        x-jisautodetect, x-johab, x-macarabic, x-maccentraleurope, x-maccroatian,
+        x-maccyrillic, x-macdingbat, x-macgreek, x-machebrew, x-maciceland, x-macroman,
+        x-macromania, x-macsymbol, x-macthai, x-macturkish, x-macukraine, x-ms932_0213,
+        x-ms950-hkscs, x-ms950-hkscs-xp, x-mswin-936, x-pck, x-sjis_0213, x-utf-16le-bom,
+        x-utf-32be-bom, x-utf-32le-bom, x-windows-50220, x-windows-50221, x-windows-874,
+        x-windows-949, x-windows-950, x-windows-iso2022jp
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=0BDD0F75FAB23767558FE643305F5A75;
+        Path=/
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: |-
+        <?xml version="1.0" encoding="UTF-8"?><md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://www.okta.com/exk6nmg6fcDXhb0Wr0h7"><md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"><md:KeyDescriptor use="signing"><ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#"><ds:X509Data><ds:X509Certificate>MIIDnjCCAoagAwIBAgIGAVXnVVPVMA0GCSqGSIb3DQEBBQUAMIGPMQswCQYDVQQGEwJVUzETMBEG
+        A1UECAwKQ2FsaWZvcm5pYTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzENMAsGA1UECgwET2t0YTEU
+        MBIGA1UECwwLU1NPUHJvdmlkZXIxEDAOBgNVBAMMB2puYWRlYXUxHDAaBgkqhkiG9w0BCQEWDWlu
+        Zm9Ab2t0YS5jb20wHhcNMTYwNzE0MDI1NTE2WhcNMjYwNzE0MDI1NjE2WjCBjzELMAkGA1UEBhMC
+        VVMxEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xDTALBgNVBAoM
+        BE9rdGExFDASBgNVBAsMC1NTT1Byb3ZpZGVyMRAwDgYDVQQDDAdqbmFkZWF1MRwwGgYJKoZIhvcN
+        AQkBFg1pbmZvQG9rdGEuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgBl2iJ6r
+        JUHsjpp/otKf1k4Gm4zXZhI7FSz7WIX4v6H+M2VGcrjKSLP25FlkzCQWOesJPm/62yRfBphbLpmj
+        3LVNkAeWmQhsWoV0iI3W3iTQXZ34fm9MlkLdWonI19o8BxgSDnDjm1fEHuQBmCT+AOicl213M1I7
+        S74fX7FxA8iDxjly+qzf97dPiTRXCsDjK79w5R7ZrWELzAYpekxHHH37hJDYbIebvcUkPbz/GaWA
+        QRkT/Kdc9eLeiGO01pYBs2d74XayGPEQZmSgsaXT7W2Ewtbos0xOYx0J4BxPyrLl5vBag+p8xKSc
+        ZDHtsR6cqMMdg/b1N/sIenxNbywmWwIDAQABMA0GCSqGSIb3DQEBBQUAA4IBAQAie2AQ+741L/+K
+        cfINc8n0fm2EvHAYeVd5H8vu0gjNn/4tWWEmNvQ9t+2osOE34DF+1VLqXomSkzYYM3GWlb6/4zuA
+        eEFeErLPgboHFkJwF7JwBfDDiJvFeFzfQN461chuSNSYBkixm0dt9EIXW/WyFXz9snoibhmwvH35
+        N+BPd5J9bCIxu7AViy7MD1heRy9oy/TeOW3tWVFidlrPDYaTEVp0GItVAJ0nOvs/ou63f7kBAfsn
+        62XRPZ7emK55c2IaQb2YkDPqD+lFGUd9wqQRwvc3JupN7QNQPBa6x4n+baOhba6e0PKZSyrGFzuy
+        89ZYxlJH00LfHtvGr2i7JhKQ</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://okta-test.okta.com/app/template_saml_2_0/exk6nmg6fcDXhb0Wr0h7/sso/saml"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://okta-test.okta.com/app/template_saml_2_0/exk6nmg6fcDXhb0Wr0h7/sso/saml"/></md:IDPSSODescriptor></md:EntityDescriptor>
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:42:36 GMT
+recorded_with: VCR 2.9.3

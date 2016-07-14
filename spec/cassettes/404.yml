@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://my-okta.okta.com/api/v1/users/-1
+    uri: https://okta-test.okta.com/api/v1/users/-1
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       message: 
     headers:
       date:
-      - Wed, 13 Jul 2016 20:36:49 GMT
+      - Thu, 14 Jul 2016 04:49:29 GMT
       server:
       - nginx
       content-type:
@@ -29,13 +29,13 @@ http_interactions:
       vary:
       - Accept-Encoding
       x-okta-request-id:
-      - V4amYecW8MPGyQhffgDRzAAABq8
+      - V4cZ2Q7SELDyJL1gVC5CpgAAAHQ
       x-rate-limit-limit:
       - '1200'
       x-rate-limit-remaining:
-      - '1195'
+      - '1137'
       x-rate-limit-reset:
-      - '1468442224'
+      - '1468471810'
       p3p:
       - CP="HONK"
       cache-control:
@@ -45,7 +45,7 @@ http_interactions:
       expires:
       - '0'
       set-cookie:
-      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=0EBA2742ADD2301BA02BB7371DFF6309;
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=1DC7B55B667C26725CB11CEE390BF552;
         Path=/
       connection:
       - close
@@ -54,7 +54,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"errorCode":"E0000007","errorSummary":"Not found: Resource not found:
-        -1 (User)","errorLink":"E0000007","errorId":"oaeCZQeBDDxTIeU_182kmLBLA","errorCauses":[]}'
+        -1 (User)","errorLink":"E0000007","errorId":"oaekva6sjfERWuAFIfw_tuDSw","errorCauses":[]}'
     http_version: 
-  recorded_at: Wed, 13 Jul 2016 20:36:49 GMT
-recorded_with: VCR 2.9.3
+  recorded_at: Thu, 14 Jul 2016 04:49:29 GMT
+recorded_with: VCR 3.0.3

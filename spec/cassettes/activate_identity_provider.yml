@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/idps/0oa62bfdjnK55Z5x80h7/lifecycle/activate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:18 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cZzkkS67yJuNE68swX5QAABT4
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1177'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D733C5CA7F2A6151A109D3759BB2AF48;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"0oa62bfdjnK55Z5x80h7","type":"GOOGLE","name":"Google","status":"ACTIVE","created":"2016-03-24T23:21:49.000Z","lastUpdated":"2016-03-25T19:14:23.000Z","protocol":{"type":"OIDC","endpoints":{"authorization":{"url":"https://accounts.google.com/o/oauth2/auth","binding":"HTTP-REDIRECT"},"token":{"url":"https://www.googleapis.com/oauth2/v3/token","binding":"HTTP-POST"}},"scopes":["profile","email","openid"],"credentials":{"client":{"client_id":"your-client-id","client_secret":"your-client-secret"}}},"policy":{"provisioning":{"action":"AUTO","profileMaster":true,"groups":{"action":"NONE"}},"accountLink":{"filter":null,"action":"AUTO"},"subject":{"userNameTemplate":{"template":"idpuser.email"},"filter":null,"matchType":"USERNAME"},"maxClockSkew":0},"_links":{"authorize":{"href":"https://your-domain.okta.com/oauth2/v1/authorize?idp=0oa62bfdiumsUndnZ0h7&          client_id={clientId}&response_type={responseType}&response_mode={responseMode}&          scope={scopes}&redirect_uri={redirectUri}&state={state}","templated":true,"hints":{"allow":["GET"]}},"clientRedirectUri":{"href":"https://your-domain.okta.com/oauth2/v1/authorize/callback","hints":{"allow":["POST"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:18 GMT
+recorded_with: VCR 3.0.3

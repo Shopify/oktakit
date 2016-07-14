@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:19 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4cZz1vHuzkq7qcWhkOD-gAADlA
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1172'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=F7A2DFC6E80166793A204D940DE475AF;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:19 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/mbl6o3uhd97Rc2PM70h7
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 204
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:58:45 GMT
+      server:
+      - nginx
+      x-okta-request-id:
+      - V4eopUuPyeAlKtEAc3tR5wAABMQ
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468508385'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-okta-backend:
+      - op1-majorapp02b.aue1s.saasure.com
+      x-frame-options:
+      - SAMEORIGIN
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D0885B7DAEB22CDD00945454F130B2CA;
+        Path=/, JSESSIONID=D0885B7DAEB22CDD00945454F130B2CA; Path=/; Secure
+      content-length:
+      - '0'
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:58:45 GMT
+recorded_with: VCR 3.0.3

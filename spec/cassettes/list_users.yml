@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:24 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cZ1J9thkP2wy3aoVLxCAAAAjg
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1153'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?limit=10000>; rel="self"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=397FDA960743D17F9BA60F4D7FB69BD6;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"00u6nm9ytbmwHeunx0h7","status":"PROVISIONED","created":"2016-07-14T03:20:53.000Z","activated":"2016-07-14T03:20:56.000Z","statusChanged":"2016-07-14T03:20:56.000Z","lastLogin":null,"lastUpdated":"2016-07-14T03:20:56.000Z","passwordChanged":null,"profile":{"login":"julian@example.com","mobilePhone":null,"email":"julian@example.com","secondEmail":null,"firstName":"Julian2","lastName":"Nadeau"},"credentials":{"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/lifecycle/suspend","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/lifecycle/reset_password","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/lifecycle/deactivate","method":"POST"}}},{"id":"00u6nlr57ri2LmhPP0h7","status":"ACTIVE","created":"2016-07-14T02:56:18.000Z","activated":null,"statusChanged":"2016-07-14T03:01:04.000Z","lastLogin":"2016-07-14T03:01:04.000Z","lastUpdated":"2016-07-14T03:01:04.000Z","passwordChanged":"2016-07-14T03:01:04.000Z","profile":{"login":"julian+okta@example.com","mobilePhone":null,"email":"julian+okta@example.com","secondEmail":null,"firstName":"Julian","lastName":"Nadeau"},"credentials":{"password":{},"recovery_question":{"question":"What
+        is the food you least liked as a child?"},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/lifecycle/suspend","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/lifecycle/reset_password","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/lifecycle/expire_password","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/credentials/forgot_password","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/credentials/change_recovery_question","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/lifecycle/deactivate","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/users/00u6nlr57ri2LmhPP0h7/credentials/change_password","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:24 GMT
+recorded_with: VCR 3.0.3

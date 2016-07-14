@@ -1,0 +1,204 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/events
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:10 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cZxp9thkP2wy3aoVLvZAAAAcI
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/events?after=tevxIm0rDD6SXaygrLEKaG98A1468464977000&limit=1000>;
+        rel="self", <https://okta-test.okta.com/api/v1/events?after=tevTtcpWnmlQR2ee_MTTNEkeA1468471509000&limit=1000>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=1695D0BF6E7C71DDCFFA72EB1569FF6B;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"eventId":"tevFfpQO21cTNamj17Qz2rKgg1468464977000","sessionId":"trsmFbKVy6IQIyzW1jQZDeyBQ","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:17.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/internal/orgs"},"actors":[{"id":"00u2wp3qxjFMNQCSPMTQ","displayName":"Flickerbox
+        Freetrial","login":"freetrial@okta.com","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[{"id":"0oa6nlr5780cdStFo0h7","objectType":"AppInstance"}]},{"eventId":"tevPHgPs9UKRquufxj4CoqrOQ1468464977000","sessionId":"trsYmKM5tH5Qae_h3dO08V9Fg","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:17.000Z","action":{"message":"Policy
+        created (id: 00p6nlr57etGXBil60h7, type: OktaSignOn)","categories":["Policy
+        Lifecycle"],"objectType":"policy.created","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[]},{"eventId":"tevlbumPcdiSHuyfkYfZUE5LA1468464977000","sessionId":"trsYmKM5tH5Qae_h3dO08V9Fg","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:17.000Z","action":{"message":"Policy
+        rule (id: 0pr6nlr57fzcilD050h7, type: signOn) added to Policy (id: 00p6nlr57etGXBil60h7,
+        type: OktaSignOn)","categories":["Policy Lifecycle"],"objectType":"policy.rule.added","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[]},{"eventId":"tevusSASAl6SqyCkXb0b5bgDw1468464978000","sessionId":"trseuf_8RdYQ4q9C7n5H3om9Q","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:18.000Z","action":{"message":"User
+        profile bootstrapped (Profile: oty6nlr57lm1XlcLr0h7)","categories":["Universal
+        Directory"],"objectType":"cvd.user_profile_bootstrapped","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[]},{"eventId":"tevTcIwx8goSVq-X3DXD2OCnQ1468464978000","sessionId":"trsYS6hk2I9SLOMAvgTAZCzdw","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:18.000Z","action":{"message":"Policy
+        rule (id: 0pr6nlr57fzcilD050h7, type: signOn) updated in Policy (id: 00p6nlr57etGXBil60h7,
+        type: OktaSignOn)","categories":["Policy Lifecycle"],"objectType":"policy.rule.updated","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[]},{"eventId":"tevVSu4IzzHTWawoDavkiFhOw1468464978000","sessionId":"trs1C_Stcz2TUiy2KkhnnsrEQ","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:18.000Z","action":{"message":"Okta
+        user created","categories":["User Creation"],"objectType":"core.user.config.user_creation.success","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevC7AzBnFLQT6ISTAGzRN9lA1468464978000","sessionId":"trs1C_Stcz2TUiy2KkhnnsrEQ","requestId":"V4b-UNtnJBqDdYPiZomvWgAAC48","published":"2016-07-14T02:56:18.000Z","action":{"message":"Okta
+        user has been activated","categories":["User Activation"],"objectType":"core.user.config.user_activated","requestUri":"/api/internal/orgs"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Java/1.7.0_79","displayName":"UNKNOWN","ipAddress":"54.160.189.12","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevAGMYg0OTQ52ZTotOX7gBvw1468465031000","sessionId":"trslEeXz_CPR1KDYOVQMobmqg","requestId":"V4b-gzgc0PBG8@sl2Wm7dAAABmI","published":"2016-07-14T02:57:11.000Z","action":{"message":"Synchronizing
+        user with app","categories":[],"objectType":"app.user_management.provision_user","requestUri":"Background"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tev0dfgZf6pTeqa5UF2kkriGA1468465031000","sessionId":"trslEeXz_CPR1KDYOVQMobmqg","requestId":"V4b-gzgc0PBG8@sl2Wm7dAAABmI","published":"2016-07-14T02:57:11.000Z","action":{"message":"Pushing
+        new user account to app","categories":[],"objectType":"app.user_management.push_new_user","requestUri":"Background"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tevwfXF9rN-SRO8L6gOFL3Oqg1468465036000","sessionId":"trslEeXz_CPR1KDYOVQMobmqg","requestId":"V4b-gzgc0PBG8@sl2Wm7dAAABmI","published":"2016-07-14T02:57:16.000Z","action":{"message":"Successfully
+        pushed new user account to app","categories":[],"objectType":"app.user_management.push_new_user_success","requestUri":"Background"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tevEI3fMlBIRACoScdb0WtkBQ1468465053000","sessionId":"","requestId":"V4b-nUkS67yJuNE68swxggAABNM","published":"2016-07-14T02:57:33.000Z","action":{"message":"Sign-in
+        Failed - Unknown User ''julian@example.com''","categories":["Sign-in Failure","Suspicious
+        Activity"],"objectType":"core.user_auth.login_failed","requestUri":"/login/do-login"},"actors":[{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"","objectType":"User"}]},{"eventId":"tevafCRh43bQZ6U2ntJ82pIKQ1468465264000","sessionId":"101lJXR-_zOQ2KnR9aLif7XAw","requestId":"V4cAcJ9thkP2wy3aoVL5DAAAAcw","published":"2016-07-14T03:01:04.000Z","action":{"message":"User
+        updated their Okta password","categories":[],"objectType":"core.user.config.password_update.success","requestUri":"/user/welcome/login/internal"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevb8QPi7amQ0ycgZdoSlKwew1468465264000","sessionId":"101T2HehrhmQ6eaZb6dhWrVxg","requestId":"V4cAcJ9thkP2wy3aoVL5DAAAAcw","published":"2016-07-14T03:01:04.000Z","action":{"message":"Sign-in
+        successful","categories":["Sign-in Success"],"objectType":"core.user_auth.login_success","requestUri":"/user/welcome/login/internal"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tev61OtW9rvRaCbR8lvgg1ptA1468465271000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cAdxOu1-dHlvqIBTv9oAAAAkM","published":"2016-07-14T03:01:11.000Z","action":{"message":"User
+        logged in to the Admin app","categories":[],"objectType":"app.admin.sso.login.success","requestUri":"/admin/sso/request"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"0oa6nlr5780cdStFo0h7","objectType":"AppInstance"}]},{"eventId":"tev7LYLXtNvToGCrEx9vCNZWA1468465298000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cAkhOu1-dHlvqIBTv@gAAAAko","published":"2016-07-14T03:01:38.000Z","action":{"message":"API
+        Token created ","categories":["Token Lifecycle"],"objectType":"api.token.create","requestUri":"/api/internal/tokens"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevLTu3ZQJ8QNipFh1rqGopYw1468465334000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cAtuXAfLU1ttNceQctYwAAA9U","published":"2016-07-14T03:02:14.000Z","action":{"message":"API
+        Token revoked ","categories":["Token Lifecycle"],"objectType":"api.token.revoke","requestUri":"/api/internal/tokens/00T1939kuedpd1Gdv0h6/revoke"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevstyUF7onTsq4m8Xx96DjOw1468465823000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cCnzgc0PBG8@sl2WnztgAABwY","published":"2016-07-14T03:10:23.000Z","action":{"message":"API
+        Token created ","categories":["Token Lifecycle"],"objectType":"api.token.create","requestUri":"/api/internal/tokens"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"}]},{"eventId":"tevT-XQYgtwS0GnHtE6q23fhQ1468466275000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cEYxO5NQRCulomlzklhwAAC2o","published":"2016-07-14T03:17:55.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/admin/app/googleappsadmin/instance/_new_"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nnkxqzSHZVPsq0h7","objectType":"AppInstance"}]},{"eventId":"tevoJo4bWOvQKeZTc-hHqsQFw1468466275000","sessionId":"trsy23pA4KkSI2NGZbWnLDJeg","requestId":"V4cEYxO5NQRCulomlzklhwAAC2o","published":"2016-07-14T03:17:55.000Z","action":{"message":"App
+        to Okta (Source profile: oty6nnkxr4bojtUin0h7, Target profile: oty6nlr57lm1XlcLr0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/admin/app/googleappsadmin/instance/_new_"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevwr8duHd4TzGhhhIOK_RHwQ1468466275000","sessionId":"trsy23pA4KkSI2NGZbWnLDJeg","requestId":"V4cEYxO5NQRCulomlzklhwAAC2o","published":"2016-07-14T03:17:55.000Z","action":{"message":"Application
+        User profile bootstrapped (Profile: oty6nnkxr4bojtUin0h7)","categories":["Universal
+        Directory"],"objectType":"cvd.appuser_profile_bootstrapped","requestUri":"/admin/app/googleappsadmin/instance/_new_"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nnkxqzSHZVPsq0h7","objectType":"AppInstance"}]},{"eventId":"tevUKX6-PHlTNeXfvAiWr8OxQ1468466275000","sessionId":"trsy23pA4KkSI2NGZbWnLDJeg","requestId":"V4cEYxO5NQRCulomlzklhwAAC2o","published":"2016-07-14T03:17:55.000Z","action":{"message":"Okta
+        to App (Source profile: oty6nlr57lm1XlcLr0h7, Target profile: oty6nnkxr4bojtUin0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/admin/app/googleappsadmin/instance/_new_"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevsqQUBBGKTnGI6f77NJp12g1468466276000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cEYxO5NQRCulomlzklmwAAC34","published":"2016-07-14T03:17:56.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/admin/app/googleappsadmin/instance/0oa6nnkxqzSHZVPsq0h7/add-step"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nnkxqzSHZVPsq0h7","objectType":"AppInstance"}]},{"eventId":"tevZjttZM-4SNSikYH0g4CERA1468466279000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cEZxO5NQRCulomlzklvwAAC5w","published":"2016-07-14T03:17:59.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/admin/app/googleappsadmin/instance/0oa6nnkxqzSHZVPsq0h7/settings/sso"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nnkxqzSHZVPsq0h7","objectType":"AppInstance"}]},{"eventId":"tevbb1G9El8TKSRxcIMJSmohg1468466279000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cEZxO5NQRCulomlzklwQAACvg","published":"2016-07-14T03:17:59.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/admin/app/googleappsadmin/instance/0oa6nnkxqzSHZVPsq0h7/add-step"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nnkxqzSHZVPsq0h7","objectType":"AppInstance"}]},{"eventId":"tevRB6BVG0QTsmcqkHMWpqbXQ1468466453000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cFFA7SELDyJL1gVC5opQAAAGc","published":"2016-07-14T03:20:53.000Z","action":{"message":"Okta
+        user created","categories":["User Creation"],"objectType":"core.user.config.user_creation.success","requestUri":"/api/v1/users"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"}]},{"eventId":"tevrgL5EKSWR4GwLvOKnOPq3Q1468466456000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cFGA7SELDyJL1gVC5otgAAAFc","published":"2016-07-14T03:20:56.000Z","action":{"message":"Okta
+        user has been activated","categories":["User Activation"],"objectType":"core.user.config.user_activated","requestUri":"/admin/user/activate/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"}]},{"eventId":"tevcuk6r_3iSN6vzcj2D0Z3cA1468466473000","sessionId":"trsNXInUvxyTgu8y3kUKcFDUQ","requestId":"V4cFKJ9thkP2wy3aoVJXggAAAZI","published":"2016-07-14T03:21:13.000Z","action":{"message":"Synchronizing
+        user with app","categories":[],"objectType":"app.user_management.provision_user","requestUri":"Background"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tev2rMuLXiURC-vk7ZP9lRnbg1468466473000","sessionId":"trsNXInUvxyTgu8y3kUKcFDUQ","requestId":"V4cFKJ9thkP2wy3aoVJXggAAAZI","published":"2016-07-14T03:21:13.000Z","action":{"message":"Pushing
+        new user account to app","categories":[],"objectType":"app.user_management.push_new_user","requestUri":"Background"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tev4TkoS0IHTh22qt2BwmHC5w1468466478000","sessionId":"trsNXInUvxyTgu8y3kUKcFDUQ","requestId":"V4cFKJ9thkP2wy3aoVJXggAAAZI","published":"2016-07-14T03:21:18.000Z","action":{"message":"Successfully
+        pushed new user account to app","categories":[],"objectType":"app.user_management.push_new_user_success","requestUri":"Background"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"ipAddress":"","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nnvc4aH6ICgAK0h7","objectType":"AppInstance"}]},{"eventId":"tevF5FvlLiJRCKUw0OU5XHcng1468467241000","sessionId":"101cP3szjIfTyipnS4UlUmWIA","requestId":"V4cIKbdUfGp94vBLix1XZgAAA4M","published":"2016-07-14T03:34:01.000Z","action":{"message":"Read
+        only admin privileges granted","categories":[],"objectType":"core.user.admin_privilege.granted","requestUri":"/api/internal/administrators/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"}]},{"eventId":"tevstwLSWI0TviOKGn1MfAJ8A1468468539000","sessionId":"trsL_tbFajeTHmAiQ8z_WfmfA","requestId":"V4cNO0uPyeAlKtEAc3vhGAAABV4","published":"2016-07-14T03:55:39.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/v1/apps"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevWtUTfFXBT6eWxWkEkx2qJA1468468539000","sessionId":"trsNp9xQ4MIQmujdOdwocD9Ow","requestId":"V4cNO0uPyeAlKtEAc3vhGAAABV4","published":"2016-07-14T03:55:39.000Z","action":{"message":"Application
+        User profile bootstrapped (Profile: oty6nmg6fiw3LlMGV0h7)","categories":["Universal
+        Directory"],"objectType":"cvd.appuser_profile_bootstrapped","requestUri":"/api/v1/apps"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevvwNZbv2rQfi1z7OIOPfZeQ1468468540000","sessionId":"trsNp9xQ4MIQmujdOdwocD9Ow","requestId":"V4cNO0uPyeAlKtEAc3vhGAAABV4","published":"2016-07-14T03:55:40.000Z","action":{"message":"App
+        to Okta (Source profile: oty6nmg6fiw3LlMGV0h7, Target profile: oty6nlr57lm1XlcLr0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevSEvmFPxxQZWTbgYctjXXaQ1468468540000","sessionId":"trsNp9xQ4MIQmujdOdwocD9Ow","requestId":"V4cNO0uPyeAlKtEAc3vhGAAABV4","published":"2016-07-14T03:55:40.000Z","action":{"message":"Okta
+        to App (Source profile: oty6nlr57lm1XlcLr0h7, Target profile: oty6nmg6fiw3LlMGV0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps"},"actors":[{"id":"spr6nlr575xTYVG1l0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevf02QtkcJSL6RwpkN4JYvbA1468468540000","sessionId":"trsL_tbFajeTHmAiQ8z_WfmfA","requestId":"V4cNO0uPyeAlKtEAc3vhGAAABV4","published":"2016-07-14T03:55:40.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/v1/apps"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevl4Zhi2oGR6STBbmcc9sVFA1468469027000","sessionId":"trsjy9XR9MeTraHj6ePl-wGPg","requestId":"V4cPI7r8O12L419F@fkKjAAAA40","published":"2016-07-14T04:03:47.000Z","action":{"message":"App
+        deactivated","categories":[],"objectType":"app.generic.config.app_deactivated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/deactivate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevREsFo7FzSV-PJjvezv3rHw1468469104000","sessionId":"trsRprklDWMQHymFshHIDO7ew","requestId":"V4cPcOkF-t6HOvQdBAVQpAAABtc","published":"2016-07-14T04:05:04.000Z","action":{"message":"App
+        to Okta (Source profile: oty6nmg6fiw3LlMGV0h7, Target profile: oty6nlr57lm1XlcLr0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/activate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tev7f15ai8SRh6kRmb6OK8OXg1468469104000","sessionId":"trsRprklDWMQHymFshHIDO7ew","requestId":"V4cPcOkF-t6HOvQdBAVQpAAABtc","published":"2016-07-14T04:05:04.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/activate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevnrdT1NmGRay0GtCH35kNFQ1468469104000","sessionId":"trsRprklDWMQHymFshHIDO7ew","requestId":"V4cPcOkF-t6HOvQdBAVQpAAABtc","published":"2016-07-14T04:05:04.000Z","action":{"message":"App
+        activated","categories":[],"objectType":"app.generic.config.app_activated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/activate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevBpGnR0SaRymdT3qVwYsfyw1468469104000","sessionId":"trsRprklDWMQHymFshHIDO7ew","requestId":"V4cPcOkF-t6HOvQdBAVQpAAABtc","published":"2016-07-14T04:05:04.000Z","action":{"message":"Okta
+        to App (Source profile: oty6nlr57lm1XlcLr0h7, Target profile: oty6nmg6fiw3LlMGV0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/activate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevH9utAdfUQD2m3TEvBYninA1468469463000","sessionId":"trsJz4nnQygQoCmBICpxGLGCQ","requestId":"V4cQ1xOu1-dHlvqIBTuUIAAAAi0","published":"2016-07-14T04:11:03.000Z","action":{"message":"User
+        provisioned to app","categories":["Application Assignment"],"objectType":"app.generic.provision.assign_user_to_app","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevkuPH-XkKTq6ieh25hxVuMg1468469642000","sessionId":"trsuAt8Z82lTVmmqTfFA9jdzg","requestId":"V4cRirr8O12L419F@fk4wAAAA6w","published":"2016-07-14T04:14:02.000Z","action":{"message":"App
+        user property has been updated","categories":[],"objectType":"app.generic.config.app_user_update","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevjw_riSknRrOK6sh7kSZVeA1468469718000","sessionId":"trs45Es5kNeRkaXzKglczefnA","requestId":"V4cR1eXAfLU1ttNceQdp-wAAA2U","published":"2016-07-14T04:15:18.000Z","action":{"message":"App
+        user property has been updated","categories":[],"objectType":"app.generic.config.app_user_update","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevZiGEnokmQpii-0YfnVaXwg1468470659000","sessionId":"trsRVMph1KCTAKSw-2e3NQzrQ","requestId":"V4cVg59thkP2wy3aoVKXNAAAAj8","published":"2016-07-14T04:30:59.000Z","action":{"message":"App
+        Example SAML App added to group Default","categories":[],"objectType":"platform.group_app_assignment.app_add","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups/00g6nm9yt5VEl6xYd0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevZOXqQadQSpiKaZlwnBWWXA1468470752000","sessionId":"trsPduo4w8-S_ahSg_MgL9xtg","requestId":"V4cV4EkS67yJuNE68sz5HQAABLo","published":"2016-07-14T04:32:32.000Z","action":{"message":"App
+        Example SAML App removed from group Default","categories":[],"objectType":"platform.group_app_assignment.app_remove","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups/00g6nm9yt5VEl6xYd0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevi9yYIqU-TZOAJm3bLGVebg1468470792000","sessionId":"trsICFhzq2rQLGyTQucy_-ekQ","requestId":"V4cWCEkS67yJuNE68sz6HQAABRU","published":"2016-07-14T04:33:12.000Z","action":{"message":"User
+        deprovisioned from app","categories":["Application Assignment"],"objectType":"app.generic.provision.deactivate_user_from_app","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevgHrDKzuLQf-IrVgYIYhjWQ1468470936000","sessionId":"trsxfFCaPZHQkmKwZVLUp49qw","requestId":"V4cWmEkS67yJuNE68sz@tAAABWA","published":"2016-07-14T04:35:36.000Z","action":{"message":"User
+        provisioned to app","categories":["Application Assignment"],"objectType":"app.generic.provision.assign_user_to_app","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tev6wI7Y5eRShS-fye9w6BoBg1468471003000","sessionId":"trsrbH22vUWTn-TJ2BwjI2X9g","requestId":"V4cW2@XAfLU1ttNceQfFtAAAAyA","published":"2016-07-14T04:36:43.000Z","action":{"message":"User
+        has changed their app username to user@example.com","categories":["Application
+        Assignment"],"objectType":"app.generic.config.app_username_update","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevWUYBn93MRQi4bCpYgvsX9A1468471003000","sessionId":"trsrbH22vUWTn-TJ2BwjI2X9g","requestId":"V4cW2@XAfLU1ttNceQfFtAAAAyA","published":"2016-07-14T04:36:43.000Z","action":{"message":"User
+        deprovisioned from app","categories":["Application Assignment"],"objectType":"app.generic.provision.deactivate_user_from_app","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevtk9PInWzSwyrJOVNF2ZKCw1468471003000","sessionId":"trsrbH22vUWTn-TJ2BwjI2X9g","requestId":"V4cW2@XAfLU1ttNceQfFtAAAAyA","published":"2016-07-14T04:36:43.000Z","action":{"message":"User
+        provisioned to app","categories":["Application Assignment"],"objectType":"app.generic.provision.assign_user_to_app","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"00u6nm9ytbmwHeunx0h7","objectType":"User"},{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevffpz7ulcRByn4xki1b1ePw1468471169000","sessionId":"trsoYZj0orVT1GLxqwK2V4lqQ","requestId":"V4cXgeXAfLU1ttNceQfSwwAAAz4","published":"2016-07-14T04:39:29.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevLSZXF5lJSjq8n1WjhqpdSA1468471169000","sessionId":"trsoYZj0orVT1GLxqwK2V4lqQ","requestId":"V4cXgeXAfLU1ttNceQfSwwAAAz4","published":"2016-07-14T04:39:29.000Z","action":{"message":"App
+        configuration updated ","categories":[],"objectType":"app.generic.config.app_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tevEkOpyOJAQGCSdJy377hrhA1468471491000","sessionId":"trseujLVz3GQea3W9SGecn4XA","requestId":"V4cYw9tnJBqDdYPiZol2xwAAC0c","published":"2016-07-14T04:44:51.000Z","action":{"message":"App
+        deactivated","categories":[],"objectType":"app.generic.config.app_deactivated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/deactivate"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/51.0.2704.106 Safari/537.36","displayName":"CHROME","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]},{"eventId":"tev75560_AkSjW7n_RezDFxdA1468471509000","sessionId":"trs8ngZVDGDRECrJT9xrNQHPA","requestId":"V4cY1NtnJBqDdYPiZol4lAAAC14","published":"2016-07-14T04:45:09.000Z","action":{"message":"App
+        to Okta (Source profile: oty6nmg6fiw3LlMGV0h7, Target profile: oty6nlr57lm1XlcLr0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevY9laVKroRZK9jLIn5EmzSw1468471509000","sessionId":"trs8ngZVDGDRECrJT9xrNQHPA","requestId":"V4cY1NtnJBqDdYPiZol4lAAAC14","published":"2016-07-14T04:45:09.000Z","action":{"message":"Okta
+        to App (Source profile: oty6nlr57lm1XlcLr0h7, Target profile: oty6nmg6fiw3LlMGV0h7,
+        Added: [], Modified: [], Deleted: [])","categories":["Universal Directory"],"objectType":"cvd.mappings_updated","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[]},{"eventId":"tevTtcpWnmlQR2ee_MTTNEkeA1468471509000","sessionId":"trs8ngZVDGDRECrJT9xrNQHPA","requestId":"V4cY1NtnJBqDdYPiZol4lAAAC14","published":"2016-07-14T04:45:09.000Z","action":{"message":"App
+        deleted","categories":[],"objectType":"app.generic.config.app_deleted","requestUri":"/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"actors":[{"id":"00u6nlr57ri2LmhPP0h7","objectType":"User"},{"id":"Oktakit
+        v0.1.0","displayName":"UNKNOWN","ipAddress":"208.87.23.133","objectType":"Client"}],"targets":[{"id":"0oa6nmg6fdvwvoHwR0h7","objectType":"AppInstance"}]}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:10 GMT
+recorded_with: VCR 3.0.3

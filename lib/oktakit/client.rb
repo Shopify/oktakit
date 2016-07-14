@@ -5,6 +5,7 @@ require 'oktakit/client/apps'
 require 'oktakit/client/events'
 require 'oktakit/client/factors'
 require 'oktakit/client/groups'
+require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
 require 'oktakit/client/templates'
 require 'oktakit/client/users'
@@ -16,6 +17,7 @@ module Oktakit
     include Events
     include Factors
     include Groups
+    include IdentityProviders
     include Schemas
     include Templates
     include Users
@@ -105,8 +107,8 @@ module Oktakit
       end
 
       uri = URI::Parser.new.escape("/api/v1/" + path.to_s)
-      @last_response = response = sawyer_agent.call(method, uri, data, options)
-      response.data
+      response = sawyer_agent.call(method, uri, data, options)
+      [response.data, response.status]
     end
 
     def sawyer_agent

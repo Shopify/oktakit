@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 418
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 05:01:38 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4ccskkS67yJuNE68swyngAABXI
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1191'
+      x-rate-limit-reset:
+      - '1468472557'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D2CA1E0C3509E64370F1A549E7F07AC8;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errorCode":"E0000007","errorSummary":"Not found: Resource not found:
+        -1 (User)","errorLink":"E0000007","errorId":"oae-tTyxLXyQHO0zQu6SK_58w","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 05:01:38 GMT
+recorded_with: VCR 3.0.3

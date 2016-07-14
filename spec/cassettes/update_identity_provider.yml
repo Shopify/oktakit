@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://okta-test.okta.com/api/v1/idps/0oa62bfdjnK55Z5x80h7
+    body:
+      encoding: UTF-8
+      string: "{'id':'0oa62bfdjnK55Z5x80h7','type':'SAML2','name':'Example IdP','protocol':{'type':'SAML2','endpoints':{'sso':{'url':'https://idp.example.com/saml2/sso','binding':'HTTP-REDIRECT','destination':'https://idp.example.com/saml2/sso'},'acs':{'binding':'HTTP-POST','type':'INSTANCE'}},'algorithms':{'request':{'signature':{'algorithm':'SHA-256','scope':'REQUEST'}},'response':{'signature':{'algorithm':'SHA-256','scope':'ANY'}}},'credentials':{'trust':{'issuer':'https://idp.example.com','audience':'https://www.okta.com/saml2/service-provider/spCQJRNaaxs7ANqKBO7M','kid':'74bb2164-e0c8-4457-862b-7c29ba6cd2c9'}}},'policy':{'provisioning':{'action':'AUTO','profileMaster':true,'groups':{'action':'NONE'}},'accountLink':{'filter':null,'action':'AUTO'},'subject':{'userNameTemplate':{'template':'idpuser.subjectNameId','type':'BUILT_IN'},'format':['urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified'],'filter':null,'matchType':'USERNAME'},'maxClockSkew':120000}}"
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:17 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4cZzSGXJLimuAsnJGeimQAABuE
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1179'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=6057DA3B06A41A667024F2194DA1458A;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"0oa62bfdjnK55Z5x80h7","type":"SAML2","name":"Example IdP","status":"INACTIVE","created":null,"lastUpdated":"2016-03-29T21:23:45.000Z","protocol":{"type":"SAML2","endpoints":{"sso":{"url":"https://idp.example.com/saml2/sso","binding":"HTTP-REDIRECT","destination":"https://idp.example.com/saml2/sso"},"acs":{"binding":"HTTP-POST","type":"INSTANCE"}},"algorithms":{"request":{"signature":{"algorithm":"SHA-256","scope":"REQUEST"}},"response":{"signature":{"algorithm":"SHA-256","scope":"ANY"}}},"settings":{"nameFormat":"urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"},"credentials":{"trust":{"issuer":"https://idp.example.com","audience":"https://www.okta.com/saml2/service-provider/spCQJRNaaxs7ANqKBO7M","kid":"your-key-id"}}},"policy":{"provisioning":{"action":"AUTO","profileMaster":true,"groups":{"action":"NONE"}},"accountLink":{"filter":null,"action":"AUTO"},"subject":{"userNameTemplate":{"template":"idpuser.subjectNameId"},"filter":null,"matchType":"USERNAME"},"maxClockSkew":120000},"_links":{"metadata":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/metadata.xml","type":"application/xml","hints":{"allow":["GET"]}},"acs":{"href":"https://your-domain.okta.com/sso/saml2/0oa62bc8wppPw0UGr0h7","type":"application/xml","hints":{"allow":["POST"]}},"users":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/users","hints":{"allow":["GET"]}},"activate":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/lifecycle/activate","hints":{"allow":["POST"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:17 GMT
+recorded_with: VCR 3.0.3

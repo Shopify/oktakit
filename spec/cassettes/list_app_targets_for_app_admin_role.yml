@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/roles/ra16nmg6csiUalQhH0h7/targets/catalog/apps
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 201
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:41:18 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4cJ3jgc0PBG8@sl2Wl8NQAABuw
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468467738'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=4ABBB87C0401A910C0A2C487D7C59D34;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"name":"salesforce","displayName":"Salesforce.com","description":"Salesforce","status":"ACTIVE","lastUpdated":"2014-06-03T16:17:13.000Z","category":"CRM","verificationStatus":"OKTA_VERIFIED","website":"http://www.salesforce.com","signOnModes":["SAML_2_0"],"features":["IMPORT_NEW_USERS","IMPORT_PROFILE_UPDATES","IMPORT_USER_SCHEMA","PROFILE_MASTERING","PUSH_NEW_USERS","PUSH_PASSWORD_UPDATES","PUSH_PROFILE_UPDATES","PUSH_USER_DEACTIVATION","REACTIVATE_USERS"],"_links":{"logo":[{"name":"medium","href":"http://rain.okta1.com:1802/img/logos/salesforce_logo.png","type":"image/png"}]}},{"name":"boxnet","displayName":"Box","description":"Cloud storage.","status":"ACTIVE","lastUpdated":"2014-06-03T16:17:13.000Z","category":"CM","verificationStatus":"OKTA_VERIFIED","website":"http://www.box.net","signOnModes":["SAML_2_0"],"features":["GROUP_PUSH","IMPORT_NEW_USERS","IMPORT_PROFILE_UPDATES","PUSH_NEW_USERS","PUSH_PROFILE_UPDATES","PUSH_USER_DEACTIVATION","REACTIVATE_USERS"],"_links":{"logo":[{"name":"medium","href":"http://rain.okta1.com:1802/img/logos/box.png","type":"image/png"}]}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:41:18 GMT
+recorded_with: VCR 2.9.3

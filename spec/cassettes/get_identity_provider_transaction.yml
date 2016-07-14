@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:49:18 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4cZziGXJLimuAsnJGeipAAABnY
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1175'
+      x-rate-limit-reset:
+      - '1468471810'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=8356DC6064AD51A7FBDFC3CCE6893983;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"satvklBYyJmwa6qOg0g3","status":"ACCOUNT_JIT","expiresAt":"2016-01-03T23:52:58.000Z","created":"2016-01-03T23:44:38.000Z","idp":{"id":"0oabmluDNh2JZi8lt0g4","name":"Facebook","type":"FACEBOOK"},"context":{"userAgent":"Mozilla/5.0
+        (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko)         Chrome/47.0.2526.106
+        Safari/537.36","ipAddress":"127.0.0.1"},"_links":{"source":{"href":"https://example.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/source"},"target":{"href":"https://example.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/target"},"cancel":{"href":"https://example.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/cancel","hints":{"allow":["POST"]}},"provision":{"href":"https://example.okta.com/api/v1/idps/tx/satvklBYyJmwa6qOg0g3/lifecycle/provision","hints":{"allow":["POST"]}}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:49:18 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7/factors/questions
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 14:57:44 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4eoaCGXJLimuAsnJGdH1gAABmU
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468508324'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=9816D9A9015BC36C1B4F0A73B446214C;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"question":"disliked_food","questionText":"What is the food you least
+        liked as a child?"},{"question":"name_of_first_plush_toy","questionText":"What
+        is the name of your first stuffed animal?"},{"question":"first_award","questionText":"What
+        did you earn your first medal or award for?"},{"question":"favorite_security_question","questionText":"What
+        is your favorite security question?"},{"question":"favorite_toy","questionText":"What
+        is the toy/stuffed animal you liked the most as a kid?"},{"question":"first_computer_game","questionText":"What
+        was the first computer game you played?"},{"question":"favorite_movie_quote","questionText":"What
+        is your favorite movie quote?"},{"question":"first_sports_team_mascot","questionText":"What
+        was the mascot of the first sports team you played on?"},{"question":"first_music_purchase","questionText":"What
+        music album or song did you first purchase?"},{"question":"favorite_art_piece","questionText":"What
+        is your favorite piece of art?"},{"question":"grandmother_favorite_desert","questionText":"What
+        was your grandmother''s favorite dessert?"},{"question":"first_thing_cooked","questionText":"What
+        was the first thing you learned to cook?"},{"question":"childhood_dream_job","questionText":"What
+        was your dream job as a child?"},{"question":"first_kiss_location","questionText":"Where
+        did you have your first kiss?"},{"question":"place_where_significant_other_was_met","questionText":"Where
+        did you meet your spouse/significant other?"},{"question":"favorite_vacation_location","questionText":"Where
+        did you go for your favorite vacation?"},{"question":"new_years_two_thousand","questionText":"Where
+        were you on New Year''s Eve in the year 2000?"},{"question":"favorite_speaker_actor","questionText":"Who
+        is your favorite speaker/orator?"},{"question":"favorite_book_movie_character","questionText":"Who
+        is your favorite book/movie character?"},{"question":"favorite_sports_player","questionText":"Who
+        is your favorite sports player?"}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 14:57:44 GMT
+recorded_with: VCR 3.0.3

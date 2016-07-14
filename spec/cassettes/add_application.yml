@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/apps
+    body:
+      encoding: UTF-8
+      string: '{"name":"template_saml_2_0","label":"Example SAML App","signOnMode":"SAML_2_0","settings":{"app":{"audienceRestriction":"https://example.com/tenant/123","forceAuthn":false,"postBackURL":"https://example.com/sso/saml","authnContextClassRef":"urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport","requestCompressed":"COMPRESSED","recipient":"https://example.com/sso/saml","signAssertion":"SIGNED","destination":"https://example.com/sso/saml","signResponse":"SIGNED","nameIDFormat":"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress","groupName":null,"groupFilter":null,"defaultRelayState":null,"configuredIssuer":null,"attributeStatements":null}}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 03:49:44 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4cL2EuPyeAlKtEAc3vTmwAABSA
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468468244'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=7B921F4CAC6AA71592717ABB5AE5DA11;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":"0oa6nmg6fdvwvoHwR0h7","name":"template_saml_2_0","label":"Example SAML App","status":"ACTIVE","lastUpdated":"2016-07-14T03:55:40.000Z","created":"2016-07-14T03:55:39.000Z","accessibility":{"selfService":false,"errorRedirectUrl":null,"loginRedirectUrl":null},"visibility":{"autoSubmitToolbar":false,"hide":{"iOS":false,"web":false},"appLinks":{"login":true}},"features":[],"signOnMode":"SAML_2_0","credentials":{"userNameTemplate":{"template":"${source.login}","type":"BUILT_IN"},"signing":{}},"settings":{"app":{"audienceRestriction":"https://example.com/tenant/123","groupName":null,"forceAuthn":false,"defaultRelayState":null,"postBackURL":"https://example.com/sso/saml","authnContextClassRef":"urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport","configuredIssuer":null,"requestCompressed":"COMPRESSED","groupFilter":null,"recipient":"https://example.com/sso/saml","signAssertion":"SIGNED","destination":"https://example.com/sso/saml","signResponse":"SIGNED","nameIDFormat":"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress","attributeStatements":null},"notifications":{"vpn":{"network":{"connection":"DISABLED"},"message":null,"helpUrl":null}}},"_links":{"logo":[{"name":"medium","href":"https://op1static.oktacdn.com/assets/img/logos/default.6770228fb0dab49a1695ef440a5279bb.png","type":"image/png"}],"appLinks":[{"name":"login","href":"https://okta-test.okta.com/home/template_saml_2_0/0oa6nmg6fdvwvoHwR0h7/1541","type":"text/html"}],"help":{"href":"https://okta-test.okta.com/app/template_saml_2_0/0oa6nmg6fdvwvoHwR0h7/setup/help/SAML_2_0/instructions","type":"text/html"},"users":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/lifecycle/deactivate"},"groups":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups"},"metadata":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/sso/saml/metadata","type":"application/xml"}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 03:49:43 GMT
+recorded_with: VCR 2.9.3

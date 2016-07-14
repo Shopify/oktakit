@@ -23,7 +23,7 @@ And then execute:
 
 ```ruby
 client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
-agents = client.rels[:agents].get.data
+response, http_status = client.list_users
 ```
 
 ## Development

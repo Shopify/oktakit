@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:31:58 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cVvp9thkP2wy3aoVKdXAAAAhM
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1196'
+      x-rate-limit-reset:
+      - '1468470719'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups?limit=20>;
+        rel="self"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=6A2EF76405C25D80471BB723C02398E0;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"00g6nm9yt5VEl6xYd0h7","lastUpdated":"2016-07-14T04:30:59.000Z","priority":0,"profile":{},"_links":{"app":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"self":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/groups/00g6nm9yt5VEl6xYd0h7"},"group":{"href":"https://okta-test.okta.com/api/v1/groups/00g6nm9yt5VEl6xYd0h7"}}}]'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:31:57 GMT
+recorded_with: VCR 2.9.3

@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users/00u6nm9ytbmwHeunx0h7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 04:17:06 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4cSQuXAfLU1ttNceQdyPQAAA0I
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468469886'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=79B64D7235579C3536F0CE8E097D7826;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"00u6nm9ytbmwHeunx0h7","externalId":null,"created":"2016-07-14T04:11:03.000Z","lastUpdated":"2016-07-14T04:15:18.000Z","scope":"USER","status":"ACTIVE","statusChanged":"2016-07-14T04:11:03.000Z","passwordChanged":null,"syncState":"DISABLED","lastSync":null,"credentials":{"userName":"user@example.com"},"profile":{},"_links":{"app":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"user":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7"}}}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 04:17:05 GMT
+recorded_with: VCR 2.9.3
