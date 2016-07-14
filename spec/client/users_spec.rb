@@ -169,7 +169,7 @@ describe Oktakit::Client::Users do
   end
 
   describe '#forgot_password' do
-    it 'returns an empty object by default. when sendemail is false, returns a link for the user to reset their password.' do
+    it 'returns an empty object by default.' do
       VCR.use_cassette 'forgot_password' do
         resp, = client.forgot_password(USERS_USER_ID,
           password: { value: "123Password!" },

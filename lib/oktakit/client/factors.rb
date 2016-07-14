@@ -74,7 +74,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] All responses return the enrolled Factor with a status of either PENDING_ACTIVATION or ACTIVE.
+      # @return [Hash<Sawyer::Resource>] The enrolled Factor with a status of either PENDING_ACTIVATION or ACTIVE.
       # @see http://developer.okta.com/docs/api/resources/factors.html#enroll-factor
       # @example
       #   Oktakit.enroll_factor('id')

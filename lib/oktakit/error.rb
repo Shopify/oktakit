@@ -8,24 +8,28 @@ module Oktakit
     # @return [Oktakit::Error]
     def self.from_response(response)
       status = response[:status].to_i
-      if klass =  case status
-                  when 400      then Oktakit::BadRequest
-                  when 401      then Oktakit::Unauthorized
-                  when 403      then Oktakit::Forbidden
-                  when 404      then Oktakit::NotFound
-                  when 405      then Oktakit::MethodNotAllowed
-                  when 406      then Oktakit::NotAcceptable
-                  when 409      then Oktakit::Conflict
-                  when 415      then Oktakit::UnsupportedMediaType
-                  when 422      then Oktakit::UnprocessableEntity
-                  when 400..499 then Oktakit::ClientError
-                  when 500      then Oktakit::InternalServerError
-                  when 501      then Oktakit::NotImplemented
-                  when 502      then Oktakit::BadGateway
-                  when 503      then Oktakit::ServiceUnavailable
-                  when 500..599 then Oktakit::ServerError
-                  end
+      if klass = error(status)
         klass.new(response)
+      end
+    end
+
+    def self.error(status)
+      case status
+      when 400      then Oktakit::BadRequest
+      when 401      then Oktakit::Unauthorized
+      when 403      then Oktakit::Forbidden
+      when 404      then Oktakit::NotFound
+      when 405      then Oktakit::MethodNotAllowed
+      when 406      then Oktakit::NotAcceptable
+      when 409      then Oktakit::Conflict
+      when 415      then Oktakit::UnsupportedMediaType
+      when 422      then Oktakit::UnprocessableEntity
+      when 400..499 then Oktakit::ClientError
+      when 500      then Oktakit::InternalServerError
+      when 501      then Oktakit::NotImplemented
+      when 502      then Oktakit::BadGateway
+      when 503      then Oktakit::ServiceUnavailable
+      when 500..599 then Oktakit::ServerError
       end
     end
 

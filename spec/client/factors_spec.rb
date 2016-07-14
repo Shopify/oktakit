@@ -112,7 +112,11 @@ describe Oktakit::Client::Factors do
   describe '#poll_for_verify_transaction_completion' do
     it 'returns verification result' do
       VCR.use_cassette 'poll_for_verify_transaction_completion', record: :new_episodes do
-        resp, = client.poll_for_verify_transaction_completion(FACTORS_USER_ID, FACTORS_FACTOR_ID, FACTORS_TRANSACTION_ID)
+        resp, = client.poll_for_verify_transaction_completion(
+          FACTORS_USER_ID,
+          FACTORS_FACTOR_ID,
+          FACTORS_TRANSACTION_ID
+        )
         expect(resp.factorResult).to be == 'WAITING'
       end
     end

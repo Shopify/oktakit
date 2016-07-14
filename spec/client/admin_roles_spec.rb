@@ -52,7 +52,11 @@ describe Oktakit::Client::AdminRoles do
   describe '#add_group_target_to_user_admin_role' do
     it 'returns http 204 no content' do
       VCR.use_cassette 'add_group_target_to_user_admin_role' do
-        _, status = client.add_group_target_to_user_admin_role(ADMIN_ROLES_USER_ID, 'ra16nmg6csiUalQhH0h7', ADMIN_ROLES_GROUP_ID)
+        _, status = client.add_group_target_to_user_admin_role(
+          ADMIN_ROLES_USER_ID,
+          'ra16nmg6csiUalQhH0h7',
+          ADMIN_ROLES_GROUP_ID
+        )
         expect(status).to be(204)
       end
     end
@@ -61,7 +65,11 @@ describe Oktakit::Client::AdminRoles do
   describe '#remove_group_target_from_user_admin_role' do
     it 'returns http 204 no content' do
       VCR.use_cassette 'remove_group_target_from_user_admin_role' do
-        _, status = client.remove_group_target_from_user_admin_role(ADMIN_ROLES_USER_ID, 'role_id', ADMIN_ROLES_GROUP_ID)
+        _, status = client.remove_group_target_from_user_admin_role(
+          ADMIN_ROLES_USER_ID,
+          'role_id',
+          ADMIN_ROLES_GROUP_ID
+        )
         expect(status).to be(204)
       end
     end
@@ -79,7 +87,11 @@ describe Oktakit::Client::AdminRoles do
   describe '#add_app_target_to_app_admin_role' do
     it 'returns http 204 no content' do
       VCR.use_cassette 'add_app_target_to_app_admin_role' do
-        _, status = client.add_app_target_to_app_admin_role(ADMIN_ROLES_USER_ID, 'ra16nmg6csiUalQhH0h7', ADMIN_ROLES_APP_NAME)
+        _, status = client.add_app_target_to_app_admin_role(
+          ADMIN_ROLES_USER_ID,
+          'ra16nmg6csiUalQhH0h7',
+          ADMIN_ROLES_APP_NAME
+        )
         expect(status).to be(204)
       end
     end

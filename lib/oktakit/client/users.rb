@@ -118,7 +118,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns empty object by default. When sendEmail is false, returns an activation link for the user to set up their account.
+      # @return [Hash<Sawyer::Resource>] Returns empty object by default. If sendEmail is false, a user activation link.
       # @see http://developer.okta.com/docs/api/resources/users.html#activate-user
       # @example
       #   Oktakit.activate_user('id')
@@ -198,7 +198,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
+      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. If sendEmail is false a password reset link
       # @see http://developer.okta.com/docs/api/resources/users.html#reset-password
       # @example
       #   Oktakit.reset_password('id')
@@ -214,7 +214,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns the complete user object by default. When tempPassword is true, returns the temporary password.
+      # @return [Hash<Sawyer::Resource>] Returns the user by default. If tempPassword is true, a temporary password.
       # @see http://developer.okta.com/docs/api/resources/users.html#expire-password
       # @example
       #   Oktakit.expire_password('id')
@@ -246,7 +246,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
+      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. If sendEmail is false a password reset link
       # @see http://developer.okta.com/docs/api/resources/users.html#forgot-password
       # @example
       #   Oktakit.forgot_password('id')
