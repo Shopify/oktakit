@@ -1,9 +1,23 @@
 require 'sawyer'
 require 'oktakit/response/raise_error'
+require 'oktakit/client/admin_roles'
+require 'oktakit/client/apps'
+require 'oktakit/client/events'
+require 'oktakit/client/factors'
+require 'oktakit/client/groups'
+require 'oktakit/client/schemas'
+require 'oktakit/client/templates'
 require 'oktakit/client/users'
 
 module Oktakit
   class Client
+    include AdminRoles
+    include Apps
+    include Events
+    include Factors
+    include Groups
+    include Schemas
+    include Templates
     include Users
 
     # Header keys that can be passed in options hash to {#get},{#head}

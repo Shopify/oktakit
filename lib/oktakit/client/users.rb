@@ -1,198 +1,183 @@
 module Oktakit
   class Client
-    # Methods for the Users API
-    #
-    # @see http://developer.okta.com/docs/api/resources/users.html
     module Users
-      # List all users
+      # Create User
       #
-      # @return [Array<Sawyer::Resource>] Array of hashes representing Okta users.
-      # @see http://developer.okta.com/docs/api/resources/users.html#list-all-users
+      # @return [Hash<Sawyer::Resource>] Returns the created User.
+      # @see http://developer.okta.com/docs/api/resources/users.html#create-user
       # @example
-      #   Oktakit.users
-      def users(options = {})
+      #   Oktakit.create_user
+      def create_user(options = {})
+        post('/users', options)
+      end
+
+      # Get User
+      #
+      # @return [Hash<Sawyer::Resource>] Fetched User
+      # @see http://developer.okta.com/docs/api/resources/users.html#get-user
+      # @example
+      #   Oktakit.get_user('id')
+      def get_user(id, options = {})
+        get("/users/#{id}", options)
+      end
+
+      # List Users
+      #
+      # @return [Array<Sawyer::Resource>] Array of User
+      # @see http://developer.okta.com/docs/api/resources/users.html#list-users
+      # @example
+      #   Oktakit.list_users
+      def list_users(options = {})
         get('/users', options)
       end
 
-      # Get user
+      # Update User
       #
-      # @return [Array<Sawyer::Resource>] Hash representing the Okta user.
-      # @see http://developer.okta.com/docs/api/resources/users.html#get-user-with-id
-      # @see http://developer.okta.com/docs/api/resources/users.html#get-user-with-login
-      # @see http://developer.okta.com/docs/api/resources/users.html#get-user-with-login-shortname
-      # @example
-      #   Oktakit.user('julian.nadeau')
-      def user(user, options = {})
-        get("/users/#{user}", options)
-      end
-
-      # Get current user
-      #
-      # @return [Array<Sawyer::Resource>] Hash representing the current Okta users.
-      # @see http://developer.okta.com/docs/api/resources/users.html#get-current-user
-      # @example
-      #   Oktakit.current_user
-      def current_user(options = {})
-        get("/users/me", options)
-      end
-
-      # Create User
-      #
-      # @return [Array<Sawyer::Resource>] Hash representing an Okta User
-      # @see http://developer.okta.com/docs/api/resources/users.html#create-user
-      # @example
-      #   Oktakit.create_user({})
-      def create_user(options = {})
-        post("/users", options)
-      end
-
-      # Update user
-      #
-      # @return [Array<Sawyer::Resource>] Hash representing an Okta User
+      # @return [Hash<Sawyer::Resource>] Updated User
       # @see http://developer.okta.com/docs/api/resources/users.html#update-user
       # @example
-      #   Oktakit.update_user('jane.doe', {})
+      #   Oktakit.update_user('id')
       def update_user(id, options = {})
         put("/users/#{id}", options)
       end
 
-      # Update user profile
+      # Update Profile
       #
-      # @return [Array<Sawyer::Resource>] Hash representing an Okta User
+      # @return [Hash<Sawyer::Resource>] Updated User
       # @see http://developer.okta.com/docs/api/resources/users.html#update-profile
       # @example
-      #   Oktakit.update_profile('john.doe', {})
+      #   Oktakit.update_profile('id')
       def update_profile(id, options = {})
         post("/users/#{id}", options)
       end
 
-      # Get assigned app links
+      # Get Assigned App Links
       #
-      # @return [Array<Sawyer::Resource>] Hashes representing the app links
+      # @return [Array<Sawyer::Resource>] Array of App Links
       # @see http://developer.okta.com/docs/api/resources/users.html#get-assigned-app-links
       # @example
-      #   Oktakit.user_app_links('john.doe', {})
-      def user_app_links(id, options = {})
+      #   Oktakit.get_assigned_app_links('id')
+      def get_assigned_app_links(id, options = {})
         get("/users/#{id}/appLinks", options)
       end
 
-      # Get member groups
+      # Get Member Groups
       #
-      # @return [Array<Sawyer::Resource>] Hashes representing the groups
+      # @return [Array<Sawyer::Resource>] Array of Groups
       # @see http://developer.okta.com/docs/api/resources/users.html#get-member-groups
       # @example
-      #   Oktakit.user_member_groups('jane.doe', {})
-      def user_member_groups(id, options = {})
+      #   Oktakit.get_member_groups('id')
+      def get_member_groups(id, options = {})
         get("/users/#{id}/groups", options)
       end
 
-      # Activate user
+      # Activate User
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns empty object by default. When sendEmail is false, returns an activation link for the user to set up their account.
       # @see http://developer.okta.com/docs/api/resources/users.html#activate-user
       # @example
-      #   Oktakit.activate_user('john.doe', {})
+      #   Oktakit.activate_user('id')
       def activate_user(id, options = {})
         post("/users/#{id}/lifecycle/activate", options)
       end
 
-      # Deactivate user
+      # Deactivate User
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#deactivate-user
       # @example
-      #   Oktakit.deactive_user('jane.doe', {})
+      #   Oktakit.deactivate_user('id')
       def deactivate_user(id, options = {})
         post("/users/#{id}/lifecycle/deactivate", options)
       end
 
-      # Suspend user
+      # Suspend User
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#suspend-user
       # @example
-      #   Oktakit.suspend_user('john.doe', {})
+      #   Oktakit.suspend_user('id')
       def suspend_user(id, options = {})
         post("/users/#{id}/lifecycle/suspend", options)
       end
 
-      # Unsuspend user
+      # Unsuspend User
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns an empty object. Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#unsuspend-user
       # @example
-      #   Oktakit.unsuspend_user('jane.doe', {})
+      #   Oktakit.unsuspend_user('id')
       def unsuspend_user(id, options = {})
         post("/users/#{id}/lifecycle/unsuspend", options)
       end
 
-      # Unlock a user
+      # Unlock User
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns an empty object
       # @see http://developer.okta.com/docs/api/resources/users.html#unlock-user
       # @example
-      #   Oktakit.unlock_user('john.doe', {})
+      #   Oktakit.unlock_user('id')
       def unlock_user(id, options = {})
         post("/users/#{id}/lifecycle/unlock", options)
       end
 
-      # Reset a user's password
+      # Reset Password
       #
-      # @return [Array<Sawyer::Resource>] Hash with a url for a reset link
+      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
       # @see http://developer.okta.com/docs/api/resources/users.html#reset-password
       # @example
-      #   Oktakit.reset_user_password('jane.doe', {})
-      def reset_user_password(id, options = {})
+      #   Oktakit.reset_password('id')
+      def reset_password(id, options = {})
         post("/users/#{id}/lifecycle/reset_password", options)
       end
 
-      # Expire a user's password
+      # Expire Password
       #
-      # @return [Array<Sawyer::Resource>] Hash with a temporary password
+      # @return [Hash<Sawyer::Resource>] Returns the complete user object by default. When tempPassword is true, returns the temporary password.
       # @see http://developer.okta.com/docs/api/resources/users.html#expire-password
       # @example
-      #   Oktakit.expire_user_password('john.doe', {})
-      def expire_user_password(id, options = {})
+      #   Oktakit.expire_password('id')
+      def expire_password(id, options = {})
         post("/users/#{id}/lifecycle/expire_password", options)
       end
 
-      # Reset user MFA factors
+      # Reset Factors
       #
-      # @return [Array<Sawyer::Resource>] HTTP 200 OK
+      # @return [Hash<Sawyer::Resource>] Returns an empty object by default.
       # @see http://developer.okta.com/docs/api/resources/users.html#reset-factors
       # @example
-      #   Oktakit.reset_users_factors('jane.doe', {})
-      def reset_users_factors(id, options = {})
+      #   Oktakit.reset_factors('id')
+      def reset_factors(id, options = {})
         post("/users/#{id}/lifecycle/reset_factors", options)
       end
 
-      # Get a password reset URL for a user
+      # Forgot Password
       #
-      # @return [Array<Sawyer::Resource>] Hash with password reset url
+      # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
       # @see http://developer.okta.com/docs/api/resources/users.html#forgot-password
       # @example
-      #   Oktakit.user_forgot_password('john.doe', {})
-      def user_forgot_password(id, options = {})
+      #   Oktakit.forgot_password('id')
+      def forgot_password(id, options = {})
         post("/users/#{id}/credentials/forgot_password", options)
       end
 
-      # Change a user's password
+      # Change Password
       #
-      # @return [Array<Sawyer::Resource>] Hash representing an Okta User's Credentials
+      # @return [Hash<Sawyer::Resource>] Credentials of the user
       # @see http://developer.okta.com/docs/api/resources/users.html#change-password
       # @example
-      #   Oktakit.user_change_password('jane.doe', {})
-      def user_change_password(id, options = {})
+      #   Oktakit.change_password('id')
+      def change_password(id, options = {})
         post("/users/#{id}/credentials/change_password", options)
       end
 
-      # Change a user's recovery question
+      # Change Recovery Question
       #
-      # @return [Array<Sawyer::Resource>] Hash representing an Okta User
+      # @return [Hash<Sawyer::Resource>] Credentials of the user
       # @see http://developer.okta.com/docs/api/resources/users.html#change-recovery-question
       # @example
-      #   Oktakit.user_change_recovery_question('john.doe', {})
-      def user_change_recovery_question(id, options = {})
+      #   Oktakit.change_recovery_question('id')
+      def change_recovery_question(id, options = {})
         post("/users/#{id}/credentials/change_recovery_question", options)
       end
     end
