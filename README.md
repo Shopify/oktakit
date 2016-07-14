@@ -32,6 +32,17 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Testing
+
+Testing is fairly straightforward, with the exception of the org URL.
+To anonymize the VCR data, first setup a real token and endpoint for Okta, such as `myokta.okta.com`
+
+- In `spec_helper.rb`, set the org to `my-okta` (or whatever your organization is).
+- Set the `OKTA_TEST_TOKEN` environment variable (this should be real). Don't worry, it is automatically removed.
+- Before committing, change `my-okta` to `okta-test` in `spec_helper.rb` and any VCR Cassettes.
+
+The [API Test Client](http://developer.okta.com/docs/api/getting_started/api_test_client) provided by Okta is also really helpful.
+
 ## Contributing
 
 1. Fork it ( https://github.com/shopify/oktakit/fork )
