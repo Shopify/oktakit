@@ -3,6 +3,13 @@ module Oktakit
     module Factors
       # Get Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Factor
       # @see http://developer.okta.com/docs/api/resources/factors.html#get-factor
       # @example
@@ -13,6 +20,12 @@ module Oktakit
 
       # List Enrolled Factors
       #
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Factors
       # @see http://developer.okta.com/docs/api/resources/factors.html#list-enrolled-factors
       # @example
@@ -23,6 +36,12 @@ module Oktakit
 
       # List Factors to Enroll
       #
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Factors
       # @see http://developer.okta.com/docs/api/resources/factors.html#list-factors-to-enroll
       # @example
@@ -33,6 +52,12 @@ module Oktakit
 
       # List Security Questions
       #
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Questions
       # @see http://developer.okta.com/docs/api/resources/factors.html#list-security-questions
       # @example
@@ -43,16 +68,29 @@ module Oktakit
 
       # Enroll Factor
       #
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] All responses return the enrolled Factor with a status of either PENDING_ACTIVATION or ACTIVE.
       # @see http://developer.okta.com/docs/api/resources/factors.html#enroll-factor
       # @example
       #   Oktakit.enroll_factor('id')
-      def enroll_factor(id, options = {})
-        post("/users/#{id}/factors", options)
+      def enroll_factor(user_id, options = {})
+        post("/users/#{user_id}/factors", options)
       end
 
       # Activate Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] If the passcode is correct you will receive the Factor with an ACTIVE status.
       # @see http://developer.okta.com/docs/api/resources/factors.html#activate-factor
       # @example
@@ -63,6 +101,13 @@ module Oktakit
 
       # Reset Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return  204 No Content
       # @see http://developer.okta.com/docs/api/resources/factors.html#reset-factor
       # @example
@@ -73,6 +118,13 @@ module Oktakit
 
       # Verify Security Question Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result
       # @see http://developer.okta.com/docs/api/resources/factors.html#verify-security-question-factor
       # @example
@@ -83,6 +135,13 @@ module Oktakit
 
       # Verify SMS Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result
       # @see http://developer.okta.com/docs/api/resources/factors.html#verify-sms-factor
       # @example
@@ -93,6 +152,13 @@ module Oktakit
 
       # Verify TOTP Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result
       # @see http://developer.okta.com/docs/api/resources/factors.html#verify-totp-factor
       # @example
@@ -103,6 +169,13 @@ module Oktakit
 
       # Verify Push Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result (waiting, success, rejected, or timeout)
       # @see http://developer.okta.com/docs/api/resources/factors.html#verify-push-factor
       # @example
@@ -113,6 +186,14 @@ module Oktakit
 
       # Poll for Verify Transaction Completion
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @params transaction_id [string] Transaction ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result
       # @see http://developer.okta.com/docs/api/resources/factors.html#poll-for-verify-transaction-completion
       # @example
@@ -123,6 +204,13 @@ module Oktakit
 
       # Verify Token Factor
       #
+      # @params user_id [string] User ID
+      # @params factor_id [string] Factor ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Verification result
       # @see http://developer.okta.com/docs/api/resources/factors.html#verify-token-factor
       # @example

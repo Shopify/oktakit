@@ -239,7 +239,7 @@ describe Oktakit::Client::IdentityProviders do
   describe '#link_idp_user' do
     it 'returns identity provider transaction' do
       VCR.use_cassette 'link_idp_user', record: :new_episodes do
-        resp, = client.link_idp_user(IDENTITY_PROVIDERS_USER_ID, IDENTITY_PROVIDERS_TRANSACTION_ID,
+        resp, = client.link_idp_user(IDENTITY_PROVIDERS_TRANSACTION_ID, IDENTITY_PROVIDERS_USER_ID,
           profile: {
             userType: "Social"
           })

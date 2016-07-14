@@ -3,6 +3,11 @@ module Oktakit
     module Templates
       # Add SMS Template
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] The created SMS Template.
       # @see http://developer.okta.com/docs/api/resources/templates.html#add-sms-template
       # @example
@@ -13,6 +18,12 @@ module Oktakit
 
       # Get SMS Template
       #
+      # @params id [string] Template ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Fetched SMS Template
       # @see http://developer.okta.com/docs/api/resources/templates.html#get-sms-template
       # @example
@@ -23,6 +34,11 @@ module Oktakit
 
       # List SMS Templates
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of SMS Template
       # @see http://developer.okta.com/docs/api/resources/templates.html#list-sms-templates
       # @example
@@ -33,6 +49,12 @@ module Oktakit
 
       # Update Sms Template
       #
+      # @params id [string] Template ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated SMS Template
       # @see http://developer.okta.com/docs/api/resources/templates.html#update-sms-template
       # @example
@@ -43,6 +65,12 @@ module Oktakit
 
       # Partial SMS Template Update
       #
+      # @params id [string] Template ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated Sms Template
       # @see http://developer.okta.com/docs/api/resources/templates.html#partial-sms-template-update
       # @example
@@ -53,6 +81,12 @@ module Oktakit
 
       # Remove SMS Template
       #
+      # @params id [string] Template ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] There is no content in the response.
       # @see http://developer.okta.com/docs/api/resources/templates.html#remove-sms-template
       # @example

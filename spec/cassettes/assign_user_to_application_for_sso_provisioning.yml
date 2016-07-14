@@ -58,4 +58,54 @@ http_interactions:
       string: '{"id":"00u6nm9ytbmwHeunx0h7","externalId":null,"created":"2016-07-14T04:11:03.000Z","lastUpdated":"2016-07-14T04:15:18.000Z","scope":"USER","status":"ACTIVE","statusChanged":"2016-07-14T04:11:03.000Z","passwordChanged":null,"syncState":"DISABLED","lastSync":null,"credentials":{"userName":"user@example.com"},"profile":{},"_links":{"app":{"href":"https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7"},"user":{"href":"https://okta-test.okta.com/api/v1/users/00u6nm9ytbmwHeunx0h7"}}}'
     http_version: 
   recorded_at: Thu, 14 Jul 2016 04:15:18 GMT
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/users?credentials%5BuserName%5D=user%40example.com&id=00u6nm9ytbmwHeunx0h7&&scope=USER
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 401
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 19:54:16 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4ft6F0-w16hB8ZJfFXleAAAA9s
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1195'
+      x-rate-limit-reset:
+      - '1468526057'
+      p3p:
+      - CP="HONK"
+      www-authenticate:
+      - SSWS
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=4914BE21C9CF4452666BF40657C91E14;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000011","errorSummary":"Invalid token provided","errorLink":"E0000011","errorId":"oaedR_d13xeRqubYSglX8Ft9A","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 19:54:16 GMT
 recorded_with: VCR 2.9.3

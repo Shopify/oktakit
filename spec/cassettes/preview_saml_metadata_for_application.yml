@@ -98,4 +98,90 @@ http_interactions:
         89ZYxlJH00LfHtvGr2i7JhKQ</ds:X509Certificate></ds:X509Data></ds:KeyInfo></md:KeyDescriptor><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</md:NameIDFormat><md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://okta-test.okta.com/app/template_saml_2_0/exk6nmg6fcDXhb0Wr0h7/sso/saml"/><md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://okta-test.okta.com/app/template_saml_2_0/exk6nmg6fcDXhb0Wr0h7/sso/saml"/></md:IDPSSODescriptor></md:EntityDescriptor>
     http_version: 
   recorded_at: Thu, 14 Jul 2016 04:42:36 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/sso/saml/metadata
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/xml
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 401
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 19:01:25 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4fhhUs17jIXqc3IPQ8dMQAABQ0
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468522945'
+      p3p:
+      - CP="HONK"
+      www-authenticate:
+      - SSWS
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=2A71CA4B35279F6BAC7A04E410EECEB1;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000011","errorSummary":"Invalid token provided","errorLink":"E0000011","errorId":"oaexoe8DZ37QH-53rGPi1tVXg","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 19:01:25 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/apps/0oa6nmg6fdvwvoHwR0h7/sso/saml/metadata?query%5Bq%5D=akml95AVptFeCi4zm0g3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 400
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 19:54:16 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000019","errorSummary":"Bad request.  Accept and/or
+        Content-Type headers likely do not match supported values.","errorLink":"E0000019","errorId":"oaeWBhkCzyVT4C2OqFkEGuGzQ","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 19:54:16 GMT
 recorded_with: VCR 2.9.3

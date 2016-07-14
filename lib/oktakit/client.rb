@@ -22,9 +22,6 @@ module Oktakit
     include Templates
     include Users
 
-    # Header keys that can be passed in options hash to {#get},{#head}
-    CONVENIENCE_HEADERS = Set.new([:accept, :content_type])
-
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
     RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
 
@@ -42,72 +39,106 @@ module Oktakit
     # Make a HTTP GET request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def get(url, options = {})
-      request :get, url, parse_query_and_convenience_headers(options)
+      request :get, url, query: options.delete(:query), headers: options.delete(:headers),
+                         accept: options.delete(:accept), content_type: options.delete(:content_type),
+                         data: options
     end
 
     # Make a HTTP POST request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def post(url, options = {})
-      request :post, url, options
+      request :post, url, query: options.delete(:query), headers: options.delete(:headers),
+                          accept: options.delete(:accept), content_type: options.delete(:content_type),
+                          data: options
     end
 
     # Make a HTTP PUT request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def put(url, options = {})
-      request :put, url, options
+      request :put, url, query: options.delete(:query), headers: options.delete(:headers),
+                         accept: options.delete(:accept), content_type: options.delete(:content_type),
+                         data: options
     end
 
     # Make a HTTP PATCH request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Body and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def patch(url, options = {})
-      request :patch, url, options
+      request :patch, url, query: options.delete(:query), headers: options.delete(:headers),
+                           accept: options.delete(:accept), content_type: options.delete(:content_type),
+                           data: options
     end
 
     # Make a HTTP DELETE request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def delete(url, options = {})
-      request :delete, url, options
+      request :delete, url, query: options.delete(:query), headers: options.delete(:headers),
+                            accept: options.delete(:accept), content_type: options.delete(:content_type),
+                            data: options
     end
 
     # Make a HTTP HEAD request
     #
     # @param url [String] The path, relative to {#api_endpoint}
-    # @param options [Hash] Query and header params for request
+    # @param options[:query] [Hash] Optional. Query params for request
+    # @param options[:headers] [Hash] Optional. Header params for the request.
+    # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+    # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def head(url, options = {})
-      request :head, url, parse_query_and_convenience_headers(options)
+      request :head, url, query: options.delete(:query), headers: options.delete(:headers),
+                          accept: options.delete(:accept), content_type: options.delete(:content_type),
+                          data: options
     end
 
     attr_reader :last_response
 
     private
 
-    def request(method, path, data, options = {})
-      if data.is_a?(Hash)
-        options[:query]   = data.delete(:query) || {}
-        options[:headers] = data.delete(:headers) || {}
-        if accept = data.delete(:accept)
-          options[:headers][:accept] = accept
-        end
-      end
+    def request(method, path, data:, query:, headers:, accept:, content_type:)
+      options = {}
+      options[:query] = query || {}
+      options[:headers] = headers || {}
+      options[:headers][:accept] = accept if accept
+      options[:headers][:content_type] = content_type if content_type
 
       uri = URI::Parser.new.escape("/api/v1/" + path.to_s)
-      response = sawyer_agent.call(method, uri, data, options)
+      @last_response = response = sawyer_agent.call(method, uri, data, options)
       [response.data, response.status]
     end
 
@@ -129,21 +160,6 @@ module Oktakit
 
     def api_endpoint
       "https://#{@organization}.okta.com/api/v1/"
-    end
-
-    def parse_query_and_convenience_headers(options)
-      headers = options.fetch(:headers, {})
-      CONVENIENCE_HEADERS.each do |h|
-        if header = options.delete(h)
-          headers[h] = header
-        end
-      end
-      query = options.delete(:query)
-      opts = { query: options }
-      opts[:query].merge!(query) if query && query.is_a?(Hash)
-      opts[:headers] = headers unless headers.empty?
-
-      opts
     end
   end
 end

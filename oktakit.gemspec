@@ -6,8 +6,8 @@ require 'oktakit/version'
 Gem::Specification.new do |spec|
   spec.name          = 'oktakit'
   spec.version       = Oktakit::VERSION
-  spec.authors       = ['Graeme Johnson']
-  spec.email         = ['graeme.johnson@shopify.com']
+  spec.authors       = ['Graeme Johnson', 'Julian Nadeau']
+  spec.email         = ['graeme.johnson@shopify.com', 'julian@shopify.com']
 
   spec.summary       = 'Ruby toolkit for working with the Okta API'
   spec.homepage      = 'https://github.com/shopify/oktakit'

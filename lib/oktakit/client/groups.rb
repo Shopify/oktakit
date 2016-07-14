@@ -3,6 +3,11 @@ module Oktakit
     module Groups
       # Add Group
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] The created Group.
       # @see http://developer.okta.com/docs/api/resources/groups.html#add-group
       # @example
@@ -13,6 +18,12 @@ module Oktakit
 
       # Get Group
       #
+      # @params id [string] Group ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Fetched Group
       # @see http://developer.okta.com/docs/api/resources/groups.html#get-group
       # @example
@@ -23,6 +34,11 @@ module Oktakit
 
       # List Groups
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Groups
       # @see http://developer.okta.com/docs/api/resources/groups.html#list-groups
       # @example
@@ -33,6 +49,12 @@ module Oktakit
 
       # Update Group
       #
+      # @params id [string] Group ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated Group
       # @see http://developer.okta.com/docs/api/resources/groups.html#update-group
       # @example
@@ -43,6 +65,12 @@ module Oktakit
 
       # Remove Group
       #
+      # @params id [string] Group ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return  HTTP 204 No Content
       # @see http://developer.okta.com/docs/api/resources/groups.html#remove-group
       # @example
@@ -53,6 +81,12 @@ module Oktakit
 
       # List Group Members
       #
+      # @params id [string] Group ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Users
       # @see http://developer.okta.com/docs/api/resources/groups.html#list-group-members
       # @example
@@ -63,6 +97,13 @@ module Oktakit
 
       # Add User to Group
       #
+      # @params group_id [string] Group ID
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return  HTTP 204 No Content
       # @see http://developer.okta.com/docs/api/resources/groups.html#add-user-to-group
       # @example
@@ -73,6 +114,13 @@ module Oktakit
 
       # Remove User from Group
       #
+      # @params group_id [string] Group ID
+      # @params user_id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return  HTTP 204 No Content
       # @see http://developer.okta.com/docs/api/resources/groups.html#remove-user-from-group
       # @example
@@ -83,6 +131,12 @@ module Oktakit
 
       # List Assigned Applications
       #
+      # @params id [string] Group ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Applications
       # @see http://developer.okta.com/docs/api/resources/groups.html#list-assigned-applications
       # @example

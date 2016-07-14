@@ -3,6 +3,11 @@ module Oktakit
     module Users
       # Create User
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns the created User.
       # @see http://developer.okta.com/docs/api/resources/users.html#create-user
       # @example
@@ -13,6 +18,12 @@ module Oktakit
 
       # Get User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Fetched User
       # @see http://developer.okta.com/docs/api/resources/users.html#get-user
       # @example
@@ -23,6 +34,11 @@ module Oktakit
 
       # List Users
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of User
       # @see http://developer.okta.com/docs/api/resources/users.html#list-users
       # @example
@@ -33,6 +49,12 @@ module Oktakit
 
       # Update User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated User
       # @see http://developer.okta.com/docs/api/resources/users.html#update-user
       # @example
@@ -43,6 +65,12 @@ module Oktakit
 
       # Update Profile
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated User
       # @see http://developer.okta.com/docs/api/resources/users.html#update-profile
       # @example
@@ -53,6 +81,11 @@ module Oktakit
 
       # Get Assigned App Links
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of App Links
       # @see http://developer.okta.com/docs/api/resources/users.html#get-assigned-app-links
       # @example
@@ -63,6 +96,12 @@ module Oktakit
 
       # Get Member Groups
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Groups
       # @see http://developer.okta.com/docs/api/resources/users.html#get-member-groups
       # @example
@@ -73,6 +112,12 @@ module Oktakit
 
       # Activate User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns empty object by default. When sendEmail is false, returns an activation link for the user to set up their account.
       # @see http://developer.okta.com/docs/api/resources/users.html#activate-user
       # @example
@@ -83,6 +128,12 @@ module Oktakit
 
       # Deactivate User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#deactivate-user
       # @example
@@ -93,6 +144,12 @@ module Oktakit
 
       # Suspend User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#suspend-user
       # @example
@@ -103,6 +160,12 @@ module Oktakit
 
       # Unsuspend User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object. Returns an empty object.
       # @see http://developer.okta.com/docs/api/resources/users.html#unsuspend-user
       # @example
@@ -113,6 +176,12 @@ module Oktakit
 
       # Unlock User
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object
       # @see http://developer.okta.com/docs/api/resources/users.html#unlock-user
       # @example
@@ -123,6 +192,12 @@ module Oktakit
 
       # Reset Password
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
       # @see http://developer.okta.com/docs/api/resources/users.html#reset-password
       # @example
@@ -133,6 +208,12 @@ module Oktakit
 
       # Expire Password
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns the complete user object by default. When tempPassword is true, returns the temporary password.
       # @see http://developer.okta.com/docs/api/resources/users.html#expire-password
       # @example
@@ -143,6 +224,12 @@ module Oktakit
 
       # Reset Factors
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object by default.
       # @see http://developer.okta.com/docs/api/resources/users.html#reset-factors
       # @example
@@ -153,6 +240,12 @@ module Oktakit
 
       # Forgot Password
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Returns an empty object by default. When sendEmail is false, returns a link for the user to reset their password.
       # @see http://developer.okta.com/docs/api/resources/users.html#forgot-password
       # @example
@@ -163,6 +256,12 @@ module Oktakit
 
       # Change Password
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Credentials of the user
       # @see http://developer.okta.com/docs/api/resources/users.html#change-password
       # @example
@@ -173,6 +272,12 @@ module Oktakit
 
       # Change Recovery Question
       #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Credentials of the user
       # @see http://developer.okta.com/docs/api/resources/users.html#change-recovery-question
       # @example

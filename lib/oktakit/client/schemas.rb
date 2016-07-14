@@ -3,6 +3,11 @@ module Oktakit
     module Schemas
       # Get User Schema
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] User Schema
       # @see http://developer.okta.com/docs/api/resources/schemas.html#get-user-schema
       # @example
@@ -13,6 +18,11 @@ module Oktakit
 
       # Add Property to User Profile Schema
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] User Schema
       # @see http://developer.okta.com/docs/api/resources/schemas.html#add-property-to-user-profile-schema
       # @example
@@ -23,6 +33,11 @@ module Oktakit
 
       # Update User Profile Schema Property
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] User Schema
       # @see http://developer.okta.com/docs/api/resources/schemas.html#update-user-profile-schema-property
       # @example
@@ -33,6 +48,11 @@ module Oktakit
 
       # Remove Property from User Profile Schema
       #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] User Schema
       # @see http://developer.okta.com/docs/api/resources/schemas.html#remove-property-from-user-profile-schema
       # @example

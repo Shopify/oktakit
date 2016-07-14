@@ -54,4 +54,54 @@ http_interactions:
       string: '{"id":"0oa62bfdjnK55Z5x80h7","type":"SAML2","name":"Example IdP","status":"INACTIVE","created":null,"lastUpdated":"2016-03-29T21:23:45.000Z","protocol":{"type":"SAML2","endpoints":{"sso":{"url":"https://idp.example.com/saml2/sso","binding":"HTTP-REDIRECT","destination":"https://idp.example.com/saml2/sso"},"acs":{"binding":"HTTP-POST","type":"INSTANCE"}},"algorithms":{"request":{"signature":{"algorithm":"SHA-256","scope":"REQUEST"}},"response":{"signature":{"algorithm":"SHA-256","scope":"ANY"}}},"settings":{"nameFormat":"urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"},"credentials":{"trust":{"issuer":"https://idp.example.com","audience":"https://www.okta.com/saml2/service-provider/spCQJRNaaxs7ANqKBO7M","kid":"your-key-id"}}},"policy":{"provisioning":{"action":"AUTO","profileMaster":true,"groups":{"action":"NONE"}},"accountLink":{"filter":null,"action":"AUTO"},"subject":{"userNameTemplate":{"template":"idpuser.subjectNameId"},"filter":null,"matchType":"USERNAME"},"maxClockSkew":120000},"_links":{"metadata":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/metadata.xml","type":"application/xml","hints":{"allow":["GET"]}},"acs":{"href":"https://your-domain.okta.com/sso/saml2/0oa62bc8wppPw0UGr0h7","type":"application/xml","hints":{"allow":["POST"]}},"users":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/users","hints":{"allow":["GET"]}},"activate":{"href":"https://your-domain.okta.com/api/v1/idps/0oa62bc8wppPw0UGr0h7/lifecycle/activate","hints":{"allow":["POST"]}}}}'
     http_version: 
   recorded_at: Thu, 14 Jul 2016 04:49:17 GMT
-recorded_with: VCR 3.0.3
+- request:
+    method: put
+    uri: https://okta-test.okta.com/api/v1/idps/0oa62bfdjnK55Z5x80h7?id=0oa62bfdjnK55Z5x80h7&name=Example+IdP&policy%5BaccountLink%5D%5Baction%5D=AUTO&policy%5BaccountLink%5D%5Bfilter%5D&policy%5BmaxClockSkew%5D=120000&policy%5Bprovisioning%5D%5Baction%5D=AUTO&policy%5Bprovisioning%5D%5Bgroups%5D%5Baction%5D=NONE&policy%5Bprovisioning%5D%5BprofileMaster%5D=true&policy%5Bsubject%5D%5Bfilter%5D&policy%5Bsubject%5D%5Bformat%5D%5B%5D=urn%3Aoasis%3Anames%3Atc%3ASAML%3A1.1%3Anameid-format%3Aunspecified&policy%5Bsubject%5D%5BmatchType%5D=USERNAME&policy%5Bsubject%5D%5BuserNameTemplate%5D%5Btemplate%5D=idpuser.subjectNameId&policy%5Bsubject%5D%5BuserNameTemplate%5D%5Btype%5D=BUILT_IN&protocol%5Balgorithms%5D%5Brequest%5D%5Bsignature%5D%5Balgorithm%5D=SHA-256&protocol%5Balgorithms%5D%5Brequest%5D%5Bsignature%5D%5Bscope%5D=REQUEST&protocol%5Balgorithms%5D%5Bresponse%5D%5Bsignature%5D%5Balgorithm%5D=SHA-256&protocol%5Balgorithms%5D%5Bresponse%5D%5Bsignature%5D%5Bscope%5D=ANY&protocol%5Bcredentials%5D%5Btrust%5D%5Baudience%5D=https%3A%2F%2Fwww.okta.com%2Fsaml2%2Fservice-provider%2FspCQJRNaaxs7ANqKBO7M&protocol%5Bcredentials%5D%5Btrust%5D%5Bissuer%5D=https%3A%2F%2Fidp.example.com&protocol%5Bcredentials%5D%5Btrust%5D%5Bkid%5D=74bb2164-e0c8-4457-862b-7c29ba6cd2c9&protocol%5Bendpoints%5D%5Bacs%5D%5Bbinding%5D=HTTP-POST&protocol%5Bendpoints%5D%5Bacs%5D%5Btype%5D=INSTANCE&protocol%5Bendpoints%5D%5Bsso%5D%5Bbinding%5D=HTTP-REDIRECT&protocol%5Bendpoints%5D%5Bsso%5D%5Bdestination%5D=https%3A%2F%2Fidp.example.com%2Fsaml2%2Fsso&protocol%5Bendpoints%5D%5Bsso%5D%5Burl%5D=https%3A%2F%2Fidp.example.com%2Fsaml2%2Fsso&protocol%5Btype%5D=SAML2&type=SAML2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 401
+      message: 
+    headers:
+      date:
+      - Thu, 14 Jul 2016 19:54:17 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - V4ft6W0frCTPE5D0FgByeQAACBs
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1190'
+      x-rate-limit-reset:
+      - '1468526057'
+      p3p:
+      - CP="HONK"
+      www-authenticate:
+      - SSWS
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D3065497B4552B02391516F5E7419055;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000011","errorSummary":"Invalid token provided","errorLink":"E0000011","errorId":"oae3b32dPXGQ--cZ8Wo5K8gsA","errorCauses":[]}'
+    http_version: 
+  recorded_at: Thu, 14 Jul 2016 19:54:17 GMT
+recorded_with: VCR 2.9.3
