@@ -1,0 +1,559 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:32 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFJjU4zIDuh6bjDC6T8wAAF-o
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1197'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?limit=200>; rel="self", <https://okta-test.okta.com/api/v1/users?after=200u3c0kdjah7fmnvO0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=137CE8ECBE82A1C459A90F1A3C394855;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idWoY0x7","status":"PROVISIONED","created":"2015-12-14T21:30:12.000Z","activated":"2015-12-14T21:30:12.000Z","statusChanged":"2015-12-14T21:30:12.000Z","lastLogin":null,"lastUpdated":"2016-03-30T15:15:48.000Z","passwordChanged":null,"profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:31 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u3c0kdjah7fmnvO0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:34 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFKAKXSBiBB2eXu1haqgAABRc
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1196'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u3c0kdjah7fmnvO0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u3c0op3qtJsOMzf0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=4AAF1AB755804D856B9CAE178AFE4B2C;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idJqn0x7","status":"ACTIVE","created":"2015-12-14T21:27:59.000Z","activated":"2015-12-14T21:27:59.000Z","statusChanged":"2015-12-17T20:52:08.000Z","lastLogin":"2016-06-03T14:42:29.000Z","lastUpdated":"2016-03-30T15:17:29.000Z","passwordChanged":"2015-12-17T20:52:08.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:34 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u3c0op3qtJsOMzf0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:37 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFKwKXSBiBB2eXu1ha@AAABVY
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1195'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u3c0op3qtJsOMzf0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u3c0q5qpgavZCNs0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=4DBF4BC9AB8CF86508040CF8C8361A93;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idMF30x7","status":"ACTIVE","created":"2015-12-14T21:58:33.000Z","activated":"2015-12-14T21:58:33.000Z","statusChanged":"2015-12-15T15:22:51.000Z","lastLogin":"2016-07-14T17:38:01.000Z","lastUpdated":"2016-03-30T15:17:57.000Z","passwordChanged":"2015-12-15T15:22:51.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:36 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u3c0q5qpgavZCNs0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:39 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFLd4KE9pTNUnmvp7LKwAADMY
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1194'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u3c0q5qpgavZCNs0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u3c0x5yzFQEVfuA0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=9D8B43C94906AACBE29CFF7CB2A089C8;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idJLS0x7","status":"ACTIVE","created":"2015-12-14T21:54:07.000Z","activated":"2015-12-14T21:54:07.000Z","statusChanged":"2015-12-15T13:52:25.000Z","lastLogin":"2016-07-04T12:56:41.000Z","lastUpdated":"2016-03-30T15:14:26.000Z","passwordChanged":"2015-12-15T13:52:25.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:38 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u3c0x5yzFQEVfuA0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:41 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFLwO7b8X@i3AU@d70@AAAB-s
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1192'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u3c0x5yzFQEVfuA0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u3c10wwp3KuqpZY0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=6053FD468D9AB3DB28429617A2B3E792;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"id3Lw0x7","status":"ACTIVE","created":"2015-12-14T21:47:54.000Z","activated":"2015-12-14T21:47:54.000Z","statusChanged":"2015-12-15T15:40:38.000Z","lastLogin":"2016-06-10T13:10:20.000Z","lastUpdated":"2016-03-30T15:16:20.000Z","passwordChanged":"2015-12-15T15:40:38.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:40 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u3c10wwp3KuqpZY0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:43 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFMQO7b8X@i3AU@d71MwAACG0
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1191'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u3c10wwp3KuqpZY0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u48gtiz1vtFZG1M0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=78F14F2C50B12A0BB77D448A5AE91910;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idulg0x7","status":"ACTIVE","created":"2015-12-14T22:01:04.000Z","activated":"2015-12-14T22:01:04.000Z","statusChanged":"2015-12-18T01:32:33.000Z","lastLogin":"2016-07-11T15:16:06.000Z","lastUpdated":"2016-03-30T15:13:10.000Z","passwordChanged":"2015-12-20T02:58:01.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:43 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u48gtiz1vtFZG1M0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:46 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFNAO7b8X@i3AU@d71WQAAB9c
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1190'
+      x-rate-limit-reset:
+      - '1468548404'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u48gtiz1vtFZG1M0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u522fzt5FptowEN0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=0148946216BF6B4F67189C16D2876F88;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idike0x7","status":"ACTIVE","created":"2016-02-17T17:51:41.000Z","activated":"2016-02-17T17:51:42.000Z","statusChanged":"2016-02-22T14:17:47.000Z","lastLogin":"2016-07-02T05:12:02.000Z","lastUpdated":"2016-05-26T14:42:51.000Z","passwordChanged":"2016-05-26T14:42:51.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:45 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u522fzt5FptowEN0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:49 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFNnBU7BgCVhxX5i4ExgAAC1A
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468548466'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u522fzt5FptowEN0x7&limit=200>;
+        rel="self", <https://okta-test.okta.com/api/v1/users?after=200u5ri0t6657ThngI0x7&limit=200>;
+        rel="next"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=A8E1F37B81400C7315753323F7C5448F;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"id8i20x7","status":"ACTIVE","created":"2016-04-27T21:02:30.000Z","activated":"2016-04-27T21:02:30.000Z","statusChanged":"2016-05-02T15:45:33.000Z","lastLogin":"2016-07-05T18:09:13.000Z","lastUpdated":"2016-05-02T15:45:33.000Z","passwordChanged":"2016-05-02T15:45:33.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:48 GMT
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users?after=200u5ri0t6657ThngI0x7&limit=200
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 15 Jul 2016 02:06:50 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4hFOQKXSBiBB2eXu1hcXgAABNo
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1198'
+      x-rate-limit-reset:
+      - '1468548466'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      link:
+      - <https://okta-test.okta.com/api/v1/users?after=200u5ri0t6657ThngI0x7&limit=200>;
+        rel="self"
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=B1B3AC0A60DEE23B680533D89B88F6C9;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":"idbBW0x7","status":"ACTIVE","created":"2016-06-22T21:11:03.000Z","activated":"2016-06-22T21:11:03.000Z","statusChanged":"2016-06-27T15:51:05.000Z","lastLogin":"2016-07-13T19:08:38.000Z","lastUpdated":"2016-06-28T00:39:58.000Z","passwordChanged":"2016-06-27T15:51:05.000Z","profile":{},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}},{"id":"id4ws0x7","status":"ACTIVE","created":"2016-07-13T20:30:29.000Z","activated":"2016-07-13T20:30:29.000Z","statusChanged":"2016-07-13T20:31:03.000Z","lastLogin":"2016-07-13T20:31:04.000Z","lastUpdated":"2016-07-14T19:04:13.000Z","passwordChanged":"2016-07-13T20:31:03.000Z","profile":{"mobilePhone":null,"email":"example@example.com","secondEmail":null,"firstName":"Example","lastName":"Example","login":"example@example.com","ssh_public_keys":""},"credentials":{"password":{},"recovery_question":{"question":""},"provider":{"type":"OKTA","name":"OKTA"}},"_links":{"suspend":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"resetFactors":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"expirePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"forgotPassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"self":{"href":"https://okta-test.okta.com/api/v1/link"},"changeRecoveryQuestion":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"deactivate":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"},"changePassword":{"href":"https://okta-test.okta.com/api/v1/link","method":"POST"}}}]'
+    http_version: 
+  recorded_at: Fri, 15 Jul 2016 02:06:49 GMT
+recorded_with: VCR 2.9.3
