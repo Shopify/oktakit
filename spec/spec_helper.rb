@@ -19,6 +19,11 @@ VCR.configure do |config|
   config.filter_sensitive_data('<<ACCESS_TOKEN>>') do
     test_okta_token
   end
+
+  # Forces binary to be readable and modifiable json
+  config.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
 end
 
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)

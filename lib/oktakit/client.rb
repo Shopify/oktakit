@@ -43,12 +43,28 @@ module Oktakit
     # @param options[:headers] [Hash] Optional. Header params for the request.
     # @param options[:accept] [String] Optional. The content type to accept. Default application/json
     # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+    # @param options[:paginate] [Boolean] Optional. If true, will auto-paginate Okta's API responses.
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def get(url, options = {})
-      request :get, url, query: options.delete(:query), headers: options.delete(:headers),
-                         accept: options.delete(:accept), content_type: options.delete(:content_type),
-                         data: options
+      should_paginate = options.delete(:paginate)
+      resp, status, next_page = request :get, url, query: options.delete(:query),
+                                                   headers: options.delete(:headers),
+                                                   accept: options.delete(:accept),
+                                                   content_type: options.delete(:content_type),
+                                                   paginate: should_paginate, data: options
+
+      # If we should paginate, then automatically traverse all next_pages
+      if should_paginate
+        all_objs = [resp]
+        while next_page && resp = next_page.get
+          next_page = resp.rels[:next]
+          all_objs << resp.data
+        end
+        resp = all_objs.flatten
+      end
+
+      [resp, status]
     end
 
     # Make a HTTP POST request
@@ -130,7 +146,7 @@ module Oktakit
 
     private
 
-    def request(method, path, data:, query:, headers:, accept:, content_type:)
+    def request(method, path, data:, query:, headers:, accept:, content_type:, paginate: false)
       options = {}
       options[:query] = query || {}
       options[:headers] = headers || {}
@@ -138,8 +154,11 @@ module Oktakit
       options[:headers][:content_type] = content_type if content_type
 
       uri = URI::Parser.new.escape("/api/v1/" + path.to_s)
-      @last_response = response = sawyer_agent.call(method, uri, data, options)
-      [response.data, response.status]
+      @last_response = resp = sawyer_agent.call(method, uri, data, options)
+
+      response = [resp.data, resp.status]
+      response << resp.rels[:next] if paginate
+      response
     end
 
     def sawyer_agent
