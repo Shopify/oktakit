@@ -38,13 +38,6 @@ module Oktakit
       super(build_error_message)
     end
 
-    # Documentation URL returned by the API for some errors
-    #
-    # @return [String]
-    def documentation_url
-      data[:documentation_url] if data.is_a? Hash
-    end
-
     # Array of validation errors
     # @return [Array<Hash>] Error info
     def errors
@@ -78,25 +71,10 @@ module Oktakit
     def response_message
       case data
       when Hash
-        data[:message]
+        data[:errorSummary]
       when String
         data
       end
-    end
-
-    def response_error
-      "Error: #{data[:error]}" if data.is_a?(Hash) && data[:error]
-    end
-
-    def response_error_summary
-      return nil unless data.is_a?(Hash) && !Array(data[:errors]).empty?
-
-      summary = "\nError summary:\n"
-      summary << data[:errors].map do |hash|
-        hash.map { |k, v| "  #{k}: #{v}" }
-      end.join("\n")
-
-      summary
     end
 
     def build_error_message
@@ -106,9 +84,6 @@ module Oktakit
       message << redact_url(@response[:url].to_s) + ': '
       message << "#{@response[:status]} - "
       message << response_message.to_s unless response_message.nil?
-      message << response_error.to_s unless response_error.nil?
-      message << response_error_summary.to_s unless response_error_summary.nil?
-      message << " // See: #{documentation_url}" unless documentation_url.nil?
       message
     end
 
