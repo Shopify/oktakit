@@ -26,6 +26,14 @@ client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
 response, http_status = client.list_users
 ```
 
+#### Pagination
+Pass the `paginate` flag as options for any `get` action for Oktakit to autopaginate the response for you.
+
+```ruby
+client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
+response, http_status = client.list_users(paginate: true)
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
