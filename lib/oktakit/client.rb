@@ -48,18 +48,26 @@ module Oktakit
     # @return [Sawyer::Resource]
     def get(url, options = {})
       should_paginate = options.delete(:paginate)
-      resp, status, next_page = request :get, url, query: options.delete(:query),
-                                                   headers: options.delete(:headers),
-                                                   accept: options.delete(:accept),
-                                                   content_type: options.delete(:content_type),
-                                                   paginate: should_paginate, data: options
+      request_options = {
+        query: options.delete(:query),
+        headers: options.delete(:headers),
+        accept: options.delete(:accept),
+        content_type: options.delete(:content_type),
+        paginate: should_paginate,
+        data: options
+      }
+
+      resp, status, next_page = request :get, url, **request_options
+      return [resp, status] unless status == 200
 
       # If we should paginate, then automatically traverse all next_pages
       if should_paginate
         all_objs = [resp]
-        while next_page && resp = next_page.get
-          next_page = resp.rels[:next]
-          all_objs << resp.data
+        while next_page
+          resp, status, next_page = request :get, next_page, **request_options
+          break unless status == 200
+
+          all_objs << resp
         end
         resp = all_objs.flatten
       end
@@ -153,11 +161,11 @@ module Oktakit
       options[:headers][:accept] = accept if accept
       options[:headers][:content_type] = content_type if content_type
 
-      uri = URI::Parser.new.escape("/api/v1/" + path.to_s)
+      uri = URI::Parser.new.escape("/api/v1" + path.to_s)
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
 
       response = [resp.data, resp.status]
-      response << resp.rels[:next] if paginate
+      response << absolute_to_relative_url(resp.rels[:next]) if paginate
       response
     end
 
@@ -178,7 +186,12 @@ module Oktakit
     end
 
     def api_endpoint
-      "https://#{@organization}.okta.com/api/v1/"
+      "https://#{@organization}.okta.com/api/v1"
+    end
+
+    def absolute_to_relative_url(next_ref)
+      return unless next_ref
+      next_ref.href.sub(api_endpoint, '')
     end
   end
 end
