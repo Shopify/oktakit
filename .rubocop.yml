@@ -32,7 +32,7 @@ Style/NumericLiterals:
   Enabled: false
 
 Style/CaseIndentation:
-  IndentWhenRelativeTo: end
+  EnforcedStyle: end
 
 Style/IndentHash:
   EnforcedStyle: consistent
@@ -66,7 +66,7 @@ Metrics/PerceivedComplexity:
   Enabled: false
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Style/FrozenStringLiteralComment:
   Enabled: false
