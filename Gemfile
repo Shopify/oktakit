@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rake'
 gem 'byebug'
+gem 'rake'
 gem 'rubocop'
 gem 'yard'
 
