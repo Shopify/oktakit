@@ -32,7 +32,7 @@ Style/NumericLiterals:
   Enabled: false
 
 Style/CaseIndentation:
-  IndentWhenRelativeTo: end
+  EnforcedStyle: end
 
 Style/IndentHash:
   EnforcedStyle: consistent
@@ -58,6 +58,10 @@ Metrics/ClassLength:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
 Metrics/ParameterLists:
   Max: 5
   CountKeywordArgs: false
@@ -66,7 +70,7 @@ Metrics/PerceivedComplexity:
   Enabled: false
 
 Lint/EndAlignment:
-  AlignWith: variable
+  EnforcedStyleAlignWith: variable
 
 Style/FrozenStringLiteralComment:
   Enabled: false
