@@ -185,7 +185,7 @@ module Oktakit
     end
 
     def api_endpoint
-      "https://#{@organization}.okta.com/api/v1"
+      "https://#{@organization.downcase}.okta.com/api/v1"
     end
 
     def absolute_to_relative_url(next_ref)
