@@ -9,6 +9,7 @@ require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
 require 'oktakit/client/templates'
 require 'oktakit/client/users'
+require 'oktakit/client/auth'
 
 module Oktakit
   class Client
@@ -21,6 +22,7 @@ module Oktakit
     include Schemas
     include Templates
     include Users
+    include Auth
 
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
     RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
@@ -178,9 +180,16 @@ module Oktakit
     end
 
     def sawyer_options
+      fd = Faraday.new(builder: MIDDLEWARE) do |fdd|
+        #logger = Logger.new($stdout)
+        #logger.level = Logger::DEBUG
+        #fdd.response :logger, logger do |ddd|
+        #end
+      end
+
       {
         links_parser: Sawyer::LinkParsers::Simple.new,
-        faraday: Faraday.new(builder: MIDDLEWARE),
+        faraday: fd
       }
     end
 
