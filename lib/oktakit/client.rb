@@ -9,7 +9,7 @@ require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
 require 'oktakit/client/templates'
 require 'oktakit/client/users'
-require 'oktakit/client/auth'
+require 'oktakit/client/authentication'
 
 module Oktakit
   class Client
@@ -22,7 +22,7 @@ module Oktakit
     include Schemas
     include Templates
     include Users
-    include Auth
+    include Authentication
 
     # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
     RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
