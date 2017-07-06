@@ -23,9 +23,9 @@ module Oktakit
                       if verify = links[:verify]
                         if href = verify[:href]
                           data = {
-                            'fid': factor[:id],
-                            'stateToken': state_token,
-                            'passCode': mfa
+                            'fid' => factor[:id],
+                            'stateToken' => state_token,
+                            'passCode' => mfa
                           }
 
                           response, http_status = post(href.sub(api_endpoint, ''), data)
