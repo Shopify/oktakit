@@ -3,6 +3,9 @@ module Oktakit
     module Authentication
       # Authenticate User
       #
+      # @param username [String]. Username for authn request
+      # @param password [String]. Password for authn request
+      # @param mfa [String]. Multi-Factor Token for authn request (only first found "token:software:totp" supported)
       # @example
       #   Oktakit.authn('user', 'pass', 123456)
       def authn(username, password, mfa)
