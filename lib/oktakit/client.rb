@@ -180,16 +180,9 @@ module Oktakit
     end
 
     def sawyer_options
-      fd = Faraday.new(builder: MIDDLEWARE) do |fdd|
-        #logger = Logger.new($stdout)
-        #logger.level = Logger::DEBUG
-        #fdd.response :logger, logger do |ddd|
-        #end
-      end
-
       {
         links_parser: Sawyer::LinkParsers::Simple.new,
-        faraday: fd
+        faraday: Faraday.new(builder: MIDDLEWARE)
       }
     end
 
