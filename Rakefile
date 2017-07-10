@@ -7,7 +7,7 @@ require 'rubocop/rake_task'
 RuboCop::RakeTask.new
 
 task test: :spec
-task default: %i{spec, rubocop}
+task default: [:spec, :rubocop]
 
 namespace :doc do
   require 'yard'
