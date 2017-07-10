@@ -19,21 +19,22 @@ module Oktakit
               if factors = embedded[:factors]
                 factors.each do |factor|
                   next unless factor[:factorType] == "token:software:totp"
-                  if links = factor[:_links]
-                    if verify = links[:verify]
-                      if href = verify[:href]
-                        data = {
-                          'fid' => factor[:id],
-                          'stateToken' => state_token,
-                          'passCode' => mfa
-                        }
 
-                        response, http_status = post(href.sub(api_endpoint, ''), data)
+                  links = factor[:_links]
+                  verify = links[:verify]
+                  href = verify[:href]
 
-                        return response, http_status
-                      end
-                    end
-                  end
+                  next unless links && verify && href
+
+                  data = {
+                    'fid' => factor[:id],
+                    'stateToken' => state_token,
+                    'passCode' => mfa
+                  }
+
+                  response, http_status = post(href.sub(api_endpoint, ''), data)
+
+                  return response, http_status
                 end
               end
             end
