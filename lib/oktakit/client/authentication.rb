@@ -11,34 +11,36 @@ module Oktakit
       def authn(username, password, mfa)
         response, http_status = post('/authn', 'username' => username, 'password' => password)
 
+        factors = []
+
         if http_status == 200
           if response[:status] == "SUCCESS"
-            return true
+            return response, http_status
           elsif response[:status] == "MFA_REQUIRED"
             if (state_token = response[:stateToken]) && (embedded = response[:_embedded])
-              if factors = embedded[:factors]
-                factors.each do |factor|
-                  next unless factor[:factorType] == "token:software:totp"
-
-                  links = factor[:_links]
-                  verify = links[:verify]
-                  href = verify[:href]
-
-                  next unless links && verify && href
-
-                  data = {
-                    'fid' => factor[:id],
-                    'stateToken' => state_token,
-                    'passCode' => mfa
-                  }
-
-                  response, http_status = post(href.sub(api_endpoint, ''), data)
-
-                  return response, http_status
-                end
-              end
+              factors = embedded[:factors]
             end
           end
+        end
+
+        factors.each do |factor|
+          next unless factor[:factorType] == "token:software:totp"
+
+          links = factor[:_links]
+          verify = links[:verify]
+          href = verify[:href]
+
+          next unless links && verify && href
+
+          data = {
+            'fid' => factor[:id],
+            'stateToken' => state_token,
+            'passCode' => mfa
+          }
+
+          response, http_status = post(href.sub(api_endpoint, ''), data)
+
+          return response, http_status
         end
       end
     end
