@@ -31,9 +31,10 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token:, organization:)
+    def initialize(token:, organization:, developer_org:)
       @token = token
       @organization = organization
+      @developer_org = developer_org
     end
 
     # Make a HTTP GET request
@@ -184,8 +185,12 @@ module Oktakit
       }
     end
 
+    def okta_domain
+      @developer_org ? 'oktapreview' : 'okta'
+    end
+
     def api_endpoint
-      "https://#{@organization.downcase}.okta.com/api/v1"
+      "https://#{@organization.downcase}.#{okta_domain}.com/api/v1"
     end
 
     def absolute_to_relative_url(next_ref)
