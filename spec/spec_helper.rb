@@ -31,7 +31,7 @@ require 'oktakit'
 
 module TestClient
   extend RSpec::SharedContext
-  let(:client) { Oktakit::Client.new(token: test_okta_token, organization: 'okta-test') }
+  let(:client) { Oktakit::Client.new(token: test_okta_token, organization: 'okta-test', developer_org: false) }
 end
 
 RSpec.configure do |config|
