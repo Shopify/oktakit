@@ -31,7 +31,7 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token:, organization:, developer_org:)
+    def initialize(token:, organization:, developer_org: false)
       @token = token
       @organization = organization
       @developer_org = developer_org
