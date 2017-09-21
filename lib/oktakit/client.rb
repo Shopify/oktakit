@@ -31,10 +31,22 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token:, organization:)
+    def initialize(token:, organization: nil, api_endpoint: nil)
+      raise ArgumentError, "Please provide either the organization or the api_endpoint argument" if organization.nil? && api_endpoint.nil?
+
       @token = token
       @organization = organization
+      @api_endpoint = api_endpoint
     end
+
+    def api_endpoint
+      if @api_endpoint
+        @api_endpoint
+      else
+        "https://#{@organization.downcase}.okta.com/api/v1"
+      end
+    end
+
 
     # Make a HTTP GET request
     #
@@ -182,10 +194,6 @@ module Oktakit
         links_parser: Sawyer::LinkParsers::Simple.new,
         faraday: Faraday.new(builder: MIDDLEWARE),
       }
-    end
-
-    def api_endpoint
-      "https://#{@organization.downcase}.okta.com/api/v1"
     end
 
     def absolute_to_relative_url(next_ref)
