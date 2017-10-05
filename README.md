@@ -49,7 +49,7 @@ To anonymize the VCR data, first setup a real token and endpoint for Okta, such 
 - Set the `OKTA_TEST_TOKEN` environment variable (this should be real). Don't worry, it is automatically removed.
 - Before committing, change `my-okta` to `okta-test` in `spec_helper.rb` and any VCR Cassettes.
 
-The [API Test Client](http://developer.okta.com/docs/api/getting_started/api_test_client) provided by Okta is also really helpful.
+The [API Test Client](https://developer.okta.com/docs/api/getting_started/api_test_client) provided by Okta is also really helpful.
 
 ## Contributing
 
