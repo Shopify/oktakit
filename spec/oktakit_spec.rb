@@ -5,6 +5,22 @@ describe Oktakit do
     expect(Oktakit::VERSION).not_to be nil
   end
 
+  describe 'client' do
+    it 'has a default API endpoint' do
+      client = Oktakit::Client.new(token: test_okta_token, organization: 'okta-test')
+      expect(client.api_endpoint).to eq('https://okta-test.okta.com/api/v1')
+    end
+
+    it 'allows to configure the API endpoint' do
+      client = Oktakit::Client.new(token: test_okta_token, api_endpoint: 'https://okta-test.oktapreview.com/api/v1')
+      expect(client.api_endpoint).to eq('https://okta-test.oktapreview.com/api/v1')
+    end
+
+    it 'raises ArgumentError when no organization or api_endpoint is provided' do
+      expect { Oktakit::Client.new(token: test_okta_token) }.to raise_error(ArgumentError)
+    end
+  end
+
   ERRORS = {
     400 => Oktakit::BadRequest,
     401 => Oktakit::Unauthorized,
