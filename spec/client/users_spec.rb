@@ -32,7 +32,7 @@ describe Oktakit::Client::Users do
         resp, = client.get_user(USERS_USER_ID)
         expect(resp.to_h).to have_key(:id)
         expect(resp.to_h).to have_key(:profile)
-        %w(firstName lastName login email).each do |key|
+        %w[firstName lastName login email].each do |key|
           expect(resp.to_h[:profile].to_h).to have_key(key.to_sym)
         end
       end
