@@ -26,6 +26,14 @@ client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
 response, http_status = client.list_users
 ```
 
+#### Developer organization
+Pass the 'developer_org' flag as option on client initialization in case you don't have a production okta account yet. This will change the API endpoint to oktapreview.com.
+
+```ruby
+client = Oktakit.new(token: 't0k3n', organization: 'my-great-org', developer_org: true)
+response, http_status = client.list_users
+```
+
 #### Pagination
 Pass the `paginate` flag as options for any `get` action for Oktakit to autopaginate the response for you.
 
