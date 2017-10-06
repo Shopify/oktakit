@@ -32,7 +32,9 @@ module Oktakit
     end
 
     def initialize(token:, organization: nil, api_endpoint: nil)
-      raise ArgumentError, "Please provide either the organization or the api_endpoint argument" if organization.nil? && api_endpoint.nil?
+      if organization.nil? && api_endpoint.nil?
+        raise ArgumentError, "Please provide either the organization or the api_endpoint argument"
+      end
 
       @token = token
       @organization = organization
@@ -46,7 +48,6 @@ module Oktakit
         "https://#{@organization.downcase}.okta.com/api/v1"
       end
     end
-
 
     # Make a HTTP GET request
     #
@@ -172,7 +173,7 @@ module Oktakit
       options[:headers][:accept] = accept if accept
       options[:headers][:content_type] = content_type if content_type
 
-      uri = URI::Parser.new.escape("/api/v1" + path.to_s)
+      uri = URI::DEFAULT_PARSER.escape("/api/v1" + path.to_s)
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
 
       response = [resp.data, resp.status]
