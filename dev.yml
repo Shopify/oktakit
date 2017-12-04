@@ -9,7 +9,3 @@ up:
 commands:
   test: bundle exec rspec
   console: bin/console
-
-packages:
-  - git@github.com:Shopify/dev-shopify.git
-
