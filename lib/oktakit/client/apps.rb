@@ -176,6 +176,16 @@ module Oktakit
         get("/apps/#{id}/users", options)
       end
 
+      # List Applications Assigned to User
+      #
+      # @return [Array<Sawyer::Resource>] Array of Applications Assigned to User
+      # @see https://developer.okta.com/docs/api/resources/apps#list-applications-assigned-to-user
+      # @example
+      #
+      def list_applications_assigned_to_user(user_id, options = {})
+        get("/apps?filter=user.id+eq+\"#{user_id}\"&expand=user/#{user_id}", options)
+      end
+
       # Update Application Credentials for Assigned User
       #
       # @params app_id [string] Application ID
