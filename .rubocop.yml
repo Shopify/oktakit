@@ -22,7 +22,7 @@ Style/AlignParameters:
 Style/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-Style/TrailingCommaInLiteral:
+Style/Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/SignalException:
