@@ -42,11 +42,7 @@ module Oktakit
     end
 
     def api_endpoint
-      if @api_endpoint
-        @api_endpoint
-      else
-        "https://#{@organization.downcase}.okta.com/api/v1"
-      end
+      @api_endpoint || "https://#{@organization.downcase}.okta.com/api/v1"
     end
 
     # Make a HTTP GET request
@@ -182,7 +178,7 @@ module Oktakit
     end
 
     def sawyer_agent
-      @agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
+      @sawyer_agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
         http.headers[:accept] = 'application/json'
         http.headers[:content_type] = 'application/json'
         http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
@@ -193,7 +189,7 @@ module Oktakit
     def sawyer_options
       {
         links_parser: Sawyer::LinkParsers::Simple.new,
-        faraday: Faraday.new(builder: MIDDLEWARE),
+        faraday: Faraday.new(builder: MIDDLEWARE)
       }
     end
 
