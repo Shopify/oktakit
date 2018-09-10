@@ -2,7 +2,7 @@
 #   http://shopify.github.io/ruby-style-guide/
 
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.1
 
 Rails:
   Enabled: false
