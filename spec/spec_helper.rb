@@ -26,7 +26,7 @@ VCR.configure do |config|
   end
 end
 
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'oktakit'
 
 module TestClient

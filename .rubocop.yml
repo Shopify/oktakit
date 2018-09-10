@@ -2,7 +2,7 @@
 #   http://shopify.github.io/ruby-style-guide/
 
 AllCops:
-  TargetRubyVersion: 2.1
+  TargetRubyVersion: 2.2
 
 Rails:
   Enabled: false
@@ -22,7 +22,7 @@ Style/AlignParameters:
 Style/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-Style/TrailingCommaInLiteral:
+Style/Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/SignalException:
