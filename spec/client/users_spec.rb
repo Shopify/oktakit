@@ -203,4 +203,13 @@ describe Oktakit::Client::Users do
       end
     end
   end
+
+  describe '#clear_user_sessions' do
+    it 'returns 204 no content' do
+      VCR.use_cassette 'clear_user_sessions' do
+        _, status = client.clear_user_sessions(USERS_USER_ID)
+        expect(status).to be(204)
+      end
+    end
+  end
 end
