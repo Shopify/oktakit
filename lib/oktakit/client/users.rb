@@ -287,14 +287,14 @@ module Oktakit
       end
 
       # Clear user sessions
-      # 
+      #
       # @params id [string] User ID
       # @param options[:query] [Hash] Optional. Query params for request
       # @param options[:headers] [Hash] Optional. Header params for the request.
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for the request.
-      # @return 204 'No Content' 
+      # @return 204 'No Content'
       # @see https://developer.okta.com/docs/api/resources/users#user-sessions
       #   Oktakit.clear_user_sessions('id')
       def clear_user_sessions(id, options = {})
