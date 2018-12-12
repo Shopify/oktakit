@@ -48,7 +48,7 @@ describe Oktakit::Client::Factors do
           factorType: "sms",
           provider: "OKTA",
           profile: {
-            phoneNumber:  "+1-613-456-1234"
+            phoneNumber: "+1-613-456-1234"
           })
         expect(resp.id).not_to be_nil
       end
