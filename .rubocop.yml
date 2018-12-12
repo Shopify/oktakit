@@ -13,16 +13,16 @@ Lint/AssignmentInCondition:
 Style/Documentation:
   Enabled: false
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   Enabled: false
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
-Style/FirstParameterIndentation:
+Layout/FirstParameterIndentation:
   EnforcedStyle: consistent
 
-Style/Style/TrailingCommaInArrayLiteral:
+Style/TrailingCommaInArrayLiteral:
   Enabled: false
 
 Style/SignalException:
@@ -31,10 +31,10 @@ Style/SignalException:
 Style/NumericLiterals:
   Enabled: false
 
-Style/CaseIndentation:
+Layout/CaseIndentation:
   EnforcedStyle: end
 
-Style/IndentHash:
+Layout/IndentHash:
   EnforcedStyle: consistent
 
 Style/WordArray:
@@ -69,7 +69,7 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Enabled: false
 
-Lint/EndAlignment:
+Layout/EndAlignment:
   EnforcedStyleAlignWith: variable
 
 Style/FrozenStringLiteralComment:
