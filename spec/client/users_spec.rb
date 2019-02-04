@@ -63,6 +63,22 @@ describe Oktakit::Client::Users do
     end
   end
 
+  describe '#update_user partial' do
+    it 'returns updated user' do
+      VCR.use_cassette 'update_user_partial' do
+        resp, = client.update_user(USERS_USER_ID,
+          profile: {
+            firstName: "Bob",
+            lastName: "User",
+            email: "example@example.com",
+            login: "example@example.com"
+          },
+          partial: true)
+        expect(resp.profile.firstName).to be == 'Bob'
+      end
+    end
+  end
+
   describe '#update_profile' do
     it 'returns updated user' do
       VCR.use_cassette 'update_profile' do
