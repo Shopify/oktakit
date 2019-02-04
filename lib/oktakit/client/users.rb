@@ -54,13 +54,18 @@ module Oktakit
       # @param options[:headers] [Hash] Optional. Header params for the request.
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options[:partial] [Boolean] Indicates a partial update, in which case POST will be used instead of PUT
       # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated User
       # @see https://developer.okta.com/docs/api/resources/users#update-user
       # @example
       #   Oktakit.update_user('id')
       def update_user(id, options = {})
-        put("/users/#{id}", options)
+        if options.delete(:partial)
+          post("/users/#{id}", options)
+        else
+          put("/users/#{id}", options)
+        end
       end
 
       # Update Profile
