@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/users/-1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.2.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 429
+      message: 
+    headers:
+      date:
+      - Fri, 03 May 2019 19:38:20 GMT
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="r5EfzZxQVvQpKo3AgYRaT7X2bDO/kj3ACwmxfdT2zt8="; pin-sha256="MaqlcUgk2mvY/RFSGeSwBRkI+rZ6/dxe/DuQfBT/vnQ=";
+        pin-sha256="72G5IEvDEWn+EThf3qjR7/bQSWaS2ZSLqolhnO6iyJI="; pin-sha256="rrV6CLCCvqnk89gWibYT0JO6fNQ8cCit7GGoiVTjCOg=";
+        max-age=60; report-uri="https://okta.report-uri.io/r/default/hpkp/reportOnly"
+      content-type:
+      - application/json
+      x-okta-request-id:
+      - XMyYq@afbxePf@gMcngVFwAAAMs
+      x-rate-limit-limit:
+      - '600'
+      x-rate-limit-remaining:
+      - '0'
+      x-rate-limit-reset:
+      - '1516308966'
+      p3p:
+      - CP="HONK"
+      www-authenticate:
+      - SSWS
+      x-content-type-options:
+      - nosniff
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"errorCode":"E0000011","errorSummary":"Invalid token provided","errorLink":"E0000011","errorId":"oaeQn7ilK8xS4aPrf6jLwcvUw","errorCauses":[]}'
+    http_version: 
+  recorded_at: Fri, 03 May 2019 19:38:20 GMT
+recorded_with: VCR 2.9.3

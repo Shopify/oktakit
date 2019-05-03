@@ -24,6 +24,7 @@ module Oktakit
       when 409      then Oktakit::Conflict
       when 415      then Oktakit::UnsupportedMediaType
       when 422      then Oktakit::UnprocessableEntity
+      when 429      then Oktakit::RateLimitError
       when 400..499 then Oktakit::ClientError
       when 500      then Oktakit::InternalServerError
       when 501      then Oktakit::NotImplemented
@@ -124,6 +125,9 @@ module Oktakit
 
   # Raised when Okta returns a 422 HTTP status code
   class UnprocessableEntity < ClientError; end
+
+  # Raised when Okta returns a 429 HTTP status code
+  class RateLimitError < ClientError; end
 
   # Raised on errors in the 500-599 range
   class ServerError < Error; end
