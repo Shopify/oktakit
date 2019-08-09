@@ -108,7 +108,7 @@ module Oktakit
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
       # @return [Array<Sawyer::Resource>] Array of Groups
-      # @see https://developer.okta.com/docs/api/resources/users#get-member-groups
+      # @see https://developer.okta.com/docs/reference/api/users/#get-user-s-groups
       # @example
       #   Oktakit.get_member_groups('id')
       def get_member_groups(id, options = {})
