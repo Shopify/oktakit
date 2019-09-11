@@ -60,8 +60,8 @@ module Oktakit
       return body unless body.is_a?(String)
 
       headers = @response[:response_headers]
-      content_type = headers && headers[:content_type] || ''
-      if content_type =~ /json/
+      content_type = headers && headers['content-type'] || ''
+      if content_type == 'application/json'
         Sawyer::Agent.serializer.decode(body)
       else
         body
