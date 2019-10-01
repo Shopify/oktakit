@@ -72,7 +72,6 @@ module Oktakit
       if status == 200 && should_paginate
         all_objs = [resp]
         while next_page
-          sleep 1
           resp, status, next_page = request :get, next_page, uri_encode_url: false, **request_options
           break unless status == 200 # Return early if page request fails
 
