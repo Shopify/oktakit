@@ -131,6 +131,22 @@ module Oktakit
         post("/users/#{id}/lifecycle/activate", options)
       end
 
+      # Reactivate User
+      #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] Returns empty object by default. If sendEmail is false, a user activation link.
+      # @see https://developer.okta.com/docs/api/resources/users#activate-user
+      # @example
+      #   Oktakit.activate_user('id')
+      def reactivate_user(id, options = {})
+        post("/users/#{id}/lifecycle/reactivate", options)
+      end
+
       # Deactivate User
       #
       # @params id [string] User ID

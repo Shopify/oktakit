@@ -121,6 +121,15 @@ describe Oktakit::Client::Users do
     end
   end
 
+  describe '#reactivate_user' do
+    it 'returns empty object by default.' do
+      VCR.use_cassette 'reactivate_user' do
+        resp, = client.reactivate_user(USERS_USER_ID)
+        expect(resp.to_h).to be == {}
+      end
+    end
+  end
+
   describe '#deactivate_user' do
     it 'returns an empty object.' do
       VCR.use_cassette 'deactivate_user' do
