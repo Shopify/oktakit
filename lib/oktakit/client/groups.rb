@@ -144,6 +144,21 @@ module Oktakit
       def list_assigned_applications(id, options = {})
         get("/groups/#{id}/apps", options)
       end
+
+      # Add Group Rule
+      #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] The created Group Rule.
+      # @see http://developer.okta.com/docs/api/resources/groups.html#create-group-rule
+      # @example
+      #   Oktakit.add_group_rule
+      def add_group_rule(options = {})
+        post('/groups/rules', options)
+      end
     end
   end
 end
