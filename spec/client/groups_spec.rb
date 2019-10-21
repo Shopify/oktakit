@@ -119,4 +119,32 @@ describe Oktakit::Client::Groups do
       end
     end
   end
+
+  describe '#update_group_rule' do
+    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
+
+    let(:member_of_group_id) { '00gj57nf29Hb16yys0h7' }
+    let(:group_ids_to_assign) { ['00gnztfrp0uIKGEf80h7'] }
+
+    it 'returns the updated group rule' do
+      VCR.use_cassette 'update_group_rule' do
+        resp, = client.update_group_rule(group_rule_id,
+                                         name:       'A New Group Rule',
+                                         type:       'group_rule',
+                                         conditions: {
+                                           expression: {
+                                             type:  'urn:okta:expression:1.0',
+                                             value: "isMemberOfAnyGroup(\"#{member_of_group_id}\")"
+                                           }
+                                         },
+                                         actions:    {
+                                           assignUserToGroups: {
+                                             groupIds: group_ids_to_assign
+                                           }
+                                         })
+
+        expect(resp.id).not_to be_nil
+      end
+    end
+  end
 end
