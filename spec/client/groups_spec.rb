@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Oktakit::Client::Groups do
   GROUPS_GROUP_ID = '00g6o0uh8xcL5WbyZ0h7'
   GROUPS_USER_ID  = '00u6nm9ytbmwHeunx0h7'
+  let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
 
   describe '#add_group' do
     it 'returns the created group.' do
@@ -121,8 +122,6 @@ describe Oktakit::Client::Groups do
   end
 
   describe '#update_group_rule' do
-    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
-
     let(:member_of_group_id) { '00gj57nf29Hb16yys0h7' }
     let(:group_ids_to_assign) { ['00gnztfrp0uIKGEf80h7'] }
 
@@ -158,8 +157,6 @@ describe Oktakit::Client::Groups do
   end
 
   describe '#get_group_rule' do
-    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
-
     it 'returns a group rule' do
       VCR.use_cassette 'get_group_rule' do
         resp, = client.get_group_rule(group_rule_id)
@@ -169,8 +166,6 @@ describe Oktakit::Client::Groups do
   end
 
   describe '#activate_group_rule' do
-    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
-
     it 'activates a group rule' do
       VCR.use_cassette 'activate_group_rule' do
         _, status = client.activate_group_rule(group_rule_id)
@@ -180,8 +175,6 @@ describe Oktakit::Client::Groups do
   end
 
   describe '#deactivate_group_rule' do
-    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
-
     it 'deactivates a group rule' do
       VCR.use_cassette 'deactivate_group_rule' do
         _, status = client.deactivate_group_rule(group_rule_id)
@@ -191,8 +184,6 @@ describe Oktakit::Client::Groups do
   end
 
   describe '#delete_group_rule' do
-    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
-
     it 'deletes the group rule' do
       VCR.use_cassette 'delete_group_rule' do
         _, status = client.delete_group_rule(group_rule_id)
