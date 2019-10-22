@@ -167,4 +167,15 @@ describe Oktakit::Client::Groups do
       end
     end
   end
+
+  describe '#activate_group_rule' do
+    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
+
+    it 'activates a group rule' do
+      VCR.use_cassette 'activate_group_rule' do
+        _, status = client.activate_group_rule(group_rule_id)
+        expect(status).to eq(204)
+      end
+    end
+  end
 end
