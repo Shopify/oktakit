@@ -175,6 +175,21 @@ module Oktakit
       def update_group_rule(id, options = {})
         put("/groups/rules/#{id}", options)
       end
+
+      # List Group Rules
+      #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Array<Sawyer::Resource>] Array of Groups Rules
+      # @see http://developer.okta.com/docs/api/resources/groups.html#list-groups-rules
+      # @example
+      #   Oktakit.list_group_rules
+      def list_group_rules(options = {})
+        get('/groups/rules', options)
+      end
     end
   end
 end

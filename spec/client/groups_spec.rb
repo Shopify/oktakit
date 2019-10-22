@@ -147,4 +147,13 @@ describe Oktakit::Client::Groups do
       end
     end
   end
+
+  describe '#list_group_rules' do
+    it 'returns an array of group rules' do
+      VCR.use_cassette 'list_group_rules' do
+        resp, = client.list_group_rules
+        expect(resp).to be_a(Array)
+      end
+    end
+  end
 end
