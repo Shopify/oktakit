@@ -189,4 +189,15 @@ describe Oktakit::Client::Groups do
       end
     end
   end
+
+  describe '#delete_group_rule' do
+    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
+
+    it 'deletes the group rule' do
+      VCR.use_cassette 'delete_group_rule' do
+        _, status = client.delete_group_rule(group_rule_id)
+        expect(status).to eq(202)
+      end
+    end
+  end
 end

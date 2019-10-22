@@ -238,6 +238,22 @@ module Oktakit
       def deactivate_group_rule(id, options = {})
         post("/groups/rules/#{id}/lifecycle/deactivate", options)
       end
+
+      # Delete Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return  HTTP 202 Accepted
+      # @see http://developer.okta.com/docs/api/resources/groups.html#delete-a-group-rule
+      # @example
+      #   Oktakit.delete_group_rule('id')
+      def delete_group_rule(id, options = {})
+        delete("/groups/rules/#{id}", options)
+      end
     end
   end
 end
