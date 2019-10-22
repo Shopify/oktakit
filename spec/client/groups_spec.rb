@@ -2,14 +2,14 @@ require 'spec_helper'
 
 describe Oktakit::Client::Groups do
   GROUPS_GROUP_ID = '00g6o0uh8xcL5WbyZ0h7'
-  GROUPS_USER_ID = '00u6nm9ytbmwHeunx0h7'
+  GROUPS_USER_ID  = '00u6nm9ytbmwHeunx0h7'
 
   describe '#add_group' do
     it 'returns the created group.' do
       VCR.use_cassette 'add_group' do
         resp, = client.add_group(
           profile: {
-            name: "New Group Users",
+            name:        "New Group Users",
             description: "New Group Users"
           }
         )
@@ -41,7 +41,7 @@ describe Oktakit::Client::Groups do
       VCR.use_cassette 'update_group' do
         resp, = client.update_group(GROUPS_GROUP_ID,
                                     profile: {
-                                      name: "New Name for the Group",
+                                      name:        "New Name for the Group",
                                       description: "New Name for the Group"
                                     })
         expect(resp.profile.name).to be == "New Name for the Group"
@@ -153,6 +153,17 @@ describe Oktakit::Client::Groups do
       VCR.use_cassette 'list_group_rules' do
         resp, = client.list_group_rules
         expect(resp).to be_a(Array)
+      end
+    end
+  end
+
+  describe '#get_group_rule' do
+    let(:group_rule_id) { '0prnztlu4bzSqZ2vG0h7' }
+
+    it 'returns a group rule' do
+      VCR.use_cassette 'get_group_rule' do
+        resp, = client.get_group_rule(group_rule_id)
+        expect(resp.id).not_to be_nil
       end
     end
   end

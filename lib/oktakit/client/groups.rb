@@ -190,6 +190,22 @@ module Oktakit
       def list_group_rules(options = {})
         get('/groups/rules', options)
       end
+
+      # Get Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] Fetched Group Rule
+      # @see http://developer.okta.com/docs/api/resources/groups.html#get-group-rule
+      # @example
+      #   Oktakit.get_group_rule('id')
+      def get_group_rule(id, options = {})
+        get("/groups/rules/#{id}", options)
+      end
     end
   end
 end
