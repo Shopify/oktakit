@@ -10,7 +10,7 @@ describe Oktakit::Client::Groups do
       VCR.use_cassette 'add_group' do
         resp, = client.add_group(
           profile: {
-            name:        "New Group Users",
+            name: "New Group Users",
             description: "New Group Users"
           }
         )
