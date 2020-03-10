@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_application
       def add_application(options = {})
-        post('/apps', options)
+        post('apps', options)
       end
 
       # Get Application
@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_application('id')
       def get_application(id, options = {})
-        get("/apps/#{id}", options)
+        get("apps/#{id}", options)
       end
 
       # List Applications
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_applications
       def list_applications(options = {})
-        get('/apps', options)
+        get('apps', options)
       end
 
       # Update Application
@@ -60,7 +60,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application('id')
       def update_application(id, options = {})
-        put("/apps/#{id}", options)
+        put("apps/#{id}", options)
       end
 
       # Delete Application
@@ -76,7 +76,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_application('id')
       def delete_application(id, options = {})
-        delete("/apps/#{id}", options)
+        delete("apps/#{id}", options)
       end
 
       # Activate Application
@@ -92,7 +92,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_application('id')
       def activate_application(id, options = {})
-        post("/apps/#{id}/lifecycle/activate", options)
+        post("apps/#{id}/lifecycle/activate", options)
       end
 
       # Deactivate Application
@@ -108,7 +108,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_application('id')
       def deactivate_application(id, options = {})
-        post("/apps/#{id}/lifecycle/deactivate", options)
+        post("apps/#{id}/lifecycle/deactivate", options)
       end
 
       # Assign User to Application for SSO
@@ -124,7 +124,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_user_to_application_for_sso('id')
       def assign_user_to_application_for_sso(id, options = {})
-        post("/apps/#{id}/users", options)
+        post("apps/#{id}/users", options)
       end
 
       # Assign User to Application for SSO & Provisioning
@@ -140,7 +140,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_user_to_application_for_sso_provisioning('id')
       def assign_user_to_application_for_sso_provisioning(id, options = {})
-        post("/apps/#{id}/users", options)
+        post("apps/#{id}/users", options)
       end
 
       # Get Assigned User for Application
@@ -157,7 +157,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_user_for_application('user_id', 'app_id')
       def get_assigned_user_for_application(app_id, user_id, options = {})
-        get("/apps/#{app_id}/users/#{user_id}", options)
+        get("apps/#{app_id}/users/#{user_id}", options)
       end
 
       # List Users Assigned to Application
@@ -173,7 +173,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users_assigned_to_application('id')
       def list_users_assigned_to_application(id, options = {})
-        get("/apps/#{id}/users", options)
+        get("apps/#{id}/users", options)
       end
 
       # List Applications Assigned to User
@@ -189,7 +189,7 @@ module Oktakit
       # @example
       #  Oktakit.list_applications_assigned_to_user('<user_id>')
       def list_applications_assigned_to_user(user_id, options = {})
-        get("/apps?filter=user.id+eq+\"#{user_id}\"&expand=user/#{user_id}", options)
+        get("apps?filter=user.id+eq+\"#{user_id}\"&expand=user/#{user_id}", options)
       end
 
       # Update Application Credentials for Assigned User
@@ -206,7 +206,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application_credentials_for_assigned_user('user_id', 'app_id')
       def update_application_credentials_for_assigned_user(app_id, user_id, options = {})
-        post("/apps/#{app_id}/users/#{user_id}", options)
+        post("apps/#{app_id}/users/#{user_id}", options)
       end
 
       # Update Application Profile for Assigned User
@@ -223,7 +223,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application_profile_for_assigned_user('user_id', 'app_id')
       def update_application_profile_for_assigned_user(app_id, user_id, options = {})
-        post("/apps/#{app_id}/users/#{user_id}", options)
+        post("apps/#{app_id}/users/#{user_id}", options)
       end
 
       # Remove User from Application
@@ -240,7 +240,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_user_from_application('user_id', 'app_id')
       def remove_user_from_application(app_id, user_id, options = {})
-        delete("/apps/#{app_id}/users/#{user_id}", options)
+        delete("apps/#{app_id}/users/#{user_id}", options)
       end
 
       # Assign Group to Application
@@ -257,7 +257,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_group_to_application('group_id', 'app_id')
       def assign_group_to_application(app_id, group_id, options = {})
-        put("/apps/#{app_id}/groups/#{group_id}", options)
+        put("apps/#{app_id}/groups/#{group_id}", options)
       end
 
       # Get Assigned Group for Application
@@ -274,7 +274,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_group_for_application('group_id', 'app_id')
       def get_assigned_group_for_application(app_id, group_id, options = {})
-        get("/apps/#{app_id}/groups/#{group_id}", options)
+        get("apps/#{app_id}/groups/#{group_id}", options)
       end
 
       # List Groups Assigned to Application
@@ -290,7 +290,7 @@ module Oktakit
       # @example
       #   Oktakit.list_groups_assigned_to_application('id')
       def list_groups_assigned_to_application(id, options = {})
-        get("/apps/#{id}/groups", options)
+        get("apps/#{id}/groups", options)
       end
 
       # Remove Group from Application
@@ -307,7 +307,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_from_application('group_id', 'app_id')
       def remove_group_from_application(app_id, group_id, options = {})
-        delete("/apps/#{app_id}/groups/#{group_id}", options)
+        delete("apps/#{app_id}/groups/#{group_id}", options)
       end
 
       # Generate New Application Key Credential
@@ -323,7 +323,7 @@ module Oktakit
       # @example
       #   Oktakit.generate_new_application_key_credential('app_id')
       def generate_new_application_key_credential(app_id, options = {})
-        post("/apps/#{app_id}/credentials/keys/generate", options)
+        post("apps/#{app_id}/credentials/keys/generate", options)
       end
 
       # List Key Credentials for Application
@@ -339,7 +339,7 @@ module Oktakit
       # @example
       #   Oktakit.list_key_credentials_for_application('app_id')
       def list_key_credentials_for_application(app_id, options = {})
-        get("/apps/#{app_id}/credentials/keys", options)
+        get("apps/#{app_id}/credentials/keys", options)
       end
 
       # Get Key Credential for Application
@@ -356,7 +356,7 @@ module Oktakit
       # @example
       #   Oktakit.get_key_credential_for_application('app_id', 'key_id')
       def get_key_credential_for_application(app_id, key_id, options = {})
-        get("/apps/#{app_id}/credentials/keys/#{key_id}", options)
+        get("apps/#{app_id}/credentials/keys/#{key_id}", options)
       end
 
       # Preview SAML metadata for Application
@@ -372,7 +372,7 @@ module Oktakit
       # @example
       #   Oktakit.preview_saml_metadata_for_application('app_id')
       def preview_saml_metadata_for_application(app_id, options = {})
-        get("/apps/#{app_id}/sso/saml/metadata", options)
+        get("apps/#{app_id}/sso/saml/metadata", options)
       end
     end
   end

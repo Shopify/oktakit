@@ -169,7 +169,7 @@ module Oktakit
       options[:headers][:accept] = accept if accept
       options[:headers][:content_type] = content_type if content_type
 
-      uri = URI::DEFAULT_PARSER.escape("/api/v1" + path.to_s)
+      uri = URI::DEFAULT_PARSER.escape(path.to_s)
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
 
       response = [resp.data, resp.status]
@@ -196,7 +196,7 @@ module Oktakit
     def absolute_to_relative_url(next_ref)
       return unless next_ref
 
-      next_ref.href.sub(api_endpoint, '')
+      next_ref.href.sub(api_endpoint + '/', '')
     end
   end
 end

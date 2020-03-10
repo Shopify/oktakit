@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_identity_provider
       def add_identity_provider(options = {})
-        post('/idps', options)
+        post('idps', options)
       end
 
       # Get Identity Provider
@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_identity_provider('id')
       def get_identity_provider(id, options = {})
-        get("/idps/#{id}", options)
+        get("idps/#{id}", options)
       end
 
       # List Identity Providers
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_identity_providers
       def list_identity_providers(options = {})
-        get('/idps', options)
+        get('idps', options)
       end
 
       # Update Identity Provider
@@ -60,7 +60,7 @@ module Oktakit
       # @example
       #   Oktakit.update_identity_provider('id')
       def update_identity_provider(id, options = {})
-        put("/idps/#{id}", options)
+        put("idps/#{id}", options)
       end
 
       # Delete Identity Provider
@@ -76,7 +76,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_identity_provider('id')
       def delete_identity_provider(id, options = {})
-        delete("/idps/#{id}", options)
+        delete("idps/#{id}", options)
       end
 
       # Activate Identity Provider
@@ -92,7 +92,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_identity_provider('id')
       def activate_identity_provider(id, options = {})
-        post("/idps/#{id}/lifecycle/activate", options)
+        post("idps/#{id}/lifecycle/activate", options)
       end
 
       # Deactivate Identity Provider
@@ -108,7 +108,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_identity_provider('id')
       def deactivate_identity_provider(id, options = {})
-        post("/idps/#{id}/lifecycle/deactivate", options)
+        post("idps/#{id}/lifecycle/deactivate", options)
       end
 
       # Get Identity Provider Transaction
@@ -124,7 +124,7 @@ module Oktakit
       # @example
       #   Oktakit.get_identity_provider_transaction('transaction_id')
       def get_identity_provider_transaction(transaction_id, options = {})
-        get("/idps/tx/#{transaction_id}", options)
+        get("idps/tx/#{transaction_id}", options)
       end
 
       # Get Source IdP User for IdP Transaction
@@ -140,7 +140,7 @@ module Oktakit
       # @example
       #   Oktakit.get_source_idp_user_for_idp_transaction('transaction_id')
       def get_source_idp_user_for_idp_transaction(transaction_id, options = {})
-        get("/idps/tx/#{transaction_id}/source", options)
+        get("idps/tx/#{transaction_id}/source", options)
       end
 
       # Get Target User for IdP Provision Transaction
@@ -156,7 +156,7 @@ module Oktakit
       # @example
       #   Oktakit.get_target_user_for_idp_provision_transaction('transaction_id')
       def get_target_user_for_idp_provision_transaction(transaction_id, options = {})
-        get("/idps/tx/#{transaction_id}/target", options)
+        get("idps/tx/#{transaction_id}/target", options)
       end
 
       # List Users for IdP Link Transaction
@@ -172,7 +172,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users_for_idp_link_transaction('transaction_id')
       def list_users_for_idp_link_transaction(transaction_id, options = {})
-        get("/idps/tx/#{transaction_id}/users", options)
+        get("idps/tx/#{transaction_id}/users", options)
       end
 
       # Provision IdP User
@@ -188,7 +188,7 @@ module Oktakit
       # @example
       #   Oktakit.provision_idp_user('transaction_id')
       def provision_idp_user(transaction_id, options = {})
-        post("/idps/tx/#{transaction_id}/lifecycle/provision", options)
+        post("idps/tx/#{transaction_id}/lifecycle/provision", options)
       end
 
       # Link IdP User
@@ -205,7 +205,7 @@ module Oktakit
       # @example
       #   Oktakit.link_idp_user('user_id', 'transaction_id')
       def link_idp_user(transaction_id, user_id, options = {})
-        post("/idps/tx/#{transaction_id}/lifecycle/confirm/#{user_id}", options)
+        post("idps/tx/#{transaction_id}/lifecycle/confirm/#{user_id}", options)
       end
 
       # Add X.509 Certificate Public Key
@@ -220,7 +220,7 @@ module Oktakit
       # @example
       #   Oktakit.add_x509_certificate_public_key
       def add_x509_certificate_public_key(options = {})
-        post('/idps/credentials/keys', options)
+        post('idps/credentials/keys', options)
       end
 
       # Get Key
@@ -236,7 +236,7 @@ module Oktakit
       # @example
       #   Oktakit.get_key('key_id')
       def get_key(key_id, options = {})
-        get("/idps/credentials/keys/#{key_id}", options)
+        get("idps/credentials/keys/#{key_id}", options)
       end
 
       # List Keys
@@ -251,7 +251,7 @@ module Oktakit
       # @example
       #   Oktakit.list_keys
       def list_keys(options = {})
-        get('/idps/credentials/keys', options)
+        get('idps/credentials/keys', options)
       end
 
       # Delete Key
@@ -267,7 +267,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_key('key_id')
       def delete_key(key_id, options = {})
-        delete("/idps/credentials/keys/#{key_id}", options)
+        delete("idps/credentials/keys/#{key_id}", options)
       end
     end
   end

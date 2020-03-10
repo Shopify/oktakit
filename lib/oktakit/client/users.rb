@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.create_user
       def create_user(options = {})
-        post('/users', options)
+        post('users', options)
       end
 
       # Get User
@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_user('id')
       def get_user(id, options = {})
-        get("/users/#{id}", options)
+        get("users/#{id}", options)
       end
 
       # List Users
@@ -44,7 +44,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users
       def list_users(options = {})
-        get('/users', options)
+        get('users', options)
       end
 
       # Update User
@@ -62,9 +62,9 @@ module Oktakit
       #   Oktakit.update_user('id')
       def update_user(id, options = {})
         if options.delete(:partial)
-          post("/users/#{id}", options)
+          post("users/#{id}", options)
         else
-          put("/users/#{id}", options)
+          put("users/#{id}", options)
         end
       end
 
@@ -81,7 +81,7 @@ module Oktakit
       # @example
       #   Oktakit.update_profile('id')
       def update_profile(id, options = {})
-        post("/users/#{id}", options)
+        post("users/#{id}", options)
       end
 
       # Get Assigned App Links
@@ -96,7 +96,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_app_links('id')
       def get_assigned_app_links(id, options = {})
-        get("/users/#{id}/appLinks", options)
+        get("users/#{id}/appLinks", options)
       end
 
       # Get Member Groups
@@ -112,7 +112,7 @@ module Oktakit
       # @example
       #   Oktakit.get_member_groups('id')
       def get_member_groups(id, options = {})
-        get("/users/#{id}/groups", options)
+        get("users/#{id}/groups", options)
       end
 
       # Activate User
@@ -128,7 +128,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_user('id')
       def activate_user(id, options = {})
-        post("/users/#{id}/lifecycle/activate", options)
+        post("users/#{id}/lifecycle/activate", options)
       end
 
       # Deactivate User
@@ -144,7 +144,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_user('id')
       def deactivate_user(id, options = {})
-        post("/users/#{id}/lifecycle/deactivate", options)
+        post("users/#{id}/lifecycle/deactivate", options)
       end
 
       # Suspend User
@@ -160,7 +160,7 @@ module Oktakit
       # @example
       #   Oktakit.suspend_user('id')
       def suspend_user(id, options = {})
-        post("/users/#{id}/lifecycle/suspend", options)
+        post("users/#{id}/lifecycle/suspend", options)
       end
 
       # Unsuspend User
@@ -176,7 +176,7 @@ module Oktakit
       # @example
       #   Oktakit.unsuspend_user('id')
       def unsuspend_user(id, options = {})
-        post("/users/#{id}/lifecycle/unsuspend", options)
+        post("users/#{id}/lifecycle/unsuspend", options)
       end
 
       # Unlock User
@@ -192,7 +192,7 @@ module Oktakit
       # @example
       #   Oktakit.unlock_user('id')
       def unlock_user(id, options = {})
-        post("/users/#{id}/lifecycle/unlock", options)
+        post("users/#{id}/lifecycle/unlock", options)
       end
 
       # Reset Password
@@ -208,7 +208,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_password('id')
       def reset_password(id, options = {})
-        post("/users/#{id}/lifecycle/reset_password", options)
+        post("users/#{id}/lifecycle/reset_password", options)
       end
 
       # Expire Password
@@ -224,7 +224,7 @@ module Oktakit
       # @example
       #   Oktakit.expire_password('id')
       def expire_password(id, options = {})
-        post("/users/#{id}/lifecycle/expire_password", options)
+        post("users/#{id}/lifecycle/expire_password", options)
       end
 
       # Reset Factors
@@ -240,7 +240,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_factors('id')
       def reset_factors(id, options = {})
-        post("/users/#{id}/lifecycle/reset_factors", options)
+        post("users/#{id}/lifecycle/reset_factors", options)
       end
 
       # Forgot Password
@@ -256,7 +256,7 @@ module Oktakit
       # @example
       #   Oktakit.forgot_password('id')
       def forgot_password(id, options = {})
-        post("/users/#{id}/credentials/forgot_password", options)
+        post("users/#{id}/credentials/forgot_password", options)
       end
 
       # Change Password
@@ -272,7 +272,7 @@ module Oktakit
       # @example
       #   Oktakit.change_password('id')
       def change_password(id, options = {})
-        post("/users/#{id}/credentials/change_password", options)
+        post("users/#{id}/credentials/change_password", options)
       end
 
       # Change Recovery Question
@@ -288,7 +288,7 @@ module Oktakit
       # @example
       #   Oktakit.change_recovery_question('id')
       def change_recovery_question(id, options = {})
-        post("/users/#{id}/credentials/change_recovery_question", options)
+        post("users/#{id}/credentials/change_recovery_question", options)
       end
 
       # Clear user sessions
@@ -303,7 +303,7 @@ module Oktakit
       # @see https://developer.okta.com/docs/api/resources/users#user-sessions
       #   Oktakit.clear_user_sessions('id')
       def clear_user_sessions(id, options = {})
-        delete("/users/#{id}/sessions", options)
+        delete("users/#{id}/sessions", options)
       end
     end
   end

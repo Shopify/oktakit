@@ -14,7 +14,7 @@ module Oktakit
       # @example
       #   Oktakit.list_roles_assigned_to_user('id')
       def list_roles_assigned_to_user(id, options = {})
-        get("/users/#{id}/roles", options)
+        get("users/#{id}/roles", options)
       end
 
       # Assign Role to User
@@ -30,7 +30,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_role_to_user('id')
       def assign_role_to_user(id, options = {})
-        post("/users/#{id}/roles", options)
+        post("users/#{id}/roles", options)
       end
 
       # Unassign Role from User
@@ -47,7 +47,7 @@ module Oktakit
       # @example
       #   Oktakit.unassign_role_from_user('user_id', 'role_id')
       def unassign_role_from_user(user_id, role_id, options = {})
-        delete("/users/#{user_id}/roles/#{role_id}", options)
+        delete("users/#{user_id}/roles/#{role_id}", options)
       end
 
       # List Group Targets for User Admin Role
@@ -64,7 +64,7 @@ module Oktakit
       # @example
       #   Oktakit.list_group_targets_for_user_admin_role('user_id', 'role_id')
       def list_group_targets_for_user_admin_role(user_id, role_id, options = {})
-        get("/users/#{user_id}/roles/#{role_id}/targets/groups", options)
+        get("users/#{user_id}/roles/#{role_id}/targets/groups", options)
       end
 
       # Add Group Target to User Admin Role
@@ -82,7 +82,7 @@ module Oktakit
       # @example
       #   Oktakit.add_group_target_to_user_admin_role('group_id', 'user_id', 'role_id')
       def add_group_target_to_user_admin_role(user_id, role_id, group_id, options = {})
-        put("/users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
+        put("users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
       end
 
       # Remove Group Target from User Admin Role
@@ -100,7 +100,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_target_from_user_admin_role('group_id', 'user_id', 'role_id')
       def remove_group_target_from_user_admin_role(user_id, role_id, group_id, options = {})
-        delete("/users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
+        delete("users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
       end
 
       # List App Targets for App Admin Role
@@ -117,7 +117,7 @@ module Oktakit
       # @example
       #   Oktakit.list_app_targets_for_app_admin_role('user_id', 'role_id')
       def list_app_targets_for_app_admin_role(user_id, role_id, options = {})
-        get("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps", options)
+        get("users/#{user_id}/roles/#{role_id}/targets/catalog/apps", options)
       end
 
       # Add App Target to App Admin Role
@@ -135,7 +135,7 @@ module Oktakit
       # @example
       #   Oktakit.add_app_target_to_app_admin_role('user_id', 'role_id')
       def add_app_target_to_app_admin_role(user_id, role_id, app_name, options = {})
-        put("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
+        put("users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
       end
 
       # Remove App Target from App Admin Role
@@ -153,7 +153,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_app_target_from_app_admin_role('user_id', 'role_id')
       def remove_app_target_from_app_admin_role(user_id, role_id, app_name, options = {})
-        delete("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
+        delete("users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
       end
     end
   end
