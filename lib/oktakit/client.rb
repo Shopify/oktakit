@@ -201,7 +201,7 @@ module Oktakit
 
     def absolute_to_relative_url(next_ref)
       return unless next_ref
-      
+
       next_ref.href.sub(api_endpoint, '')
     end
   end
