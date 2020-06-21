@@ -36,7 +36,7 @@ module Oktakit
         raise ArgumentError, "Please provide either the organization or the api_endpoint argument"
       end
 
-      if token.nil? && access_token.nil?
+      if (token.nil? && access_token.nil?) || (token && access_token)
         raise ArgumentError, "Please provide either the token or the access_token argument"
       end
 
