@@ -25,15 +25,30 @@ $ bundle
 
 `Oktakit` follows similar patterns as found in [`Octokit`](https://github.com/octokit/octokit.rb). So if you are familiar with Oktakit, then you should feel right at home.
 
-```ruby
-client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
-response, http_status = client.list_users
-```
-
-To work with the Okta sandbox (`<organization>.oktapreview.com`), set the `api_endpoint`:
+To work with the Okta sandbox environments (e.g. `<organization>.oktapreview.com`), set the `api_endpoint`:
 
 ```ruby
 client = Oktakit.new(token: 't0k3n', api_endpoint: 'https://my-great-org.oktapreview.com/api/v1')
+```
+
+For regular okta environments, you can use `organization`:
+
+```ruby
+client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
+```
+
+The return values of each method are tuples, containing the body of the
+response, and the status code.
+
+```ruby
+response, http_status = client.list_users
+```
+
+To analyze the last response, you can call `.last_response`:
+
+```ruby
+response = client.last_response
+headers = response.headers
 ```
 
 #### Pagination
@@ -51,8 +66,3 @@ Thanks for showing interest in contributing! Please read the [Contributing
 Guide](https://github.com/hectron/oktakit/blob/main/.github/CONTRIBUTING.md) before
 submitting a pull request.
 
-1. Fork it ( https://github.com/shopify/oktakit/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
