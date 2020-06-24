@@ -29,7 +29,7 @@ jobs:
         path: vendor/bundle
         key: ${{ runner.os }}-${{ matrix.ruby }}-gems-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
-          ${{ runner.os }}-gems-
+          ${{ runner.os }}-${{ matrix.ruby }}-gems-
     - name: Install dependencies
       if: steps.cache.outputs.cache-hit != 'true'
       run: |
