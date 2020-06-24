@@ -42,7 +42,7 @@ describe Oktakit::Client::Groups do
       VCR.use_cassette 'update_group' do
         resp, = client.update_group(GROUPS_GROUP_ID,
                                     profile: {
-                                      name:        "New Name for the Group",
+                                      name: "New Name for the Group",
                                       description: "New Name for the Group"
                                     })
         expect(resp.profile.name).to be == "New Name for the Group"
@@ -102,19 +102,20 @@ describe Oktakit::Client::Groups do
     it 'returns the create group rule' do
       VCR.use_cassette 'add_group_rule' do
         resp, = client.add_group_rule(
-          name:       'New Group Rule',
-          type:       'group_rule',
+          name: 'New Group Rule',
+          type: 'group_rule',
           conditions: {
             expression: {
-              type:  'urn:okta:expression:1.0',
+              type: 'urn:okta:expression:1.0',
               value: "isMemberOfAnyGroup(\"#{member_of_group_id}\")"
             }
           },
-          actions:    {
+          actions: {
             assignUserToGroups: {
               groupIds: group_ids_to_assign
             }
-          })
+          }
+        )
 
         expect(resp.id).not_to be_nil
       end
@@ -128,15 +129,15 @@ describe Oktakit::Client::Groups do
     it 'returns the updated group rule' do
       VCR.use_cassette 'update_group_rule' do
         resp, = client.update_group_rule(group_rule_id,
-                                         name:       'A New Group Rule',
-                                         type:       'group_rule',
+                                         name: 'A New Group Rule',
+                                         type: 'group_rule',
                                          conditions: {
                                            expression: {
-                                             type:  'urn:okta:expression:1.0',
+                                             type: 'urn:okta:expression:1.0',
                                              value: "isMemberOfAnyGroup(\"#{member_of_group_id}\")"
                                            }
                                          },
-                                         actions:    {
+                                         actions: {
                                            assignUserToGroups: {
                                              groupIds: group_ids_to_assign
                                            }
