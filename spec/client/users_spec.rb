@@ -52,12 +52,12 @@ describe Oktakit::Client::Users do
     it 'returns updated user' do
       VCR.use_cassette 'update_user' do
         resp, = client.update_user(USERS_USER_ID,
-          profile: {
-            firstName: "Bob",
-            lastName: "User",
-            email: "example@example.com",
-            login: "example@example.com"
-          })
+                                   profile: {
+                                     firstName: "Bob",
+                                     lastName: "User",
+                                     email: "example@example.com",
+                                     login: "example@example.com"
+                                   })
         expect(resp.profile.firstName).to be == 'Bob'
       end
     end
@@ -67,13 +67,13 @@ describe Oktakit::Client::Users do
     it 'returns updated user' do
       VCR.use_cassette 'update_user_partial' do
         resp, = client.update_user(USERS_USER_ID,
-          profile: {
-            firstName: "Bob",
-            lastName: "User",
-            email: "example@example.com",
-            login: "example@example.com"
-          },
-          partial: true)
+                                   profile: {
+                                     firstName: "Bob",
+                                     lastName: "User",
+                                     email: "example@example.com",
+                                     login: "example@example.com"
+                                   },
+                                   partial: true)
         expect(resp.profile.firstName).to be == 'Bob'
       end
     end
@@ -83,12 +83,12 @@ describe Oktakit::Client::Users do
     it 'returns updated user' do
       VCR.use_cassette 'update_profile' do
         resp, = client.update_profile(USERS_USER_ID,
-          profile: {
-            firstName: "Other Bob",
-            lastName: "User",
-            email: "example@example.com",
-            login: "example@example.com"
-          })
+                                      profile: {
+                                        firstName: "Other Bob",
+                                        lastName: "User",
+                                        email: "example@example.com",
+                                        login: "example@example.com"
+                                      })
         expect(resp.profile.firstName).to be == 'Other Bob'
       end
     end
@@ -188,8 +188,10 @@ describe Oktakit::Client::Users do
     it 'returns an empty object by default.' do
       VCR.use_cassette 'forgot_password' do
         resp, = client.forgot_password(USERS_USER_ID,
-          password: { value: "123Password!" },
-          recovery_question: { answer: "A woodchuck could chuck as much as he could chuck." })
+                                       password: { value: "123Password!" },
+                                       recovery_question: {
+                                         answer: "A woodchuck could chuck as much as he could chuck."
+                                       })
         expect(resp.password.to_h).to be == {}
       end
     end
@@ -199,8 +201,8 @@ describe Oktakit::Client::Users do
     it 'returns credentials of the user' do
       VCR.use_cassette 'change_password' do
         _, status = client.change_password(USERS_USER_ID,
-          oldPassword: { value: "uTVM,TPw55" },
-          newPassword: { value: "NewPassword1234!" })
+                                           oldPassword: { value: "uTVM,TPw55" },
+                                           newPassword: { value: "NewPassword1234!" })
         expect(status).to be(200)
       end
     end
@@ -210,11 +212,11 @@ describe Oktakit::Client::Users do
     it 'returns credentials of the user' do
       VCR.use_cassette 'change_recovery_question' do
         resp, = client.change_recovery_question(USERS_USER_ID,
-          password: { value: "NewPassword1234!" },
-          recovery_question: {
-            question: "Where is Shopify's HQ?",
-            answer: "Ottawa"
-          })
+                                                password: { value: "NewPassword1234!" },
+                                                recovery_question: {
+                                                  question: "Where is Shopify's HQ?",
+                                                  answer: "Ottawa"
+                                                })
         expect(resp.recovery_question.question).to be == "Where is Shopify's HQ?"
       end
     end
