@@ -31,12 +31,17 @@ module Oktakit
       builder.adapter Faraday.default_adapter
     end
 
-    def initialize(token:, organization: nil, api_endpoint: nil)
+    def initialize(token: nil, access_token: nil, organization: nil, api_endpoint: nil)
       if organization.nil? && api_endpoint.nil?
         raise ArgumentError, "Please provide either the organization or the api_endpoint argument"
       end
 
+      if (token.nil? && access_token.nil?) || (token && access_token)
+        raise ArgumentError, "Please provide either the token or the access_token argument"
+      end
+
       @token = token
+      @access_token = access_token
       @organization = organization
       @api_endpoint = api_endpoint
     end
@@ -182,7 +187,8 @@ module Oktakit
         http.headers[:accept] = 'application/json'
         http.headers[:content_type] = 'application/json'
         http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
-        http.authorization 'SSWS ', @token
+        http.authorization 'SSWS ', @token if @token
+        http.authorization :Bearer, @access_token if @access_token
       end
     end
 
