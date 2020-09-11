@@ -95,7 +95,7 @@ describe Oktakit::Client::IdentityProviders do
   describe '#update_identity_provider' do
     it 'returns updated identity provider' do
       VCR.use_cassette 'update_identity_provider', record: :new_episodes do
-        _, status = client.update_identity_provider(IDENTITY_PROVIDERS_IDENTITY_ID,
+        payload = {
           id: "0oa62bfdjnK55Z5x80h7",
           type: "SAML2",
           name: "Example IdP",
@@ -158,7 +158,9 @@ describe Oktakit::Client::IdentityProviders do
               matchType: "USERNAME"
             },
             maxClockSkew: 120000
-          })
+          }
+        }
+        _, status = client.update_identity_provider(IDENTITY_PROVIDERS_IDENTITY_ID, payload)
         expect(status).to be(200)
       end
     end
@@ -240,9 +242,9 @@ describe Oktakit::Client::IdentityProviders do
     it 'returns identity provider transaction' do
       VCR.use_cassette 'link_idp_user', record: :new_episodes do
         resp, = client.link_idp_user(IDENTITY_PROVIDERS_TRANSACTION_ID, IDENTITY_PROVIDERS_USER_ID,
-          profile: {
-            userType: "Social"
-          })
+                                     profile: {
+                                       userType: "Social"
+                                     })
         expect(resp.id).not_to be_nil
       end
     end

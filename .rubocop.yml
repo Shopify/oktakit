@@ -2,10 +2,7 @@
 #   http://shopify.github.io/ruby-style-guide/
 
 AllCops:
-  TargetRubyVersion: 2.2
-
-Rails:
-  Enabled: false
+  TargetRubyVersion: 2.4
 
 Lint/AssignmentInCondition:
   Enabled: false
@@ -16,10 +13,10 @@ Style/Documentation:
 Layout/MultilineOperationIndentation:
   Enabled: false
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
-Layout/FirstParameterIndentation:
+Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
 
 Style/TrailingCommaInArrayLiteral:
@@ -34,7 +31,7 @@ Style/NumericLiterals:
 Layout/CaseIndentation:
   EnforcedStyle: end
 
-Layout/IndentHash:
+Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Style/WordArray:
@@ -79,9 +76,6 @@ Style/Alias:
   EnforcedStyle: prefer_alias_method
 
 Style/MutableConstant:
-  Enabled: false
-
-Performance/Casecmp:
   Enabled: false
 
 Style/GuardClause:

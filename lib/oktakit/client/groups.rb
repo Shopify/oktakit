@@ -144,6 +144,116 @@ module Oktakit
       def list_assigned_applications(id, options = {})
         get("/groups/#{id}/apps", options)
       end
+
+      # Add Group Rule
+      #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] The created Group Rule.
+      # @see http://developer.okta.com/docs/api/resources/groups.html#create-group-rule
+      # @example
+      #   Oktakit.add_group_rule
+      def add_group_rule(options = {})
+        post('/groups/rules', options)
+      end
+
+      # Update Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] Updated Group Rule
+      # @see http://developer.okta.com/docs/api/resources/groups.html#update-group-rule
+      # @example
+      #   Oktakit.update_group('id')
+      def update_group_rule(id, options = {})
+        put("/groups/rules/#{id}", options)
+      end
+
+      # List Group Rules
+      #
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Array<Sawyer::Resource>] Array of Groups Rules
+      # @see http://developer.okta.com/docs/api/resources/groups.html#list-groups-rules
+      # @example
+      #   Oktakit.list_group_rules
+      def list_group_rules(options = {})
+        get('/groups/rules', options)
+      end
+
+      # Get Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] Fetched Group Rule
+      # @see http://developer.okta.com/docs/api/resources/groups.html#get-group-rule
+      # @example
+      #   Oktakit.get_group_rule('id')
+      def get_group_rule(id, options = {})
+        get("/groups/rules/#{id}", options)
+      end
+
+      # Activate Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return  HTTP 204 No Content
+      # @see http://developer.okta.com/docs/api/resources/groups.html#activate-a-group-rule
+      # @example
+      #   Oktakit.activate_group_rule('id')
+      def activate_group_rule(id, options = {})
+        post("/groups/rules/#{id}/lifecycle/activate", options)
+      end
+
+      # Deactivate Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return  HTTP 204 No Content
+      # @see http://developer.okta.com/docs/api/resources/groups.html#deactivate-a-group-rule
+      # @example
+      #   Oktakit.deactivate_group_rule('id')
+      def deactivate_group_rule(id, options = {})
+        post("/groups/rules/#{id}/lifecycle/deactivate", options)
+      end
+
+      # Delete Group Rule
+      #
+      # @params id [string] Group Rule ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return  HTTP 202 Accepted
+      # @see http://developer.okta.com/docs/api/resources/groups.html#delete-a-group-rule
+      # @example
+      #   Oktakit.delete_group_rule('id')
+      def delete_group_rule(id, options = {})
+        delete("/groups/rules/#{id}", options)
+      end
     end
   end
 end

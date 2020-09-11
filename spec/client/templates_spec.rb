@@ -44,15 +44,15 @@ describe Oktakit::Client::Templates do
     it 'returns updated sms template' do
       VCR.use_cassette 'update_sms_template' do
         _, status = client.update_sms_template(TEMPLATES_TEMPLATE_ID,
-          name: "Custom",
-          type: "SMS_VERIFY_CODE",
-          template: "Your ${org.name} code is: ${code}",
-          translations:
-          {
-            es: "${org.name}: ${code}.",
-            fr: "${org.name}: ${code}.",
-            it: "${org.name}: ${code}."
-          })
+                                               name: "Custom",
+                                               type: "SMS_VERIFY_CODE",
+                                               template: "Your ${org.name} code is: ${code}",
+                                               translations:
+                                               {
+                                                 es: "${org.name}: ${code}.",
+                                                 fr: "${org.name}: ${code}.",
+                                                 it: "${org.name}: ${code}."
+                                               })
         expect(status).to be(200)
       end
     end
@@ -62,9 +62,9 @@ describe Oktakit::Client::Templates do
     it 'returns updated sms template' do
       VCR.use_cassette 'partial_sms_template_update' do
         resp, = client.partial_sms_template_update(TEMPLATES_TEMPLATE_ID,
-          translations: {
-            de: "${org.name}: ihre bestätigungscode ist ${code}."
-          })
+                                                   translations: {
+                                                     de: "${org.name}: ihre bestätigungscode ist ${code}."
+                                                   })
         expect(resp.translations.de).to be == '${org.name}: ihre bestätigungscode ist ${code}.'
       end
     end

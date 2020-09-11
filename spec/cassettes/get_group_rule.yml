@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/groups/rules/0prnztlu4bzSqZ2vG0h7
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.2.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Tue, 22 Oct 2019 00:10:40 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="jZomPEBSDXoipA9un78hKRIeN/+U4ZteRaiX8YpWfqc="; pin-sha256="axSbM6RQ+19oXxudaOTdwXJbSr6f7AahxbDHFy3p8s8=";
+        pin-sha256="SE4qe2vdD9tAegPwO79rMnZyhHvqj3i5g1c2HkyGUNE="; pin-sha256="ylP0lMLMvBaiHn0ihLxHjzvlPVQNoyQ+rMiaj0da/Pw=";
+        max-age=60; report-uri="https://okta.report-uri.io/r/default/hpkp/reportOnly"
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - Xa5JAA8k6jCS0MKkufPZ8AAAE6c
+      x-xss-protection:
+      - 1; mode=block; report=https://oktadev.report-uri.com/r/d/xss/enforce
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '500'
+      x-rate-limit-remaining:
+      - '499'
+      x-rate-limit-reset:
+      - '1571703100'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=1CF3938F271486BDFE1C0418235993D2;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"type":"group_rule","id":"0prnztlu4bzSqZ2vG0h7","status":"INACTIVE","name":"A
+        New Group Rule","created":"2019-10-21T23:43:20.000Z","lastUpdated":"2019-10-21T23:57:49.000Z","conditions":{"expression":{"value":"isMemberOfAnyGroup(\"00gj57nf29Hb16yys0h7\")","type":"urn:okta:expression:1.0"}},"actions":{"assignUserToGroups":{"groupIds":["00gnztfrp0uIKGEf80h7"]}},"allGroupsValid":true}'
+    http_version: 
+  recorded_at: Tue, 22 Oct 2019 00:10:36 GMT
+recorded_with: VCR 2.9.3

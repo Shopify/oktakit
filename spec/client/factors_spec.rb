@@ -45,11 +45,11 @@ describe Oktakit::Client::Factors do
     it 'returns all responses return the enrolled factor with a status of either pending_activation or active.' do
       VCR.use_cassette 'enroll_factor', record: :new_episodes do
         resp, = client.enroll_factor(FACTORS_USER_ID,
-          factorType: "sms",
-          provider: "OKTA",
-          profile: {
-            phoneNumber: "+1-613-456-1234"
-          })
+                                     factorType: "sms",
+                                     provider: "OKTA",
+                                     profile: {
+                                       phoneNumber: "+1-613-456-1234"
+                                     })
         expect(resp.id).not_to be_nil
       end
     end

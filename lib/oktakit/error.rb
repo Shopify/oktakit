@@ -41,7 +41,7 @@ module Oktakit
     # Array of validation errors
     # @return [Array<Hash>] Error info
     def errors
-      if data && data.is_a?(Hash)
+      if data&.is_a?(Hash)
         data[:errors] || []
       else
         []
