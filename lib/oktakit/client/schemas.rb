@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.get_user_schema
       def get_user_schema(options = {})
-        get('/meta/schemas/user/default', options)
+        get('meta/schemas/user/default', options)
       end
 
       # Add Property to User Profile Schema
@@ -28,7 +28,7 @@ module Oktakit
       # @example
       #   Oktakit.add_property_to_user_profile_schema
       def add_property_to_user_profile_schema(options = {})
-        post('/meta/schemas/user/default', options)
+        post('meta/schemas/user/default', options)
       end
 
       # Update User Profile Schema Property
@@ -43,7 +43,7 @@ module Oktakit
       # @example
       #   Oktakit.update_user_profile_schema_property
       def update_user_profile_schema_property(options = {})
-        post('/meta/schemas/user/default', options)
+        post('meta/schemas/user/default', options)
       end
 
       # Remove Property from User Profile Schema
@@ -58,7 +58,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_property_from_user_profile_schema
       def remove_property_from_user_profile_schema(options = {})
-        post('/meta/schemas/user/default', options)
+        post('meta/schemas/user/default', options)
       end
     end
   end

@@ -15,7 +15,7 @@ module Oktakit
       # @example
       #   Oktakit.get_factor('user_id', 'factor_id')
       def get_factor(user_id, factor_id, options = {})
-        get("/users/#{user_id}/factors/#{factor_id}", options)
+        get("users/#{user_id}/factors/#{factor_id}", options)
       end
 
       # List Enrolled Factors
@@ -31,7 +31,7 @@ module Oktakit
       # @example
       #   Oktakit.list_enrolled_factors('user_id')
       def list_enrolled_factors(user_id, options = {})
-        get("/users/#{user_id}/factors", options)
+        get("users/#{user_id}/factors", options)
       end
 
       # List Factors to Enroll
@@ -47,7 +47,7 @@ module Oktakit
       # @example
       #   Oktakit.list_factors_to_enroll('user_id')
       def list_factors_to_enroll(user_id, options = {})
-        get("/users/#{user_id}/factors/catalog", options)
+        get("users/#{user_id}/factors/catalog", options)
       end
 
       # List Security Questions
@@ -63,7 +63,7 @@ module Oktakit
       # @example
       #   Oktakit.list_security_questions('user_id')
       def list_security_questions(user_id, options = {})
-        get("/users/#{user_id}/factors/questions", options)
+        get("users/#{user_id}/factors/questions", options)
       end
 
       # Enroll Factor
@@ -79,7 +79,7 @@ module Oktakit
       # @example
       #   Oktakit.enroll_factor('id')
       def enroll_factor(user_id, options = {})
-        post("/users/#{user_id}/factors", options)
+        post("users/#{user_id}/factors", options)
       end
 
       # Activate Factor
@@ -96,7 +96,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_factor('user_id', 'factor_id')
       def activate_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/lifecycle/activate", options)
+        post("users/#{user_id}/factors/#{factor_id}/lifecycle/activate", options)
       end
 
       # Reset Factor
@@ -113,7 +113,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_factor('user_id', 'factor_id')
       def reset_factor(user_id, factor_id, options = {})
-        delete("/users/#{user_id}/factors/#{factor_id}", options)
+        delete("users/#{user_id}/factors/#{factor_id}", options)
       end
 
       # Verify Security Question Factor
@@ -130,7 +130,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_security_question_factor('user_id', 'factor_id')
       def verify_security_question_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/verify", options)
+        post("users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
       # Verify SMS Factor
@@ -147,7 +147,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_sms_factor('user_id', 'factor_id')
       def verify_sms_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/verify", options)
+        post("users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
       # Verify TOTP Factor
@@ -164,7 +164,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_totp_factor('user_id', 'factor_id')
       def verify_totp_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/verify", options)
+        post("users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
       # Verify Push Factor
@@ -181,7 +181,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_push_factor('user_id', 'factor_id')
       def verify_push_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/verify", options)
+        post("users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
       # Poll for Verify Transaction Completion
@@ -199,7 +199,7 @@ module Oktakit
       # @example
       #   Oktakit.poll_for_verify_transaction_completion('user_id', 'factor_id', 'transaction_id')
       def poll_for_verify_transaction_completion(user_id, factor_id, transaction_id, options = {})
-        get("/users/#{user_id}/factors/#{factor_id}/transactions/#{transaction_id}", options)
+        get("users/#{user_id}/factors/#{factor_id}/transactions/#{transaction_id}", options)
       end
 
       # Verify Token Factor
@@ -216,7 +216,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_token_factor('user_id', 'factor_id')
       def verify_token_factor(user_id, factor_id, options = {})
-        post("/users/#{user_id}/factors/#{factor_id}/verify", options)
+        post("users/#{user_id}/factors/#{factor_id}/verify", options)
       end
     end
   end

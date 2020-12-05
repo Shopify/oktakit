@@ -43,7 +43,7 @@ describe Oktakit do
     ERRORS.each do |code, error|
       it "raises a #{error} on #{code} responses" do
         VCR.use_cassette code do
-          expect { client.get('/users/-1') }.to raise_error(error)
+          expect { client.get('/api/v1/users/-1') }.to raise_error(error)
         end
       end
     end
