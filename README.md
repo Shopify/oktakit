@@ -19,7 +19,7 @@ And then execute:
 
 ## Usage
 
-`Oktakit` follows similar patterns as found in [`Octokit`](https://github.com/octokit/octokit.rb). So if you are familiar with Oktakit, then you should feel right at home.
+`Oktakit` follows similar patterns as found in [`Octokit`](https://github.com/octokit/octokit.rb). So if you are familiar with Octokit, then you should feel right at home.
 
 ```ruby
 client = Oktakit.new(token: 't0k3n', organization: 'my-great-org')
