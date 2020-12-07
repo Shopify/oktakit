@@ -27,8 +27,8 @@ module Oktakit
 
     # Default Faraday middleware stack
     MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
-      builder.use Oktakit::Response::RaiseError
-      builder.adapter Faraday.default_adapter
+      builder.use(Oktakit::Response::RaiseError)
+      builder.adapter(Faraday.default_adapter)
     end
 
     def initialize(token: nil, access_token: nil, organization: nil, api_endpoint: nil)
@@ -68,16 +68,16 @@ module Oktakit
         accept: options.delete(:accept),
         content_type: options.delete(:content_type),
         paginate: should_paginate,
-        data: options
+        data: options,
       }
 
-      resp, status, next_page = request :get, url, **request_options
+      resp, status, next_page = request(:get, url, **request_options)
 
       # If request succeeded and we should paginate, then automatically traverse all next_pages
       if status == 200 && should_paginate
         all_objs = [resp]
         while next_page
-          resp, status, next_page = request :get, next_page, **request_options
+          resp, status, next_page = request(:get, next_page, **request_options)
           break unless status == 200 # Return early if page request fails
 
           all_objs << resp
@@ -98,9 +98,9 @@ module Oktakit
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def post(url, options = {})
-      request :post, url, query: options.delete(:query), headers: options.delete(:headers),
+      request(:post, url, query: options.delete(:query), headers: options.delete(:headers),
                           accept: options.delete(:accept), content_type: options.delete(:content_type),
-                          data: options
+                          data: options)
     end
 
     # Make a HTTP PUT request
@@ -113,9 +113,9 @@ module Oktakit
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def put(url, options = {})
-      request :put, url, query: options.delete(:query), headers: options.delete(:headers),
+      request(:put, url, query: options.delete(:query), headers: options.delete(:headers),
                          accept: options.delete(:accept), content_type: options.delete(:content_type),
-                         data: options
+                         data: options)
     end
 
     # Make a HTTP PATCH request
@@ -128,9 +128,9 @@ module Oktakit
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def patch(url, options = {})
-      request :patch, url, query: options.delete(:query), headers: options.delete(:headers),
+      request(:patch, url, query: options.delete(:query), headers: options.delete(:headers),
                            accept: options.delete(:accept), content_type: options.delete(:content_type),
-                           data: options
+                           data: options)
     end
 
     # Make a HTTP DELETE request
@@ -143,9 +143,9 @@ module Oktakit
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def delete(url, options = {})
-      request :delete, url, query: options.delete(:query), headers: options.delete(:headers),
+      request(:delete, url, query: options.delete(:query), headers: options.delete(:headers),
                             accept: options.delete(:accept), content_type: options.delete(:content_type),
-                            data: options
+                            data: options)
     end
 
     # Make a HTTP HEAD request
@@ -158,9 +158,9 @@ module Oktakit
     # @param options [Hash] Optional. Body params for request.
     # @return [Sawyer::Resource]
     def head(url, options = {})
-      request :head, url, query: options.delete(:query), headers: options.delete(:headers),
+      request(:head, url, query: options.delete(:query), headers: options.delete(:headers),
                           accept: options.delete(:accept), content_type: options.delete(:content_type),
-                          data: options
+                          data: options)
     end
 
     attr_reader :last_response
@@ -187,15 +187,15 @@ module Oktakit
         http.headers[:accept] = 'application/json'
         http.headers[:content_type] = 'application/json'
         http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
-        http.authorization 'SSWS ', @token if @token
-        http.authorization :Bearer, @access_token if @access_token
+        http.authorization('SSWS ', @token) if @token
+        http.authorization(:Bearer, @access_token) if @access_token
       end
     end
 
     def sawyer_options
       {
         links_parser: Sawyer::LinkParsers::Simple.new,
-        faraday: Faraday.new(builder: MIDDLEWARE)
+        faraday: Faraday.new(builder: MIDDLEWARE),
       }
     end
 
