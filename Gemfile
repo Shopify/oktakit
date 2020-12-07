@@ -1,8 +1,10 @@
+# frozen_string_literal: true
 source 'https://rubygems.org'
 
 gem 'byebug'
 gem 'rake'
 gem 'rubocop'
+gem 'rubocop-shopify', require: false
 gem 'yard'
 
 group :test do
