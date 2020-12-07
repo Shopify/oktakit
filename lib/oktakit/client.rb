@@ -77,7 +77,8 @@ module Oktakit
       if status == 200 && should_paginate
         all_objs = [resp]
         while next_page
-          resp, status, next_page = request :get, next_page, **request_options
+          sleep 1.5
+          resp, status, next_page = request :get, next_page, uri_encode_url: false, **request_options
           break unless status == 200 # Return early if page request fails
 
           all_objs << resp
@@ -167,14 +168,15 @@ module Oktakit
 
     private
 
-    def request(method, path, data:, query:, headers:, accept:, content_type:, paginate: false)
+    def request(method, path, data:, query:, headers:, accept:, content_type:, paginate: false, uri_encode_url: true)
       options = {}
       options[:query] = query || {}
       options[:headers] = headers || {}
       options[:headers][:accept] = accept if accept
       options[:headers][:content_type] = content_type if content_type
 
-      uri = URI::DEFAULT_PARSER.escape("/api/v1" + path.to_s)
+      uri = "/api/v1" + path.to_s
+      uri = URI::DEFAULT_PARSER.escape(uri) if uri_encode_url
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
 
       response = [resp.data, resp.status]
