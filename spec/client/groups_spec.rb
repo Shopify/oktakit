@@ -40,10 +40,10 @@ describe Oktakit::Client::Groups do
     it 'returns updated group' do
       VCR.use_cassette 'update_group' do
         resp, = client.update_group(GROUPS_GROUP_ID,
-          profile: {
-            name: "New Name for the Group",
-            description: "New Name for the Group"
-          })
+                                    profile: {
+                                      name: "New Name for the Group",
+                                      description: "New Name for the Group"
+                                    })
         expect(resp.profile.name).to be == "New Name for the Group"
       end
     end

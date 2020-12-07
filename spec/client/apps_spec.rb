@@ -40,8 +40,8 @@ describe Oktakit::Client::Apps do
     it 'returns updated application' do
       VCR.use_cassette 'update_application', record: :new_episodes do
         resp, = client.update_application(APPS_APP_ID,
-          id: APPS_APP_ID,
-          signOnMode: "SAML_2_0")
+                                          id: APPS_APP_ID,
+                                          signOnMode: "SAML_2_0")
         expect(resp.id).to be == APPS_APP_ID
       end
     end
@@ -81,11 +81,11 @@ describe Oktakit::Client::Apps do
     it 'returns application user' do
       VCR.use_cassette 'assign_user_to_application_for_sso' do
         resp, status = client.assign_user_to_application_for_sso(APPS_APP_ID,
-          id: APPS_USER_ID,
-          scope: "USER",
-          credentials: {
-            userName: "user@example.com"
-          })
+                                                                 id: APPS_USER_ID,
+                                                                 scope: "USER",
+                                                                 credentials: {
+                                                                   userName: "user@example.com"
+                                                                 })
         expect(status).to be(200)
         expect(resp.id).to be == '00u6nm9ytbmwHeunx0h7'
       end
@@ -95,11 +95,13 @@ describe Oktakit::Client::Apps do
   describe '#assign_user_to_application_for_sso_provisioning' do
     it 'returns application user with user profile mappings applied' do
       VCR.use_cassette 'assign_user_to_application_for_sso_provisioning', record: :new_episodes do
-        resp, status = client.assign_user_to_application_for_sso_provisioning(APPS_APP_ID,
+        resp, status = client.assign_user_to_application_for_sso_provisioning(
+          APPS_APP_ID,
           id: APPS_USER_ID,
           scope: "USER",
           credentials: { userName: "user@example.com" },
-          profile: {})
+          profile: {}
+        )
         expect(status).to be(200)
         expect(resp.id).to be == '00u6nm9ytbmwHeunx0h7'
       end
@@ -128,12 +130,12 @@ describe Oktakit::Client::Apps do
     it 'returns application user' do
       VCR.use_cassette 'update_application_credentials_for_assigned_user', record: :new_episodes do
         resp, = client.update_application_credentials_for_assigned_user(APPS_APP_ID, APPS_USER_ID,
-          credentials: {
-            userName: "user@example.com",
-            password: {
-              value: "newPassword"
-            }
-          })
+                                                                        credentials: {
+                                                                          userName: "user@example.com",
+                                                                          password: {
+                                                                            value: "newPassword"
+                                                                          }
+                                                                        })
         expect(resp.id).to be == '00u6nm9ytbmwHeunx0h7'
       end
     end

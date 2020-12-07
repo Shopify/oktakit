@@ -2,7 +2,12 @@
 #   http://shopify.github.io/ruby-style-guide/
 
 AllCops:
-  TargetRubyVersion: 2.2
+  TargetRubyVersion: 2.6
+
+# Allow .ruby-version and spec.required_ruby_version to differ
+# to run a newer Ruby version for Rubocop, but don't force users to upgrade
+Gemspec/RequiredRubyVersion:
+  Enabled: false
 
 Rails:
   Enabled: false
@@ -19,7 +24,7 @@ Layout/MultilineOperationIndentation:
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
-Layout/FirstParameterIndentation:
+Layout/IndentFirstArgument:
   EnforcedStyle: consistent
 
 Style/TrailingCommaInArrayLiteral:
@@ -34,7 +39,7 @@ Style/NumericLiterals:
 Layout/CaseIndentation:
   EnforcedStyle: end
 
-Layout/IndentHash:
+Layout/IndentFirstHashElement:
   EnforcedStyle: consistent
 
 Style/WordArray:
