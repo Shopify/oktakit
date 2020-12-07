@@ -3,7 +3,7 @@
 name: oktakit
 
 up:
-  - ruby: 2.3.1
+  - ruby: 2.6.6
   - bundler
 
 commands:
