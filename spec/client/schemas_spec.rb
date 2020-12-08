@@ -5,16 +5,16 @@ describe Oktakit::Client::Schemas do
 
   describe '#get_user_schema' do
     it 'returns user schema' do
-      VCR.use_cassette 'get_user_schema' do
+      VCR.use_cassette('get_user_schema') do
         resp, = client.get_user_schema
-        expect(resp.id).not_to be_nil
+        expect(resp.id).not_to(be_nil)
       end
     end
   end
 
   describe '#add_property_to_user_profile_schema' do
     it 'returns user schema' do
-      VCR.use_cassette 'add_property_to_user_profile_schema' do
+      VCR.use_cassette('add_property_to_user_profile_schema') do
         resp, status = client.add_property_to_user_profile_schema(
           definitions: {
             custom: {
@@ -31,24 +31,24 @@ describe Oktakit::Client::Schemas do
                   permissions: [
                     {
                       principal: "SELF",
-                      action: "READ_WRITE"
-                    }
-                  ]
-                }
+                      action: "READ_WRITE",
+                    },
+                  ],
+                },
               },
-              required: []
-            }
+              required: [],
+            },
           }
         )
-        expect(resp.id).not_to be_nil
-        expect(status).to be(200)
+        expect(resp.id).not_to(be_nil)
+        expect(status).to(be(200))
       end
     end
   end
 
   describe '#update_user_profile_schema_property' do
     it 'returns user schema' do
-      VCR.use_cassette 'update_user_profile_schema_property' do
+      VCR.use_cassette('update_user_profile_schema_property') do
         resp, status = client.update_user_profile_schema_property(
           definitions: {
             custom: {
@@ -65,34 +65,34 @@ describe Oktakit::Client::Schemas do
                   permissions: [
                     {
                       principal: "SELF",
-                      action: "READ_ONLY"
-                    }
-                  ]
-                }
+                      action: "READ_ONLY",
+                    },
+                  ],
+                },
               },
-              required: []
-            }
+              required: [],
+            },
           }
         )
-        expect(resp.id).not_to be_nil
-        expect(status).to be(200)
+        expect(resp.id).not_to(be_nil)
+        expect(status).to(be(200))
       end
     end
   end
 
   describe '#remove_property_from_user_profile_schema' do
     it 'returns user schema' do
-      VCR.use_cassette 'remove_property_from_user_profile_schema' do
+      VCR.use_cassette('remove_property_from_user_profile_schema') do
         _, status = client.remove_property_from_user_profile_schema(
           definitions: {
             custom: {
               id: "#custom",
               type: "object",
-              properties: { twitterUserName: nil }
-            }
+              properties: { twitterUserName: nil },
+            },
           }
         )
-        expect(status).to be(200)
+        expect(status).to(be(200))
       end
     end
   end

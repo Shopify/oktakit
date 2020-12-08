@@ -8,7 +8,7 @@ module Oktakit
     # @return [Oktakit::Error]
     def self.from_response(response)
       status = response[:status].to_i
-      if klass = error(status)
+      if (klass = error(status))
         klass.new(response)
       end
     end
@@ -89,7 +89,7 @@ module Oktakit
 
     def redact_url(url_string)
       %w[client_secret access_token].each do |token|
-        url_string.gsub!(/#{token}=\S+/, "#{token}=(redacted)") if url_string.include? token
+        url_string.gsub!(/#{token}=\S+/, "#{token}=(redacted)") if url_string.include?(token)
       end
       url_string
     end

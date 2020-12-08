@@ -15,7 +15,7 @@ VCR::Response.include(AgentsAccessTokenFilter)
 VCR.configure do |config|
   config.configure_rspec_metadata!
   config.cassette_library_dir = 'spec/cassettes/'
-  config.hook_into :faraday
+  config.hook_into(:faraday)
   config.filter_sensitive_data('<<ACCESS_TOKEN>>') do
     test_okta_token
   end
@@ -26,7 +26,7 @@ VCR.configure do |config|
   end
 end
 
-$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+$LOAD_PATH.unshift(File.expand_path('../lib', __dir__))
 require 'oktakit'
 
 module TestClient
@@ -35,7 +35,7 @@ module TestClient
 end
 
 RSpec.configure do |config|
-  config.include TestClient
+  config.include(TestClient)
 end
 
 def test_okta_token

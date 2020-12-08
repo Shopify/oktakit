@@ -10,7 +10,7 @@ module Oktakit
       private
 
       def on_complete(response)
-        if error = Oktakit::Error.from_response(response)
+        if (error = Oktakit::Error.from_response(response))
           raise error
         end
       end
