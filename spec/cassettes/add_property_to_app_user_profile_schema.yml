@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/meta/schemas/apps/okta-test-application/default
+    body:
+      encoding: UTF-8
+      string: '{"definitions":{"custom":{"id":"#custom","type":"object","properties":{"twitterUserName":{"title":"Twitter
+        username","description":"User''s username for twitter.com","type":"string","required":false,"minLength":1,"maxLength":20,"permissions":[{"principal":"SELF","action":"READ_WRITE"}]}},"required":[]}}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.2.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Tue, 24 Nov 2020 22:18:48 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - X72GyG1WrZbH7bhvTYBHVwAADW4
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '1000'
+      x-rate-limit-remaining:
+      - '997'
+      x-rate-limit-reset:
+      - '1606256351'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=C1329F1A3A486A25DA2FE86573BF7AA1;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"id":"https://okta-test.okta.com/meta/schemas/apps/okta-test-application/default","$schema":"http://json-schema.org/draft-04/schema#","name":"oidc_client_31337","title":"
+        Experiments User","lastUpdated":"2020-11-24T22:18:48.000Z","created":"2020-11-23T18:24:26.000Z","definitions":{"custom":{"id":"#custom","type":"object","properties":{"twitterUserName":{"title":"Twitter
+        username","description":"User''s username for twitter.com","type":"string","scope":"NONE","minLength":1,"maxLength":20,"master":{"type":"PROFILE_MASTER"}}},"required":[]},"base":{"id":"#base","type":"object","properties":{"userName":{"title":"Username","type":"string","required":true,"externalName":"preferred_username","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"name":{"title":"Name","description":"End-User''s
+        full name in displayable form.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"nickname":{"title":"Nickname","description":"Casual
+        name of the End-User (may or may not be the same as the given_name)","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"given_name":{"title":"Given
+        Name","description":"Given name or first name of the End-User.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"middle_name":{"title":"Middle
+        Name","description":"Middle name of the End-User.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"family_name":{"title":"Family
+        Name","description":"Surname or last name of the End-User.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"email":{"title":"Email","description":"End-User''s
+        preferred e-mail address.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"profile":{"title":"Profile
+        URL","description":"URL of the End-User''s profile page.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"picture":{"title":"Picture
+        URL","description":"URL of the End-User''s profile picture.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"website":{"title":"Website","description":"URL
+        of the End-User''s Web page or blog.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"gender":{"title":"Gender","description":"End-User''s
+        gender.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"birthdate":{"title":"Birthdate","description":"End-User''s
+        birthday, represented as an ISO 8601:2004 YYYY-MM-DD format.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"zoneinfo":{"title":"Time
+        Zone","description":"String representing the End-User''s time zone.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"locale":{"title":"Locale
+        Name","description":"ISO3166‑1 country code in uppercase, separated by a dash
+        (e.g. ''en-US'')","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"phone_number":{"title":"Phone
+        Number","description":"End-User''s preferred telephone number in E.164 format.","type":"string","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"street_address":{"title":"Street
+        Address","description":"Full street address component.","type":"string","externalName":"address.street_address","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"locality":{"title":"Locality","description":"City
+        or locality component.","type":"string","externalName":"address.locality","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"region":{"title":"Region","description":"State,
+        province, prefecture, or region component.","type":"string","externalName":"address.region","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"postal_code":{"title":"Postal
+        Code","description":"Zip code or postal code component.","type":"string","externalName":"address.postal_code","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"country":{"title":"Country","description":"Country
+        name component.","type":"string","externalName":"address.country","scope":"SELF","master":{"type":"PROFILE_MASTER"}},"formatted":{"title":"Formatted","description":"Full
+        mailing address, formatted for display.","type":"string","externalName":"address.formatted","scope":"SELF","master":{"type":"PROFILE_MASTER"}}},"required":["userName"]}},"type":"object","properties":{"profile":{"allOf":[{"$ref":"#/definitions/custom"},{"$ref":"#/definitions/base"}]}}}'
+    http_version:
+  recorded_at: Tue, 24 Nov 2020 22:18:48 GMT
+recorded_with: VCR 2.9.3
