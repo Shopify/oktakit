@@ -15,7 +15,9 @@ gem 'oktakit'
 
 And then execute:
 
-    $ bundle
+```sh
+bundle
+```
 
 ## Usage
 
@@ -32,7 +34,8 @@ To work with the Okta sandbox (`<organization>.oktapreview.com`), set the `api_e
 client = Oktakit.new(token: 't0k3n', api_endpoint: 'https://my-great-org.oktapreview.com/api/v1')
 ```
 
-#### Pagination
+### Pagination
+
 Pass the `paginate` flag as options for any `get` action for Oktakit to autopaginate the response for you.
 
 ```ruby
@@ -59,8 +62,13 @@ The [API Test Client](https://developer.okta.com/docs/api/getting_started/api_te
 
 ## Contributing
 
-1. Fork it ( https://github.com/shopify/oktakit/fork )
+1. Fork it ( <https://github.com/hopify/oktakit/fork> )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+### Contributor License Agreement
+
+ New contributors will be required to sign [Shopify's Contributor License Agreement (CLA)](https://cla.shopify.com/).
+ There are two versions of the CLA: one for individuals and one for organizations.
