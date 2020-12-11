@@ -38,6 +38,10 @@ module Oktakit
       super(build_error_message)
     end
 
+    def data
+      @data ||= parse_data
+    end
+
     # Array of validation errors
     # @return [Array<Hash>] Error info
     def errors
@@ -49,10 +53,6 @@ module Oktakit
     end
 
     private
-
-    def data
-      @data ||= parse_data
-    end
 
     def parse_data
       body = @response[:body]
