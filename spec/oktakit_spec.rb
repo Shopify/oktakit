@@ -31,6 +31,7 @@ describe Oktakit do
     409 => Oktakit::Conflict,
     415 => Oktakit::UnsupportedMediaType,
     422 => Oktakit::UnprocessableEntity,
+    429 => Oktakit::RateLimitError,
     418 => Oktakit::ClientError,
     500 => Oktakit::InternalServerError,
     501 => Oktakit::NotImplemented,

@@ -27,6 +27,7 @@ module Oktakit
 
     # Default Faraday middleware stack
     MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
+      builder.use(Faraday::Request::Retry)
       builder.use(Oktakit::Response::RaiseError)
       builder.adapter(Faraday.default_adapter)
     end
