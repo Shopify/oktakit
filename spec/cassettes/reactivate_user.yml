@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7/lifecycle/reactivate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.1.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Fri, 18 Oct 2019 19:39:21 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json;charset=UTF-8
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - V4eU3jgc0PBG8@sl2WlL6QAABpc
+      x-rate-limit-limit:
+      - '1200'
+      x-rate-limit-remaining:
+      - '1199'
+      x-rate-limit-reset:
+      - '1468503322'
+      p3p:
+      - CP="HONK"
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=94B9076507A593F21545B7F006D77604;
+        Path=/
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: "{}"
+    http_version: 
+  recorded_at: Fri, 18 Oct 2019 19:39:21 GMT
+recorded_with: VCR 3.0.3
