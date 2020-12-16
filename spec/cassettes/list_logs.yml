@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://okta-test.okta.com/api/v1/logs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Oktakit v0.3.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Mon, 23 Sep 2019 21:04:35 GMT
+      content-type:
+      - application/json;charset=UTF-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - close
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="jZomPEBSDXoipA9un78hKRIeN/+U4ZteRaiX8YpWfqc="; pin-sha256="axSbM6RQ+19oXxudaOTdwXJbSr6f7AahxbDHFy3p8s8=";
+        pin-sha256="SE4qe2vdD9tAegPwO79rMnZyhHvqj3i5g1c2HkyGUNE="; pin-sha256="ylP0lMLMvBaiHn0ihLxHjzvlPVQNoyQ+rMiaj0da/Pw=";
+        max-age=60; report-uri="https://okta.report-uri.io/r/default/hpkp/reportOnly"
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - XYkzY3yKVU6ghoLZeSGhrQAAA1c
+      x-xss-protection:
+      - 1; mode=block; report=https://oktadev.report-uri.com/r/d/xss/enforce
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '600'
+      x-rate-limit-remaining:
+      - '599'
+      x-rate-limit-reset:
+      - '1569272735'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      report-to:
+      - '{"group":"csp-report","max_age":31536000,"endpoints":[{"url":"https://okta.report-uri.com/r/d/csp/reportOnly"}],"include_subdomains":true}'
+      content-security-policy-report-only:
+      - default-src 'self' op1static.oktacdn.com okta-test.okta.com; connect-src
+        'self' op1static.oktacdn.com *.mixpanel.com *.mapbox.com app.pendo.io data.pendo.io
+        pendo-static-5634101834153984.storage.googleapis.com; script-src 'unsafe-inline'
+        'unsafe-eval' 'self' op1static.oktacdn.com; style-src 'unsafe-inline' 'self'
+        op1static.oktacdn.com app.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com;
+        frame-src 'self' login.okta.com; img-src 'self' op1static.oktacdn.com okta-test.okta.com
+        *.mapbox.com app.pendo.io data.pendo.io cdn.pendo.io pendo-static-5634101834153984.storage.googleapis.com;
+        frame-ancestors 'self'; report-uri https://okta.report-uri.com/r/d/csp/reportOnly;
+        report-to csp-report
+      link:
+      - <https://okta-test.okta.com/api/v1/users?limit=200>; rel="self"
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=1421DC05F96B044916251372C29CD4A0;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '[{"actor":{"id":"sprjaqy8d2OwK2qnq0h7","type":"SystemPrincipal","alternateId":"system@okta.com","displayName":"Okta System","detailEntry":null},"client":{"userAgent":null,"zone":null,"device":null,"id":null,"ipAddress":null,"geographicalContext":null},"authenticationContext":{"authenticationProvider":null,"credentialProvider":null,"credentialType":null,"issuer":null,"interface":null,"authenticationStep":0,"externalSessionId":"trs6DA22ImyTiKKlR0RSfwyeA"},"displayMessage":"import started","eventType":"system.import.start","outcome":{"result":"SUCCESS","reason":null},"published":"2019-07-01T03:23:37.478Z","securityContext":{"asNumber":null,"asOrg":null,"isp":null,"domain":null,"isProxy":null},"severity":"INFO","debugContext":{"debugData":{"jobId":"ij1lxp7303kBQlUT40h7","importType":"Incremental","appname":"google","importTrigger":"Schedule"}},"legacyEventType":"app.generic.import.started","transaction":{"type":"JOB","id":"ij1lxp7303kBQlUT40h7","detail":{}},"uuid":"9d74f291-9baf-11e9-95b6-371469f8aeb0","version":"0","request":{"ipChain":[]},"target":[{"id":"0oaktfd2v7z477UR30h7","type":"AppInstance","alternateId":"G Suite","displayName":"G Suite","detailEntry":null}]},{"actor":{"id":"sprjaqy8d2OwK2qnq0h7","type":"SystemPrincipal","alternateId":"system@okta.com","displayName":"Okta System","detailEntry":null},"client":{"userAgent":null,"zone":null,"device":null,"id":null,"ipAddress":null,"geographicalContext":null},"authenticationContext":{"authenticationProvider":null,"credentialProvider":null,"credentialType":null,"issuer":null,"interface":null,"authenticationStep":0,"externalSessionId":"trs6DA22ImyTiKKlR0RSfwyeA"},"displayMessage":"Batch import process complete","eventType":"system.import.complete_batch","outcome":{"result":"SUCCESS","reason":null},"published":"2019-07-01T03:23:39.299Z","securityContext":{"asNumber":null,"asOrg":null,"isp":null,"domain":null,"isProxy":null},"severity":"INFO","debugContext":{"debugData":{"appname":"google","totalTime":"2 seconds"}},"legacyEventType":"app.generic.import.batch.complete","transaction":{"type":"JOB","id":"ij1lxp7303kBQlUT40h7","detail":{}},"uuid":"9e8acf7f-9baf-11e9-95b6-371469f8aeb0","version":"0","request":{"ipChain":[]},"target":[{"id":"0oaktfd2v7z477UR30h7","type":"AppInstance","alternateId":"G Suite","displayName":"G Suite","detailEntry":null}]}]'
+    http_version: 
+  recorded_at: Mon, 23 Sep 2019 21:04:16 GMT
+recorded_with: VCR 2.9.3

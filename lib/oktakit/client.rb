@@ -7,6 +7,7 @@ require 'oktakit/client/factors'
 require 'oktakit/client/groups'
 require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
+require 'oktakit/client/system_log'
 require 'oktakit/client/templates'
 require 'oktakit/client/users'
 
@@ -19,6 +20,7 @@ module Oktakit
     include Groups
     include IdentityProviders
     include Schemas
+    include SystemLog
     include Templates
     include Users
 
