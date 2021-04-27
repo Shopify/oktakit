@@ -62,7 +62,7 @@ The [API Test Client](https://developer.okta.com/docs/api/getting_started/api_te
 
 ## Contributing
 
-1. Fork it ( <https://github.com/hopify/oktakit/fork> )
+1. Fork it ( <https://github.com/Shopify/oktakit/fork> )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
