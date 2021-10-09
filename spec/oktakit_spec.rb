@@ -5,6 +5,13 @@ describe Oktakit do
     expect(Oktakit::VERSION).not_to(be(nil))
   end
 
+  describe '.new' do
+    it 'creates a client with the passed in keyword arguments' do
+      client = Oktakit.new(token: test_okta_token, organization: 'okta-test')
+      expect(client.api_endpoint).to(eq('https://okta-test.okta.com/api/v1'))
+    end
+  end
+
   describe 'client' do
     it 'has a default API endpoint' do
       client = Oktakit::Client.new(token: test_okta_token, organization: 'okta-test')
