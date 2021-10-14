@@ -2,7 +2,6 @@ require 'spec_helper'
 
 describe Oktakit::Client::GroupRules do
   GROUP_RULE_ID = '0prt3z9wdtNLNPdpL0x7'
-  # GROUPS_USER_ID = '00u6nm9ytbmwHeunx0h7'
 
   describe '#add_group_rule' do
     it 'returns the created group rule' do
