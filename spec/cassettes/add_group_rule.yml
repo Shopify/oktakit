@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/groups/rules
+    body:
+      encoding: UTF-8
+      string: '{"name":"New Group Rule","type":"group_rule","conditions":{"expression":{"type":"urn:okta:expression:1.0","value":"user.title==\"Tester\""}},"actions":{"assignUserToGroups":{"groupIds":["00gt3zbab0n2wn7ik0x7"]}}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.2.0
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message:
+    headers:
+      date:
+      - Thu, 14 Oct 2021 22:19:19 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"type":"group_rule","id":"0prt3z9wdtNLNPdpL0x7","status":"INACTIVE","name":"New
+        Group Rule","conditions":{"expression":{"value":"user.title==\"Tester\"","type":"urn:okta:expression:1.0"}},"actions":{"assignUserToGroups":{"groupIds":["00gt3zbab0n2wn7ik0x7"]}},"allGroupsValid":true}'
+    http_version:
+  recorded_at: Thu, 14 Oct 2021 22:19:19 GMT
+recorded_with: VCR 2.9.3

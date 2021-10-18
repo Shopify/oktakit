@@ -5,6 +5,7 @@ require 'oktakit/client/apps'
 require 'oktakit/client/events'
 require 'oktakit/client/factors'
 require 'oktakit/client/groups'
+require 'oktakit/client/group_rules'
 require 'oktakit/client/identity_providers'
 require 'oktakit/client/schemas'
 require 'oktakit/client/templates'
@@ -17,6 +18,7 @@ module Oktakit
     include Events
     include Factors
     include Groups
+    include GroupRules
     include IdentityProviders
     include Schemas
     include Templates
