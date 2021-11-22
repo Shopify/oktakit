@@ -139,6 +139,15 @@ describe Oktakit::Client::Users do
     end
   end
 
+  describe '#delete_user' do
+    it 'returns an empty object.' do
+      VCR.use_cassette('delete_user') do
+        resp, = client.delete_user(USERS_USER_ID)
+        expect(resp.to_h).to(be == {})
+      end
+    end
+  end
+
   describe '#suspend_user' do
     it 'returns an empty object.' do
       VCR.use_cassette('suspend_user') do

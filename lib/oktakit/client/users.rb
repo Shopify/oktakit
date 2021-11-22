@@ -165,6 +165,24 @@ module Oktakit
         post("/users/#{id}/lifecycle/deactivate", options)
       end
 
+      # Delete User
+      #
+      # @params id [string] User ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] Returns an empty object.
+      # @note Deletes a user permanently. This operation can only be performed on users that have a DEPROVISIONED status. This action cannot be recovered!
+      # This operation on a user that hasn't been deactivated causes that user to be deactivated. A second delete operation is required to delete the user.
+      # @see https://developer.okta.com/docs/api/resources/users#deactivate-user
+      # @example
+      #   Oktakit.delete_user('id')
+      def delete_user(id, options = {})
+        delete("/users/#{id}", options)
+      end
+
       # Suspend User
       #
       # @params id [string] User ID
