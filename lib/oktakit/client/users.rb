@@ -139,7 +139,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns empty object by default. If sendEmail is false, a user reactivation link.
+      # @return [Hash<Sawyer::Resource>].
       # @note The user must be in a PROVISIONED status
       # @see https://developer.okta.com/docs/reference/api/users/#reactivate-user
       # @example
@@ -172,11 +172,11 @@ module Oktakit
       # @param options[:headers] [Hash] Optional. Header params for the request.
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
-      # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] Returns an empty object.
+      # @param options [Hash] Optional. Body params for the request.
+      # @return 204 'No Content'
       # @note Deletes a user permanently. This operation can only be performed on users that have a DEPROVISIONED status. This action cannot be recovered!
       # This operation on a user that hasn't been deactivated causes that user to be deactivated. A second delete operation is required to delete the user.
-      # @see https://developer.okta.com/docs/api/resources/users#deactivate-user
+      # @see https://developer.okta.com/docs/reference/api/users/#delete-user
       # @example
       #   Oktakit.delete_user('id')
       def delete_user(id, options = {})
