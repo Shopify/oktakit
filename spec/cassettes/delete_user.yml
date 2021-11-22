@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.2.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  00AmrrD0Mvd5eVIzaP6wr9BsDDFOUu61zWytQ2yf5o
+  response:
+    status:
+      code: 204
+      message: 
+    headers:
+      date:
+      - Mon, 22 Nov 2021 18:28:44 GMT
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="jZomPEBSDXoipA9un78hKRIeN/+U4ZteRaiX8YpWfqc="; pin-sha256="axSbM6RQ+19oXxudaOTdwXJbSr6f7AahxbDHFy3p8s8=";
+        pin-sha256="SE4qe2vdD9tAegPwO79rMnZyhHvqj3i5g1c2HkyGUNE="; pin-sha256="ylP0lMLMvBaiHn0ihLxHjzvlPVQNoyQ+rMiaj0da/Pw=";
+        max-age=60; report-uri="https://okta.report-uri.com/r/default/hpkp/reportOnly"
+      x-okta-request-id:
+      - YZvhXNDEXRFjP5tqu8tyYwAADP4
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '600'
+      x-rate-limit-remaining:
+      - '599'
+      x-rate-limit-reset:
+      - '1637605784'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      expect-ct:
+      - report-uri="https://oktaexpectct.report-uri.com/r/t/ct/reportOnly", max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=71EBF44305F41332FD492D6DF26BB174;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Mon, 22 Nov 2021 18:28:44 GMT
+recorded_with: VCR 2.9.3

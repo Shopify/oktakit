@@ -142,8 +142,9 @@ describe Oktakit::Client::Users do
   describe '#delete_user' do
     it 'returns an empty object.' do
       VCR.use_cassette('delete_user') do
-        resp, = client.delete_user(USERS_USER_ID)
-        expect(resp.to_h).to(be == {})
+        resp, status = client.delete_user(USERS_USER_ID)
+        expect(resp).to(be_empty)
+        expect(status).to(be == 204)
       end
     end
   end
