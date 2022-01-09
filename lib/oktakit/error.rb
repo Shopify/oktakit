@@ -48,11 +48,11 @@ module Oktakit
       end
     end
 
-    private
-
     def data
       @data ||= parse_data
     end
+
+    private
 
     def parse_data
       body = @response[:body]
