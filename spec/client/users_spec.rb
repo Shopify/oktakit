@@ -121,11 +121,31 @@ describe Oktakit::Client::Users do
     end
   end
 
+  describe '#reactivate_user' do
+    it 'returns activation token by default.' do
+      VCR.use_cassette('reactivate_user') do
+        resp, status = client.reactivate_user(USERS_USER_ID)
+        expect(status).to(be == 200)
+        expect(resp[:activationToken]).to(be == '-9OhPWRjr7_S8t2iV5_w')
+      end
+    end
+  end
+
   describe '#deactivate_user' do
     it 'returns an empty object.' do
       VCR.use_cassette('deactivate_user') do
         resp, = client.deactivate_user(USERS_USER_ID)
         expect(resp.to_h).to(be == {})
+      end
+    end
+  end
+
+  describe '#delete_user' do
+    it 'returns an empty object.' do
+      VCR.use_cassette('delete_user') do
+        resp, status = client.delete_user(USERS_USER_ID)
+        expect(resp).to(be_empty)
+        expect(status).to(be == 204)
       end
     end
   end

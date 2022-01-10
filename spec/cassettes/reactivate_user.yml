@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/users/00u6o0w6tyuPVEeZr0h7/lifecycle/reactivate
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.2.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS  00AmrrD0Mvd5eVIzaP6wr9BsDDFOUu61zWytQ2yf5o
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Mon, 22 Nov 2021 15:41:34 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      public-key-pins-report-only:
+      - pin-sha256="jZomPEBSDXoipA9un78hKRIeN/+U4ZteRaiX8YpWfqc="; pin-sha256="axSbM6RQ+19oXxudaOTdwXJbSr6f7AahxbDHFy3p8s8=";
+        pin-sha256="SE4qe2vdD9tAegPwO79rMnZyhHvqj3i5g1c2HkyGUNE="; pin-sha256="ylP0lMLMvBaiHn0ihLxHjzvlPVQNoyQ+rMiaj0da/Pw=";
+        max-age=60; report-uri="https://okta.report-uri.com/r/default/hpkp/reportOnly"
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - YZu6LeHdLZlyG1fg5pfS@AAAA44
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '600'
+      x-rate-limit-remaining:
+      - '599'
+      x-rate-limit-reset:
+      - '1637595753'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      expect-ct:
+      - report-uri="https://oktaexpectct.report-uri.com/r/t/ct/reportOnly", max-age=0
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=D47AF9D36773B7390C6E69915A514E7D;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"activationToken":"-9OhPWRjr7_S8t2iV5_w"}'
+    http_version: 
+  recorded_at: Mon, 22 Nov 2021 15:41:34 GMT
+recorded_with: VCR 2.9.3
