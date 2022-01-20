@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oktakit (0.3.0)
+    oktakit (0.3.1)
       sawyer (~> 0.8.1)
 
 GEM
