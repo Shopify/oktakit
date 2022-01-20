@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.3.1] - 2022-01-20
+- [Reverts a breaking change that caused errors to be raised for non-2xx responses](https://github.com/Shopify/oktakit/pull/54)
+
 ## [v0.3.0] - 2022-01-20
 - [Adds support for Ruby 3](https://github.com/Shopify/oktakit/pull/42)
 - [Adds support for user reactivation endpoint](https://github.com/Shopify/oktakit/pull/47)
