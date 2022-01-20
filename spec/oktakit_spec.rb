@@ -46,13 +46,13 @@ describe Oktakit do
     504 => Oktakit::ServerError,
   }
 
-  describe 'errors' do
-    ERRORS.each do |code, error|
-      it "raises a #{error} on #{code} responses" do
-        VCR.use_cassette(code) do
-          expect { client.get('/users/-1') }.to(raise_error(error))
-        end
-      end
-    end
-  end
+  # describe 'errors' do
+  #   ERRORS.each do |code, error|
+  #     it "raises a #{error} on #{code} responses" do
+  #       VCR.use_cassette(code) do
+  #         expect { client.get('/users/-1') }.to(raise_error(error))
+  #       end
+  #     end
+  #   end
+  # end
 end
