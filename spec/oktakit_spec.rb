@@ -28,31 +28,32 @@ describe Oktakit do
     end
   end
 
-  ERRORS = {
-    400 => Oktakit::BadRequest,
-    401 => Oktakit::Unauthorized,
-    403 => Oktakit::Forbidden,
-    404 => Oktakit::NotFound,
-    405 => Oktakit::MethodNotAllowed,
-    406 => Oktakit::NotAcceptable,
-    409 => Oktakit::Conflict,
-    415 => Oktakit::UnsupportedMediaType,
-    422 => Oktakit::UnprocessableEntity,
-    418 => Oktakit::ClientError,
-    500 => Oktakit::InternalServerError,
-    501 => Oktakit::NotImplemented,
-    502 => Oktakit::BadGateway,
-    503 => Oktakit::ServiceUnavailable,
-    504 => Oktakit::ServerError,
-  }
+  ERROR_STATUSES = [
+    400,
+    401,
+    403,
+    404,
+    405,
+    406,
+    409,
+    415,
+    422,
+    418,
+    500,
+    501,
+    502,
+    503,
+    504,
+  ]
 
-  # describe 'errors' do
-  #   ERRORS.each do |code, error|
-  #     it "raises a #{error} on #{code} responses" do
-  #       VCR.use_cassette(code) do
-  #         expect { client.get('/users/-1') }.to(raise_error(error))
-  #       end
-  #     end
-  #   end
-  # end
+  describe 'errors' do
+    ERROR_STATUSES.each do |error_status|
+      it "returns a #{error_status} status for #{error_status} responses" do
+        VCR.use_cassette(error_status) do
+          _, response_status = client.get('/users/-1')
+          expect(response_status).to eq(error_status)
+        end
+      end
+    end
+  end
 end
