@@ -24,15 +24,6 @@ module Oktakit
     include Templates
     include Users
 
-    # In Faraday 0.9, Faraday::Builder was renamed to Faraday::RackBuilder
-    RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
-
-    # Default Faraday middleware stack
-    MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
-      builder.use(Oktakit::Response::RaiseError)
-      builder.adapter(Faraday.default_adapter)
-    end
-
     def initialize(token: nil, access_token: nil, organization: nil, api_endpoint: nil)
       if organization.nil? && api_endpoint.nil?
         raise ArgumentError, "Please provide either the organization or the api_endpoint argument"
@@ -185,19 +176,21 @@ module Oktakit
     end
 
     def sawyer_agent
-      @sawyer_agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options) do |http|
-        http.headers[:accept] = 'application/json'
-        http.headers[:content_type] = 'application/json'
-        http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
-        http.authorization('SSWS ', @token) if @token
-        http.authorization(:Bearer, @access_token) if @access_token
-      end
+      @sawyer_agent ||= Sawyer::Agent.new(api_endpoint, sawyer_options)
     end
 
     def sawyer_options
       {
         links_parser: Sawyer::LinkParsers::Simple.new,
-        faraday: Faraday.new(builder: MIDDLEWARE),
+        faraday: Faraday.new do |http|
+          http.use(Oktakit::Response::RaiseError)
+          http.headers[:accept] = "application/json"
+          http.headers[:content_type] = "application/json"
+          http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
+          http.request(:authorization, "SSWS", @token) if @token
+          http.request(:authorization, "Bearer", @access_token) if @access_token
+          http.adapter(Faraday.default_adapter)
+        end,
       }
     end
 
