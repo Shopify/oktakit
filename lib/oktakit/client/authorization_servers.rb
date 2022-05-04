@@ -8,7 +8,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] All responses return the created Authorization Server.
+      # @return [Hash<Sawyer::Resource>] The created Authorization Server
       # @see https://developer.okta.com/docs/reference/api/authorization-servers/#create-authorization-server
       # @example
       #   Oktakit.add_authorization_server
@@ -63,6 +63,22 @@ module Oktakit
         get("/authorizationServers/#{id}/policies", options)
       end
 
+      # Add Authorization Server Policy
+      #
+      # @params id [string] Authorization Server ID
+      # @param options[:query] [Hash] Optional. Query params for request
+      # @param options[:headers] [Hash] Optional. Header params for the request.
+      # @param options[:accept] [String] Optional. The content type to accept. Default application/json
+      # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
+      # @param options [Hash] Optional. Body params for request.
+      # @return [Hash<Sawyer::Resource>] The Created Authorization Server Policy
+      # @see https://developer.okta.com/docs/reference/api/authorization-servers/#create-a-policy
+      # @example
+      #   Oktakit.add_authorization_server_policy('id')
+      def add_authorization_server_policy(id, options = {})
+        post("/authorizationServers/#{id}/policies", options)
+      end
+
       # Update Authorization Server
       #
       # @params id [string] Authorization Server ID
@@ -89,7 +105,7 @@ module Oktakit
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
       # @return [Hash<Sawyer::Resource>] Updated Authorization Server Policy
-      # @see http://developer.okta.com/docs/api/resources/apps.html#get-application
+      # @see https://developer.okta.com/docs/reference/api/authorization-servers/#update-a-policy
       # @example
       #   Oktakit.update_authorization_server_policy('id', 'policy_id')
       def update_authorization_server_policy(id, policy_id, options = {})
@@ -104,7 +120,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] An empty JSON object {}
+      # @return [Hash<Sawyer::Resource>] HTTP 204 No Content
       # @see https://developer.okta.com/docs/reference/api/authorization-servers/#delete-authorization-server
       # @example
       #   Oktakit.delete_authorization_server('id)
@@ -120,7 +136,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] An empty JSON object {}
+      # @return [Hash<Sawyer::Resource>] HTTP 204 No Content
       # @see https://developer.okta.com/docs/reference/api/authorization-servers/#activate-authorization-server
       # @example
       #   Oktakit.activate_authorization_server('id')
@@ -136,7 +152,7 @@ module Oktakit
       # @param options[:accept] [String] Optional. The content type to accept. Default application/json
       # @param options[:content_type] [String] Optional. The content type for the request. Default application/json
       # @param options [Hash] Optional. Body params for request.
-      # @return [Hash<Sawyer::Resource>] An empty JSON object {}
+      # @return [Hash<Sawyer::Resource>] HTTP 204 No Content
       # @see https://developer.okta.com/docs/reference/api/authorization-servers/#deactivate-authorization-server
       # @example
       #   Oktakit.deactivate_authorization_server('id')
