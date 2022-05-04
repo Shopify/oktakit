@@ -13,7 +13,7 @@ module Oktakit
       # @example
       #   Oktakit.add_authorization_server
       def add_authorization_server(options = {})
-        post('/authorizationServers', options)
+        post("/authorizationServers", options)
       end
 
       # Get Authorization Server
@@ -127,7 +127,7 @@ module Oktakit
       def delete_authorization_server(id, options = {})
         delete("/authorizationServers/#{id}", options)
       end
-      
+
       # Activate Authorization Server
       #
       # @params id [string] Authorization Server ID
@@ -143,7 +143,7 @@ module Oktakit
       def activate_authorization_server(id, options = {})
         post("/authorizationServers/#{id}/lifecycle/activate")
       end
-      
+
       # Deactivate Authorization Server
       #
       # @params id [string] Authorization Server ID
