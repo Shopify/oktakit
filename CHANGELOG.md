@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.3.2] - 2022-06-30
+- [Fix 'Faraday::Connection#authorization' deprecation warning](https://github.com/Shopify/oktakit/pull/56)
+
 ## [v0.3.1] - 2022-01-20
 - [Reverts a breaking change that caused errors to be raised for non-2xx responses](https://github.com/Shopify/oktakit/pull/54)
 
