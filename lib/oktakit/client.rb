@@ -189,8 +189,8 @@ module Oktakit
         http.headers[:accept] = 'application/json'
         http.headers[:content_type] = 'application/json'
         http.headers[:user_agent] = "Oktakit v#{Oktakit::VERSION}"
-        http.authorization('SSWS ', @token) if @token
-        http.authorization(:Bearer, @access_token) if @access_token
+        http.headers[:authorization] = "SSWS #{@token}" if @token
+        http.headers[:authorization] = "Bearer #{@access_token}" if @access_token
       end
     end
 
