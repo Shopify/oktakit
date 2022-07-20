@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.3.3] - 2022-07-20
+- [Loosen sawyer dependency to allow 0.9.1](https://github.com/Shopify/oktakit/pull/61)
+
 ## [v0.3.2] - 2022-06-30
 - [Fix 'Faraday::Connection#authorization' deprecation warning](https://github.com/Shopify/oktakit/pull/56)
 
