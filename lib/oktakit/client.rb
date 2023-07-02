@@ -28,9 +28,9 @@ module Oktakit
     RACK_BUILDER_CLASS = defined?(Faraday::RackBuilder) ? Faraday::RackBuilder : Faraday::Builder
 
     # Default Faraday middleware stack
-    MIDDLEWARE = RACK_BUILDER_CLASS.new do |builder|
+    MIDDLEWARE = Faraday::RackBuilder.new do |builder|
       builder.use(Oktakit::Response::RaiseError)
-      builder.adapter(Faraday.default_adapter)
+      builder.adapter(:net_http)
     end
 
     def initialize(token: nil, access_token: nil, organization: nil, api_endpoint: nil)

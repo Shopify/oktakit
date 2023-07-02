@@ -6,7 +6,7 @@ module Oktakit
   module Response
     # This class raises an Oktakit-flavored exception based
     # HTTP status codes returned by the API
-    class RaiseError < Faraday::Response::Middleware
+    class RaiseError < Faraday::Middleware
       private
 
       def on_complete(response)
