@@ -1,5 +1,8 @@
 # Changelog
 
+## [v1.0.0] - 2023-07-12
+- [Upgrade to Faraday 2.x](https://github.com/Shopify/oktakit/pull/68)
+
 ## [v0.3.3] - 2022-07-20
 - [Loosen sawyer dependency to allow 0.9.1](https://github.com/Shopify/oktakit/pull/61)
 
