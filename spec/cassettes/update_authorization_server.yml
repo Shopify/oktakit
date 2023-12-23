@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7
+    body:
+      encoding: UTF-8
+      string: '{"name":"New Authorization Server","description":"Authorization Server
+        New Description","issuerMode":"ORG_URL","audiences":["api://default"]}'
+    headers:
+      User-Agent:
+      - Oktakit v0.3.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 03 May 2022 21:53:34 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      vary:
+      - Accept-Encoding
+      x-okta-request-id:
+      - YnGkXgsoWyB-uZQpAey@NwAABEk
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '100'
+      x-rate-limit-remaining:
+      - '99'
+      x-rate-limit-reset:
+      - '1651614874'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      expect-ct:
+      - report-uri="https://oktaexpectct.report-uri.com/r/t/ct/reportOnly", max-age=0
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, autolaunch_triggered="";
+        Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=26B4E566102F23CCACB3332009E6A5B3;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"id":"aus4wmezfewflnJvd5d7","name":"New Authorization Server","description":"Authorization
+        Server New Description","audiences":["api://default"],"issuer":"https://okta-test.okta.com/oauth2/aus4wmezfewflnJvd5d7","issuerMode":"ORG_URL","status":"ACTIVE","created":"2022-05-03T21:12:24.000Z","lastUpdated":"2022-05-03T21:53:34.000Z","credentials":{"signing":{"kid":"gFiUvGTKoo6ksMgpOHaNQG8hdBuKHbZLE2GWsgW2f00","rotationMode":"AUTO","lastRotated":"2022-05-03T21:12:24.000Z","nextRotation":"2022-08-01T21:12:24.000Z"}},"_links":{"rotateKey":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/credentials/lifecycle/keyRotate","hints":{"allow":["POST"]}},"metadata":[{"name":"oauth-authorization-server","href":"https://okta-test.okta.com/oauth2/aus4wmezfewflnJvd5d7/.well-known/oauth-authorization-server","hints":{"allow":["GET"]}},{"name":"openid-configuration","href":"https://okta-test.okta.com/oauth2/aus4wmezfewflnJvd5d7/.well-known/openid-configuration","hints":{"allow":["GET"]}}],"keys":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/credentials/keys","hints":{"allow":["GET"]}},"claims":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/claims","hints":{"allow":["GET","POST"]}},"policies":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/policies","hints":{"allow":["GET","POST"]}},"self":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7","hints":{"allow":["GET","DELETE","PUT"]}},"scopes":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/scopes","hints":{"allow":["GET","POST"]}},"deactivate":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/lifecycle/deactivate","hints":{"allow":["POST"]}}}}'
+  recorded_at: Tue, 03 May 2022 21:53:34 GMT
+recorded_with: VCR 6.0.0
