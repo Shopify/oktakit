@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/policies
+    body:
+      encoding: UTF-8
+      string: '{"type":"OAUTH_AUTHORIZATION_POLICY","status":"ACTIVE","name":"Default
+        Policy","description":"Default policy description","priority":1,"conditions":{"clients":{"include":["ALL_CLIENTS"]}}}'
+    headers:
+      User-Agent:
+      - Oktakit v0.3.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      date:
+      - Tue, 03 May 2022 21:43:09 GMT
+      content-type:
+      - application/json
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-okta-request-id:
+      - YnGh7eskj45wgfW21rUl@wAABuw
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '100'
+      x-rate-limit-remaining:
+      - '99'
+      x-rate-limit-reset:
+      - '1651614249'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      expect-ct:
+      - report-uri="https://oktaexpectct.report-uri.com/r/t/ct/reportOnly", max-age=0
+      x-content-type-options:
+      - nosniff
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, autolaunch_triggered="";
+        Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=72EED461C6B98253F0494A7C51176B57;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"id":"00p4wmrrbjdlgXfcn5d7","status":"ACTIVE","name":"Default Policy","description":"Default
+        policy description","priority":1,"system":false,"conditions":{"clients":{"include":["ALL_CLIENTS"]}},"created":"2022-05-03T21:43:09.000Z","lastUpdated":"2022-05-03T21:43:09.000Z","_links":{"self":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/policies/00p4wmrrbjdlgXfcn5d7","hints":{"allow":["GET","PUT","DELETE"]}},"rules":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/policies/00p4wmrrbjdlgXfcn5d7/rules","hints":{"allow":["GET"]}},"deactivate":{"href":"https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7/policies/00p4wmrrbjdlgXfcn5d7/lifecycle/deactivate","hints":{"allow":["POST"]}}},"type":"OAUTH_AUTHORIZATION_POLICY"}'
+  recorded_at: Tue, 03 May 2022 21:43:09 GMT
+recorded_with: VCR 6.0.0
