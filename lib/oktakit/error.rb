@@ -6,11 +6,12 @@ module Oktakit
     #
     # @param [Hash] response HTTP response
     # @return [Oktakit::Error]
-    def self.from_response(response)
-      status = response[:status].to_i
-      if (klass = error(status))
-        klass.new(response)
-      end
+    def self.from_response(response, status)
+      status = status.to_i
+
+      return if response.nil? || status.nil? || status.zero?
+
+      (klass = error(status)) ? klass.new(response, status) : nil
     end
 
     def self.error(status)
@@ -33,8 +34,10 @@ module Oktakit
       end
     end
 
-    def initialize(response = nil)
+    def initialize(response = nil, status = nil)
       @response = response
+      @status = status
+
       super(build_error_message)
     end
 
@@ -54,18 +57,16 @@ module Oktakit
 
     private
 
-    def parse_data
-      body = @response[:body]
-      return if body.empty?
-      return body unless body.is_a?(String)
+    attr_reader :response, :status
 
-      headers = @response[:response_headers]
+    def parse_data
+      return '' if response.empty?
+      return response unless response.is_a?(String)
+
+      headers = response[:response_headers]
       content_type = headers && headers[:content_type] || ''
-      if content_type =~ /json/
-        Sawyer::Agent.serializer.decode(body)
-      else
-        body
-      end
+
+      content_type =~ /json/ ? Sawyer::Agent.serializer.decode(body) : body
     end
 
     def response_message
@@ -78,12 +79,13 @@ module Oktakit
     end
 
     def build_error_message
-      return nil if @response.nil?
+      message = ''
 
-      message =  "#{@response[:method].to_s.upcase} "
-      message << redact_url(@response[:url].to_s) + ': '
-      message << "#{@response[:status]} - "
-      message << response_message.to_s unless response_message.nil?
+      message << "#{response[:method].to_s.upcase} " unless response[:method].nil?
+      message << "#{redact_url(response[:url].to_s)} : " unless response[:url].nil?
+      message << status.to_s
+      message << " - #{response_message}" unless response_message.nil? || response_message.empty?
+
       message
     end
 
