@@ -32,7 +32,10 @@ module Oktakit
     # unreserved and reserved sets, plus any "%" that does not start a valid escape sequence.
     # Existing escapes are preserved so already-encoded segments are not encoded twice.
     REQUEST_PATH_UNSAFE = %r{[^\-_.!~*'()a-zA-Z\d;/?:@&=+$,\[\]%]|%(?![0-9A-Fa-f]{2})}n
-    private_constant :PATH_SEGMENT_UNSAFE, :REQUEST_PATH_UNSAFE
+    # A single DNS label: letters, digits and inner hyphens, at most 63 characters.
+    ORGANIZATION_FORMAT = /\A[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\z/i
+
+    private_constant :PATH_SEGMENT_UNSAFE, :REQUEST_PATH_UNSAFE, :ORGANIZATION_FORMAT
 
     # Default Faraday middleware stack
     MIDDLEWARE = Faraday::RackBuilder.new do |builder|
@@ -47,6 +50,12 @@ module Oktakit
 
       if (token.nil? && access_token.nil?) || (token && access_token)
         raise ArgumentError, "Please provide either the token or the access_token argument"
+      end
+
+      # The organization becomes the hostname the token is sent to, so it must be a single DNS label.
+      if api_endpoint.nil? && !ORGANIZATION_FORMAT.match?(organization.to_s)
+        raise ArgumentError, "Invalid organization: #{organization.inspect}. Use the Okta subdomain, " \
+          "e.g. \"my-org\" for my-org.okta.com, or pass api_endpoint instead."
       end
 
       @token = token
