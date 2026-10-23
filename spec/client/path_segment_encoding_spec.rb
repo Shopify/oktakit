@@ -2,8 +2,12 @@ require "spec_helper"
 
 describe "resource ID path encoding" do
   # An ID that tries to escape its path segment with every character that changes the request target.
-  INJECTED_ID = "x/y?z#w%"
-  ENCODED_ID = "x%2Fy%3Fz%23w%25"
+  # IDs containing "/" or ";" are rejected rather than encoded (see SLASH_ID below).
+  INJECTED_ID = "x?z#w%"
+  ENCODED_ID = "x%3Fz%23w%25"
+
+  # Okta decodes "%2F" back into a path separator, so an ID with a slash must never be sent.
+  SLASH_ID = "00uX/factors"
 
   CapturedRequest = Struct.new(:verb, :request_uri, :path, :params)
 
@@ -22,6 +26,7 @@ describe "resource ID path encoding" do
       builder.use(Oktakit::Response::RaiseError)
       builder.adapter(:test, stubs)
     end
+    client.instance_variable_set(:@sawyer_agent, nil) # The client caches its agent; rebuild it on this stub.
     allow(client).to(receive(:sawyer_options).and_return(
       links_parser: Sawyer::LinkParsers::Simple.new,
       faraday: connection,
@@ -38,11 +43,12 @@ describe "resource ID path encoding" do
   end
 
   describe "#get_user" do
-    it "keeps a slash in the ID inside the user segment" do
-      path = capture_request { |c| c.get_user("00uX/factors") }.request_uri
+    it "does not let a slash in the ID reach another endpoint" do
+      requests = capture_requests do |c|
+        expect { c.get_user(SLASH_ID) }.to(raise_error(ArgumentError, /Invalid path segment/))
+      end
 
-      expect(path).not_to(eq("/api/v1/users/00uX/factors"))
-      expect(path).to(eq("/api/v1/users/00uX%2Ffactors"))
+      expect(requests).to(be_empty)
     end
   end
 
@@ -57,7 +63,8 @@ describe "resource ID path encoding" do
       "00uX#fragment" => "00uX%23fragment",
       "100%" => "100%25",
       "00u%2Fx" => "00u%252Fx",
-      "a b;c" => "a%20b%3Bc",
+      "a b" => "a%20b",
+      "a\\b" => "a%5Cb",
       "café" => "caf%C3%A9",
       "..." => "...",
       12345 => "12345",
@@ -68,7 +75,7 @@ describe "resource ID path encoding" do
       end
     end
 
-    [nil, "", ".", ".."].each do |input|
+    [nil, "", ".", "..", "/", "00uX/factors", "user/name@example.com", "00uX;x", "00uX;"].each do |input|
       it "rejects #{input.inspect} without sending a request" do
         requests = capture_requests do |c|
           expect { c.get_user(input) }.to(raise_error(ArgumentError, /Invalid path segment/))
@@ -213,11 +220,24 @@ describe "resource ID path encoding" do
         id_params = mod.instance_method(method_name).parameters.select { |type, _| type == :req }
         next if id_params.empty? || query_id_helpers.include?(method_name)
 
-        it "#{mod.name.split("::").last}##{method_name} keeps every ID inside its own segment" do
+        helper = "#{mod.name.split("::").last}##{method_name}"
+
+        it "#{helper} keeps every ID inside its own segment" do
           request = capture_request { |c| c.public_send(method_name, *Array.new(id_params.size, INJECTED_ID)) }
 
-          expect(request.request_uri).not_to(include("x/y"))
+          expect(request.request_uri).not_to(include("x?z"))
           expect(request.path.scan(ENCODED_ID).size).to(eq(id_params.size))
+        end
+
+        it "#{helper} rejects a slash in any ID without sending a request" do
+          id_params.size.times do |position|
+            args = Array.new(id_params.size, "00uOk")
+            args[position] = SLASH_ID
+            requests = capture_requests do |c|
+              expect { c.public_send(method_name, *args) }.to(raise_error(ArgumentError, /Invalid path segment/))
+            end
+            expect(requests).to(be_empty)
+          end
         end
       end
     end

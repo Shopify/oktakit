@@ -193,16 +193,21 @@ module Oktakit
 
     # Percent-encode a single value for use as one URL path segment.
     #
-    # Characters that would change the request target ("/", "?", "#", "%") are encoded,
-    # as is everything else outside the RFC 3986 unreserved set. Empty values and the
-    # dot segments "." and ".." are rejected, because they resolve to a different resource.
+    # Everything outside the RFC 3986 unreserved set is percent-encoded, including "?", "#"
+    # and "%". Some values cannot be made safe by encoding and are rejected instead:
+    #
+    # - empty values, "." and "..", which resolve to a different resource;
+    # - values containing "/", because Okta decodes "%2F" back into a path separator;
+    # - values containing ";", because Okta ignores everything from ";" (or "%3B") onward.
+    #
+    # Okta only supports fetching logins that contain "/" by user ID.
     #
     # @param value [#to_s] Resource identifier, e.g. an Okta ID or a user login
     # @return [String] The encoded segment
-    # @raise [ArgumentError] If the value is empty, ".", or ".."
+    # @raise [ArgumentError] If the value is empty, ".", "..", or contains "/" or ";"
     def path_segment(value)
       segment = value.to_s
-      if segment.empty? || segment == "." || segment == ".."
+      if segment.empty? || segment == "." || segment == ".." || segment.include?("/") || segment.include?(";")
         raise ArgumentError, "Invalid path segment: #{value.inspect}"
       end
 
