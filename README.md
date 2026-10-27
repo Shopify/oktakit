@@ -49,7 +49,9 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
-To release a new version, update the version number in `version.rb` and the `CHANGELOG.md`, and merge the change to `main`. Then push a `vX.Y.Z` tag for that commit. The `Release` GitHub Actions workflow uses [trusted publishing](https://guides.rubygems.org/trusted-publishing/) to push the gem to [rubygems.org](https://rubygems.org), and then creates a GitHub release for the tag.
+To release a new version, update the version number in `version.rb`, and merge the change to `main`. Then push a `vX.Y.Z` tag for that commit. The `Release` GitHub Actions workflow uses [trusted publishing](https://guides.rubygems.org/trusted-publishing/) to push the gem to [rubygems.org](https://rubygems.org), and then creates a GitHub release for the tag. The release notes list the merged pull requests.
+
+The changes in each version are in the [GitHub releases](https://github.com/Shopify/oktakit/releases).
 
 ## Testing
 
