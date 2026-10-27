@@ -44,7 +44,7 @@ describe Oktakit do
     502,
     503,
     504,
-  ]
+  ].freeze
 
   describe 'errors' do
     ERROR_STATUSES.each do |error_status|

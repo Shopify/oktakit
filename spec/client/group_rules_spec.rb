@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Oktakit::Client::GroupRules do
-  GROUP_RULE_ID = '0prt3z9wdtNLNPdpL0x7'
+  GROUP_RULE_ID = '0prt3z9wdtNLNPdpL0x7'.freeze
 
   describe '#add_group_rule' do
     it 'returns the created group rule' do

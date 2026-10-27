@@ -3,11 +3,11 @@ require "spec_helper"
 describe "resource ID path encoding" do
   # An ID that tries to escape its path segment with every character that changes the request target.
   # IDs containing "/" or ";" are rejected rather than encoded (see SLASH_ID below).
-  INJECTED_ID = "x?z#w%"
-  ENCODED_ID = "x%3Fz%23w%25"
+  INJECTED_ID = "x?z#w%".freeze
+  ENCODED_ID = "x%3Fz%23w%25".freeze
 
   # Okta decodes "%2F" back into a path separator, so an ID with a slash must never be sent.
-  SLASH_ID = "00uX/factors"
+  SLASH_ID = "00uX/factors".freeze
 
   CapturedRequest = Struct.new(:verb, :request_uri, :path, :params)
 

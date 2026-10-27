@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Oktakit::Client::AdminRoles do
-  ADMIN_ROLES_GROUP_ID = '00g6nm9yt5VEl6xYd0h7'
-  ADMIN_ROLES_USER_ID = '00u6nm9ytbmwHeunx0h7'
-  ADMIN_ROLES_APP_NAME = 'googleappsadmin'
+  ADMIN_ROLES_GROUP_ID = '00g6nm9yt5VEl6xYd0h7'.freeze
+  ADMIN_ROLES_USER_ID = '00u6nm9ytbmwHeunx0h7'.freeze
+  ADMIN_ROLES_APP_NAME = 'googleappsadmin'.freeze
 
   describe '#list_roles_assigned_to_user' do
     it 'returns array of role' do

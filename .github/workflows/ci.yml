@@ -25,3 +25,16 @@ jobs:
         bundler-cache: true
     - name: Ruby tests
       run: bundle exec rspec
+
+  lint:
+    runs-on: ubuntu-latest
+    name: RuboCop
+    steps:
+    - name: Check out code
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
+      with:
+        bundler-cache: true
+    - name: RuboCop
+      run: bundle exec rubocop

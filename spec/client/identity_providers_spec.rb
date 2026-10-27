@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 describe Oktakit::Client::IdentityProviders do
-  IDENTITY_PROVIDERS_IDENTITY_ID = '0oa62bfdjnK55Z5x80h7'
-  IDENTITY_PROVIDERS_TRANSACTION_ID = 'satvklBYyJmwa6qOg0g3'
-  IDENTITY_PROVIDERS_KEY_ID = '74bb2164-e0c8-4457-862b-7c29ba6cd2c9'
-  IDENTITY_PROVIDERS_USER_ID = '00u6o0w6tyuPVEeZr0h7'
+  IDENTITY_PROVIDERS_IDENTITY_ID = '0oa62bfdjnK55Z5x80h7'.freeze
+  IDENTITY_PROVIDERS_TRANSACTION_ID = 'satvklBYyJmwa6qOg0g3'.freeze
+  IDENTITY_PROVIDERS_KEY_ID = '74bb2164-e0c8-4457-862b-7c29ba6cd2c9'.freeze
+  IDENTITY_PROVIDERS_USER_ID = '00u6o0w6tyuPVEeZr0h7'.freeze
 
   describe '#add_identity_provider' do
     it 'returns the created identity provider' do
@@ -242,9 +242,9 @@ describe Oktakit::Client::IdentityProviders do
     it 'returns identity provider transaction' do
       VCR.use_cassette('link_idp_user', record: :new_episodes) do
         resp, = client.link_idp_user(IDENTITY_PROVIDERS_TRANSACTION_ID, IDENTITY_PROVIDERS_USER_ID,
-                                     profile: {
-                                       userType: "Social",
-                                     })
+          profile: {
+            userType: "Social",
+          })
         expect(resp.id).not_to(be_nil)
       end
     end
