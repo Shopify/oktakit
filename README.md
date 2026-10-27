@@ -47,7 +47,54 @@ response, http_status = client.list_users(paginate: true)
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`.
+
+## Releasing
+
+Releases use [RubyGems Trusted Publishing](https://guides.rubygems.org/trusted-publishing/)
+through [the release workflow](.github/workflows/release.yml). No RubyGems API key or
+repository secret is needed.
+
+### One-time setup
+
+Before pushing a release tag:
+
+1. A repository administrator must create the `release` GitHub environment, configure
+   required reviewers, and restrict deployments to tags matching `v*`.
+2. An owner of the `oktakit` gem on RubyGems.org must add a GitHub trusted publisher with:
+
+   | Setting | Value |
+   | --- | --- |
+   | Repository owner | `Shopify` |
+   | Repository name | `oktakit` |
+   | Workflow filename | `release.yml` |
+   | Environment | `release` |
+
+   Leave the optional workflow-repository fields blank; this workflow lives in the gem's repository.
+
+The environment name must match on GitHub and RubyGems.org. Merely referencing an
+environment in the workflow does not configure its approval or tag restrictions.
+
+### Publish a version
+
+1. Update `lib/oktakit/version.rb`, `Gemfile.lock`, and `CHANGELOG.md` in a PR.
+2. Merge the PR and confirm CI passes. The tagged commit must include the release workflow.
+3. From a clean, up-to-date checkout of `main`, tag the version and push the tag:
+
+   ```sh
+   git tag -a v1.0.1 -m "Release 1.0.1"
+   git push origin refs/tags/v1.0.1
+   ```
+
+   Substitute the version being released. The workflow rejects tags that do not match
+   `Oktakit::VERSION` or point outside `main`.
+4. Approve the `release` environment deployment and wait for the workflow to succeed.
+5. Verify the version on [RubyGems.org](https://rubygems.org/gems/oktakit), then create
+   a GitHub release from the existing tag.
+
+If authentication fails, check the trusted publisher settings and re-run the failed
+workflow after correcting them. Check RubyGems.org first: do not retry publishing a
+version that already succeeded or move an existing release tag.
 
 ## Testing
 

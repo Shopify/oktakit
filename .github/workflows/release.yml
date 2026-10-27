@@ -1,0 +1,60 @@
+name: Release gem
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rubygems-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'Shopify/oktakit' && !github.event.deleted
+    runs-on: ubuntu-latest
+    environment: release
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Check out release tag
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
+        with:
+          ruby-version: '3.4'
+          bundler: none
+
+      - name: Validate release tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          git merge-base --is-ancestor HEAD origin/main || {
+            echo "::error::Release tags must point to a commit on main"
+            exit 1
+          }
+          ruby -Ilib -roktakit/version <<'RUBY'
+          expected = "v#{Oktakit::VERSION}"
+          abort "Release tag must be #{expected}" unless ENV.fetch("RELEASE_TAG") == expected
+          RUBY
+
+      - name: Build gem
+        run: |
+          mkdir -p pkg
+          gem build oktakit.gemspec --output pkg/oktakit.gem
+
+      - name: Authenticate with RubyGems
+        uses: rubygems/configure-rubygems-credentials@dc5a8d8553e6ee01fc26761a49e99e733d17954a # v2.1.0
+
+      - name: Publish gem
+        run: gem push pkg/oktakit.gem --host https://rubygems.org
