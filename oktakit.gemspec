@@ -5,12 +5,14 @@ require 'oktakit/version'
 Gem::Specification.new do |spec|
   spec.name          = 'oktakit'
   spec.version       = Oktakit::VERSION
-  spec.authors       = ['Graeme Johnson', 'Julian Nadeau']
-  spec.email         = ['graeme.johnson@shopify.com', 'julian@shopify.com']
+  spec.authors       = ['Shopify']
+  spec.email         = ['ruby@shopify.com']
 
   spec.summary       = 'Ruby toolkit for working with the Okta API'
   spec.homepage      = 'https://github.com/Shopify/oktakit'
   spec.license       = 'MIT'
+
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.files         = %x(git ls-files -z).split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'
