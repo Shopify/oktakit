@@ -7,9 +7,7 @@ describe Oktakit::Client::Apps do
 
   describe '#add_application' do
     it 'returns all responses return the created application.' do
-      # rubocop:disable Metrics/LineLength
       params = { "name" => "template_saml_2_0", "label" => "Example SAML App", "signOnMode" => "SAML_2_0", "settings" => { "app" => { "audienceRestriction" => "https://example.com/tenant/123", "forceAuthn" => false, "postBackURL" => "https://example.com/sso/saml", "authnContextClassRef" => "urn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport", "requestCompressed" => "COMPRESSED", "recipient" => "https://example.com/sso/saml", "signAssertion" => "SIGNED", "destination" => "https://example.com/sso/saml", "signResponse" => "SIGNED", "nameIDFormat" => "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress", "groupName" => nil, "groupFilter" => nil, "defaultRelayState" => nil, "configuredIssuer" => nil, "attributeStatements" => nil } } }
-      # rubocop:enable Metrics/LineLength
 
       VCR.use_cassette('add_application') do
         resp, = client.add_application(params)

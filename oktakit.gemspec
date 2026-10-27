@@ -23,5 +23,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency('sawyer', '>= 0.8.1', '< 0.10')
   spec.add_dependency('faraday', '>= 2.0.1', '< 3')
-  spec.add_development_dependency('bundler')
 end
