@@ -38,6 +38,18 @@ describe "Oktakit::Client organization" do
     end
   end
 
+  it "rejects an unsafe organization when api_endpoint is false" do
+    expect do
+      Oktakit::Client.new(token: "t", organization: "evil.example#", api_endpoint: false)
+    end.to(raise_error(ArgumentError, /Invalid organization/))
+  end
+
+  it "uses a valid organization when api_endpoint is false" do
+    client = Oktakit::Client.new(token: "t", organization: "okta-test", api_endpoint: false)
+
+    expect(client.api_endpoint).to(eq("https://okta-test.okta.com/api/v1"))
+  end
+
   it "ignores the organization when api_endpoint is given" do
     client = Oktakit::Client.new(
       token: "t",

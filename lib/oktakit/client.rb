@@ -53,7 +53,7 @@ module Oktakit
       end
 
       # The organization becomes the hostname the token is sent to, so it must be a single DNS label.
-      if api_endpoint.nil? && !ORGANIZATION_FORMAT.match?(organization.to_s)
+      if !api_endpoint && !ORGANIZATION_FORMAT.match?(organization.to_s)
         raise ArgumentError, "Invalid organization: #{organization.inspect}. Use the Okta subdomain, " \
           "e.g. \"my-org\" for my-org.okta.com, or pass api_endpoint instead."
       end
