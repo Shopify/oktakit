@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 # This file strictly follows the rules defined in the Ruby style guide:
 #   http://shopify.github.io/ruby-style-guide/
 inherit_gem:
