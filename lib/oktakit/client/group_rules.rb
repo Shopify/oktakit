@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_group_rule('id')
       def get_group_rule(id, options = {})
-        get("/groups/rules/#{id}", options)
+        get("/groups/rules/#{path_segment(id)}", options)
       end
 
       # List Group Rules
@@ -60,7 +60,7 @@ module Oktakit
       # @example
       #   Oktakit.update_group_rule('id')
       def update_group_rule(id, options = {})
-        put("/groups/rules/#{id}", options)
+        put("/groups/rules/#{path_segment(id)}", options)
       end
 
       # Remove Group Rule
@@ -76,7 +76,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_rule('id')
       def remove_group_rule(id, options = {})
-        delete("/groups/rules/#{id}", options)
+        delete("/groups/rules/#{path_segment(id)}", options)
       end
 
       # Activate Group Rule
@@ -92,7 +92,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_group_rule('id')
       def activate_group_rule(id, options = {})
-        post("/groups/rules/#{id}/lifecycle/activate", options)
+        post("/groups/rules/#{path_segment(id)}/lifecycle/activate", options)
       end
 
       # Deactivate Group Rule
@@ -108,7 +108,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_group_rule('id')
       def deactivate_group_rule(id, options = {})
-        post("/groups/rules/#{id}/lifecycle/deactivate", options)
+        post("/groups/rules/#{path_segment(id)}/lifecycle/deactivate", options)
       end
     end
   end

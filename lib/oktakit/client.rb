@@ -1,3 +1,4 @@
+require "json"
 require 'sawyer'
 require 'oktakit/response/raise_error'
 require 'oktakit/client/admin_roles'
@@ -24,6 +25,18 @@ module Oktakit
     include Templates
     include Users
 
+    # Bytes that path_segment percent-encodes: everything except RFC 3986 unreserved characters.
+    PATH_SEGMENT_UNSAFE = /[^A-Za-z0-9\-._~]/n
+
+    # Bytes that request percent-encodes in a full path: everything outside the RFC 2396
+    # unreserved and reserved sets, plus any "%" that does not start a valid escape sequence.
+    # Existing escapes are preserved so already-encoded segments are not encoded twice.
+    REQUEST_PATH_UNSAFE = %r{[^\-_.!~*'()a-zA-Z\d;/?:@&=+$,\[\]%]|%(?![0-9A-Fa-f]{2})}n
+    # A single DNS label: letters, digits and inner hyphens, at most 63 characters.
+    ORGANIZATION_FORMAT = /\A[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\z/i
+
+    private_constant :PATH_SEGMENT_UNSAFE, :REQUEST_PATH_UNSAFE, :ORGANIZATION_FORMAT
+
     # Default Faraday middleware stack
     MIDDLEWARE = Faraday::RackBuilder.new do |builder|
       builder.use(Oktakit::Response::RaiseError)
@@ -37,6 +50,12 @@ module Oktakit
 
       if (token.nil? && access_token.nil?) || (token && access_token)
         raise ArgumentError, "Please provide either the token or the access_token argument"
+      end
+
+      # The organization becomes the hostname the token is sent to, so it must be a single DNS label.
+      if !api_endpoint && !ORGANIZATION_FORMAT.match?(organization.to_s)
+        raise ArgumentError, "Invalid organization: #{organization.inspect}. Use the Okta subdomain, " \
+          "e.g. \"my-org\" for my-org.okta.com, or pass api_endpoint instead."
       end
 
       @token = token
@@ -173,12 +192,43 @@ module Oktakit
       options[:headers][:accept] = accept if accept
       options[:headers][:content_type] = content_type if content_type
 
-      uri = URI::DEFAULT_PARSER.escape("/api/v1" + path.to_s)
+      uri = escape_request_path("/api/v1" + path.to_s)
       @last_response = resp = sawyer_agent.call(method, uri, data, options)
 
       response = [resp.data, resp.status]
       response << absolute_to_relative_url(resp.rels[:next]) if paginate
       response
+    end
+
+    # Percent-encode a single value for use as one URL path segment.
+    #
+    # Everything outside the RFC 3986 unreserved set is percent-encoded, including "?", "#"
+    # and "%". Some values cannot be made safe by encoding and are rejected instead:
+    #
+    # - empty values, "." and "..", which resolve to a different resource;
+    # - values containing "/", because Okta decodes "%2F" back into a path separator;
+    # - values containing ";", because Okta ignores everything from ";" (or "%3B") onward.
+    #
+    # Okta only supports fetching logins that contain "/" by user ID.
+    #
+    # @param value [#to_s] Resource identifier, e.g. an Okta ID or a user login
+    # @return [String] The encoded segment
+    # @raise [ArgumentError] If the value is empty, ".", "..", or contains "/" or ";"
+    def path_segment(value)
+      segment = value.to_s
+      if segment.empty? || segment == "." || segment == ".." || segment.include?("/") || segment.include?(";")
+        raise ArgumentError, "Invalid path segment: #{value.inspect}"
+      end
+
+      percent_encode(segment, PATH_SEGMENT_UNSAFE)
+    end
+
+    def escape_request_path(path)
+      percent_encode(path, REQUEST_PATH_UNSAFE)
+    end
+
+    def percent_encode(string, unsafe)
+      string.b.gsub(unsafe) { |byte| format("%%%02X", byte.ord) }.force_encoding(Encoding::US_ASCII)
     end
 
     def sawyer_agent

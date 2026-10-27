@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_group('id')
       def get_group(id, options = {})
-        get("/groups/#{id}", options)
+        get("/groups/#{path_segment(id)}", options)
       end
 
       # List Groups
@@ -60,7 +60,7 @@ module Oktakit
       # @example
       #   Oktakit.update_group('id')
       def update_group(id, options = {})
-        put("/groups/#{id}", options)
+        put("/groups/#{path_segment(id)}", options)
       end
 
       # Remove Group
@@ -76,7 +76,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group('id')
       def remove_group(id, options = {})
-        delete("/groups/#{id}", options)
+        delete("/groups/#{path_segment(id)}", options)
       end
 
       # List Group Members
@@ -92,7 +92,7 @@ module Oktakit
       # @example
       #   Oktakit.list_group_members('id')
       def list_group_members(id, options = {})
-        get("/groups/#{id}/users", options)
+        get("/groups/#{path_segment(id)}/users", options)
       end
 
       # Add User to Group
@@ -109,7 +109,7 @@ module Oktakit
       # @example
       #   Oktakit.add_user_to_group('group_id', 'user_id')
       def add_user_to_group(group_id, user_id, options = {})
-        put("/groups/#{group_id}/users/#{user_id}", options)
+        put("/groups/#{path_segment(group_id)}/users/#{path_segment(user_id)}", options)
       end
 
       # Remove User from Group
@@ -126,7 +126,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_user_from_group('group_id', 'user_id')
       def remove_user_from_group(group_id, user_id, options = {})
-        delete("/groups/#{group_id}/users/#{user_id}", options)
+        delete("/groups/#{path_segment(group_id)}/users/#{path_segment(user_id)}", options)
       end
 
       # List Assigned Applications
@@ -142,7 +142,7 @@ module Oktakit
       # @example
       #   Oktakit.list_assigned_applications('id')
       def list_assigned_applications(id, options = {})
-        get("/groups/#{id}/apps", options)
+        get("/groups/#{path_segment(id)}/apps", options)
       end
     end
   end

@@ -74,7 +74,7 @@ module Oktakit
       # @example
       #   Oktakit.get_app_user_schema('id')
       def get_app_user_schema(id, options = {})
-        get("/meta/schemas/apps/#{id}/default", options)
+        get("/meta/schemas/apps/#{path_segment(id)}/default", options)
       end
 
       # Add Property to App User Profile Schema
@@ -90,7 +90,7 @@ module Oktakit
       # @example
       #   Oktakit.add_property_to_app_user_profile_schema('id')
       def add_property_to_app_user_profile_schema(id, options = {})
-        post("/meta/schemas/apps/#{id}/default", options)
+        post("/meta/schemas/apps/#{path_segment(id)}/default", options)
       end
 
       # Update App User Profile Schema property
@@ -106,7 +106,7 @@ module Oktakit
       # @example
       #   Oktakit.update_app_user_profile_schema_property('id')
       def update_app_user_profile_schema_property(id, options = {})
-        post("/meta/schemas/apps/#{id}/default", options)
+        post("/meta/schemas/apps/#{path_segment(id)}/default", options)
       end
 
       # Remove property from App User Profile Schema
@@ -122,7 +122,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_property_from_app_user_profile_schema('id')
       def remove_property_from_app_user_profile_schema(id, options = {})
-        post("/meta/schemas/apps/#{id}/default", options)
+        post("/meta/schemas/apps/#{path_segment(id)}/default", options)
       end
     end
   end

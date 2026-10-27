@@ -29,7 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_sms_template('id')
       def get_sms_template(id, options = {})
-        get("/templates/sms/#{id}", options)
+        get("/templates/sms/#{path_segment(id)}", options)
       end
 
       # List SMS Templates
@@ -60,7 +60,7 @@ module Oktakit
       # @example
       #   Oktakit.update_sms_template('id')
       def update_sms_template(id, options = {})
-        put("/templates/sms/#{id}", options)
+        put("/templates/sms/#{path_segment(id)}", options)
       end
 
       # Partial SMS Template Update
@@ -76,7 +76,7 @@ module Oktakit
       # @example
       #   Oktakit.partial_sms_template_update('id')
       def partial_sms_template_update(id, options = {})
-        post("/templates/sms/#{id}", options)
+        post("/templates/sms/#{path_segment(id)}", options)
       end
 
       # Remove SMS Template
@@ -92,7 +92,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_sms_template('id')
       def remove_sms_template(id, options = {})
-        delete("/templates/sms/#{id}", options)
+        delete("/templates/sms/#{path_segment(id)}", options)
       end
     end
   end
