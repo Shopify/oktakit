@@ -117,8 +117,8 @@ module Oktakit
     # @return [Sawyer::Resource]
     def post(url, options = {})
       request(:post, url, query: options.delete(:query), headers: options.delete(:headers),
-                          accept: options.delete(:accept), content_type: options.delete(:content_type),
-                          data: options)
+        accept: options.delete(:accept), content_type: options.delete(:content_type),
+        data: options)
     end
 
     # Make a HTTP PUT request
@@ -132,8 +132,8 @@ module Oktakit
     # @return [Sawyer::Resource]
     def put(url, options = {})
       request(:put, url, query: options.delete(:query), headers: options.delete(:headers),
-                         accept: options.delete(:accept), content_type: options.delete(:content_type),
-                         data: options)
+        accept: options.delete(:accept), content_type: options.delete(:content_type),
+        data: options)
     end
 
     # Make a HTTP PATCH request
@@ -147,8 +147,8 @@ module Oktakit
     # @return [Sawyer::Resource]
     def patch(url, options = {})
       request(:patch, url, query: options.delete(:query), headers: options.delete(:headers),
-                           accept: options.delete(:accept), content_type: options.delete(:content_type),
-                           data: options)
+        accept: options.delete(:accept), content_type: options.delete(:content_type),
+        data: options)
     end
 
     # Make a HTTP DELETE request
@@ -162,8 +162,8 @@ module Oktakit
     # @return [Sawyer::Resource]
     def delete(url, options = {})
       request(:delete, url, query: options.delete(:query), headers: options.delete(:headers),
-                            accept: options.delete(:accept), content_type: options.delete(:content_type),
-                            data: options)
+        accept: options.delete(:accept), content_type: options.delete(:content_type),
+        data: options)
     end
 
     # Make a HTTP HEAD request
@@ -177,8 +177,8 @@ module Oktakit
     # @return [Sawyer::Resource]
     def head(url, options = {})
       request(:head, url, query: options.delete(:query), headers: options.delete(:headers),
-                          accept: options.delete(:accept), content_type: options.delete(:content_type),
-                          data: options)
+        accept: options.delete(:accept), content_type: options.delete(:content_type),
+        data: options)
     end
 
     attr_reader :last_response

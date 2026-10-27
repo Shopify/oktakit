@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Oktakit::Client::Groups do
-  GROUPS_GROUP_ID = '00g6o0uh8xcL5WbyZ0h7'
-  GROUPS_USER_ID = '00u6nm9ytbmwHeunx0h7'
+  GROUPS_GROUP_ID = '00g6o0uh8xcL5WbyZ0h7'.freeze
+  GROUPS_USER_ID = '00u6nm9ytbmwHeunx0h7'.freeze
 
   describe '#add_group' do
     it 'returns the created group.' do
@@ -40,10 +40,10 @@ describe Oktakit::Client::Groups do
     it 'returns updated group' do
       VCR.use_cassette('update_group') do
         resp, = client.update_group(GROUPS_GROUP_ID,
-                                    profile: {
-                                      name: "New Name for the Group",
-                                      description: "New Name for the Group",
-                                    })
+          profile: {
+            name: "New Name for the Group",
+            description: "New Name for the Group",
+          })
         expect(resp.profile.name).to(be == "New Name for the Group")
       end
     end

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Oktakit::Client::Factors do
-  FACTORS_USER_ID = '00u6nm9ytbmwHeunx0h7'
-  FACTORS_FACTOR_ID = 'mbl6o3uhd97Rc2PM70h7'
-  FACTORS_TRANSACTION_ID = 'mbl6o3uhd97Rc2PM70h7'
+  FACTORS_USER_ID = '00u6nm9ytbmwHeunx0h7'.freeze
+  FACTORS_FACTOR_ID = 'mbl6o3uhd97Rc2PM70h7'.freeze
+  FACTORS_TRANSACTION_ID = 'mbl6o3uhd97Rc2PM70h7'.freeze
 
   describe '#get_factor' do
     it 'returns factor' do
@@ -45,11 +45,11 @@ describe Oktakit::Client::Factors do
     it 'returns all responses return the enrolled factor with a status of either pending_activation or active.' do
       VCR.use_cassette('enroll_factor', record: :new_episodes) do
         resp, = client.enroll_factor(FACTORS_USER_ID,
-                                     factorType: "sms",
-                                     provider: "OKTA",
-                                     profile: {
-                                       phoneNumber: "+1-613-456-1234",
-                                     })
+          factorType: "sms",
+          provider: "OKTA",
+          profile: {
+            phoneNumber: "+1-613-456-1234",
+          })
         expect(resp.id).not_to(be_nil)
       end
     end
