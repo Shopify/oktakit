@@ -29,6 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_group('id')
       def get_group(id, options = {})
+        validate_resource_ids(id)
         get("/groups/#{id}", options)
       end
 
@@ -60,6 +61,7 @@ module Oktakit
       # @example
       #   Oktakit.update_group('id')
       def update_group(id, options = {})
+        validate_resource_ids(id)
         put("/groups/#{id}", options)
       end
 
@@ -76,6 +78,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group('id')
       def remove_group(id, options = {})
+        validate_resource_ids(id)
         delete("/groups/#{id}", options)
       end
 
@@ -92,6 +95,7 @@ module Oktakit
       # @example
       #   Oktakit.list_group_members('id')
       def list_group_members(id, options = {})
+        validate_resource_ids(id)
         get("/groups/#{id}/users", options)
       end
 
@@ -109,6 +113,7 @@ module Oktakit
       # @example
       #   Oktakit.add_user_to_group('group_id', 'user_id')
       def add_user_to_group(group_id, user_id, options = {})
+        validate_resource_ids(group_id, user_id)
         put("/groups/#{group_id}/users/#{user_id}", options)
       end
 
@@ -126,6 +131,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_user_from_group('group_id', 'user_id')
       def remove_user_from_group(group_id, user_id, options = {})
+        validate_resource_ids(group_id, user_id)
         delete("/groups/#{group_id}/users/#{user_id}", options)
       end
 
@@ -142,6 +148,7 @@ module Oktakit
       # @example
       #   Oktakit.list_assigned_applications('id')
       def list_assigned_applications(id, options = {})
+        validate_resource_ids(id)
         get("/groups/#{id}/apps", options)
       end
     end

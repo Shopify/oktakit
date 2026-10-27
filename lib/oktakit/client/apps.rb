@@ -29,6 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_application('id')
       def get_application(id, options = {})
+        validate_resource_ids(id)
         get("/apps/#{id}", options)
       end
 
@@ -60,6 +61,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application('id')
       def update_application(id, options = {})
+        validate_resource_ids(id)
         put("/apps/#{id}", options)
       end
 
@@ -76,6 +78,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_application('id')
       def delete_application(id, options = {})
+        validate_resource_ids(id)
         delete("/apps/#{id}", options)
       end
 
@@ -92,6 +95,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_application('id')
       def activate_application(id, options = {})
+        validate_resource_ids(id)
         post("/apps/#{id}/lifecycle/activate", options)
       end
 
@@ -108,6 +112,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_application('id')
       def deactivate_application(id, options = {})
+        validate_resource_ids(id)
         post("/apps/#{id}/lifecycle/deactivate", options)
       end
 
@@ -124,6 +129,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_user_to_application_for_sso('id')
       def assign_user_to_application_for_sso(id, options = {})
+        validate_resource_ids(id)
         post("/apps/#{id}/users", options)
       end
 
@@ -140,6 +146,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_user_to_application_for_sso_provisioning('id')
       def assign_user_to_application_for_sso_provisioning(id, options = {})
+        validate_resource_ids(id)
         post("/apps/#{id}/users", options)
       end
 
@@ -157,6 +164,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_user_for_application('user_id', 'app_id')
       def get_assigned_user_for_application(app_id, user_id, options = {})
+        validate_resource_ids(app_id, user_id)
         get("/apps/#{app_id}/users/#{user_id}", options)
       end
 
@@ -173,6 +181,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users_assigned_to_application('id')
       def list_users_assigned_to_application(id, options = {})
+        validate_resource_ids(id)
         get("/apps/#{id}/users", options)
       end
 
@@ -189,7 +198,12 @@ module Oktakit
       # @example
       #  Oktakit.list_applications_assigned_to_user('<user_id>')
       def list_applications_assigned_to_user(user_id, options = {})
-        get("/apps?filter=user.id+eq+\"#{user_id}\"&expand=user/#{user_id}", options)
+        validate_resource_ids(user_id)
+
+        query = (options[:query] || {}).reject { |key, _| ["filter", "expand"].include?(key.to_s) }
+        query[:filter] = "user.id eq #{JSON.generate(user_id)}"
+        query[:expand] = "user/#{user_id}"
+        get("/apps", options.merge(query: query))
       end
 
       # Update Application Credentials for Assigned User
@@ -206,6 +220,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application_credentials_for_assigned_user('user_id', 'app_id')
       def update_application_credentials_for_assigned_user(app_id, user_id, options = {})
+        validate_resource_ids(app_id, user_id)
         post("/apps/#{app_id}/users/#{user_id}", options)
       end
 
@@ -223,6 +238,7 @@ module Oktakit
       # @example
       #   Oktakit.update_application_profile_for_assigned_user('user_id', 'app_id')
       def update_application_profile_for_assigned_user(app_id, user_id, options = {})
+        validate_resource_ids(app_id, user_id)
         post("/apps/#{app_id}/users/#{user_id}", options)
       end
 
@@ -240,6 +256,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_user_from_application('user_id', 'app_id')
       def remove_user_from_application(app_id, user_id, options = {})
+        validate_resource_ids(app_id, user_id)
         delete("/apps/#{app_id}/users/#{user_id}", options)
       end
 
@@ -257,6 +274,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_group_to_application('group_id', 'app_id')
       def assign_group_to_application(app_id, group_id, options = {})
+        validate_resource_ids(app_id, group_id)
         put("/apps/#{app_id}/groups/#{group_id}", options)
       end
 
@@ -274,6 +292,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_group_for_application('group_id', 'app_id')
       def get_assigned_group_for_application(app_id, group_id, options = {})
+        validate_resource_ids(app_id, group_id)
         get("/apps/#{app_id}/groups/#{group_id}", options)
       end
 
@@ -290,6 +309,7 @@ module Oktakit
       # @example
       #   Oktakit.list_groups_assigned_to_application('id')
       def list_groups_assigned_to_application(id, options = {})
+        validate_resource_ids(id)
         get("/apps/#{id}/groups", options)
       end
 
@@ -307,6 +327,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_from_application('group_id', 'app_id')
       def remove_group_from_application(app_id, group_id, options = {})
+        validate_resource_ids(app_id, group_id)
         delete("/apps/#{app_id}/groups/#{group_id}", options)
       end
 
@@ -323,6 +344,7 @@ module Oktakit
       # @example
       #   Oktakit.generate_new_application_key_credential('app_id')
       def generate_new_application_key_credential(app_id, options = {})
+        validate_resource_ids(app_id)
         post("/apps/#{app_id}/credentials/keys/generate", options)
       end
 
@@ -339,6 +361,7 @@ module Oktakit
       # @example
       #   Oktakit.list_key_credentials_for_application('app_id')
       def list_key_credentials_for_application(app_id, options = {})
+        validate_resource_ids(app_id)
         get("/apps/#{app_id}/credentials/keys", options)
       end
 
@@ -356,6 +379,7 @@ module Oktakit
       # @example
       #   Oktakit.get_key_credential_for_application('app_id', 'key_id')
       def get_key_credential_for_application(app_id, key_id, options = {})
+        validate_resource_ids(app_id, key_id)
         get("/apps/#{app_id}/credentials/keys/#{key_id}", options)
       end
 
@@ -372,6 +396,7 @@ module Oktakit
       # @example
       #   Oktakit.preview_saml_metadata_for_application('app_id')
       def preview_saml_metadata_for_application(app_id, options = {})
+        validate_resource_ids(app_id)
         get("/apps/#{app_id}/sso/saml/metadata", options)
       end
     end

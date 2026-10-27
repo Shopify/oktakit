@@ -14,6 +14,7 @@ module Oktakit
       # @example
       #   Oktakit.list_roles_assigned_to_user('id')
       def list_roles_assigned_to_user(id, options = {})
+        validate_resource_ids(id)
         get("/users/#{id}/roles", options)
       end
 
@@ -30,6 +31,7 @@ module Oktakit
       # @example
       #   Oktakit.assign_role_to_user('id')
       def assign_role_to_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/roles", options)
       end
 
@@ -47,6 +49,7 @@ module Oktakit
       # @example
       #   Oktakit.unassign_role_from_user('user_id', 'role_id')
       def unassign_role_from_user(user_id, role_id, options = {})
+        validate_resource_ids(user_id, role_id)
         delete("/users/#{user_id}/roles/#{role_id}", options)
       end
 
@@ -64,6 +67,7 @@ module Oktakit
       # @example
       #   Oktakit.list_group_targets_for_user_admin_role('user_id', 'role_id')
       def list_group_targets_for_user_admin_role(user_id, role_id, options = {})
+        validate_resource_ids(user_id, role_id)
         get("/users/#{user_id}/roles/#{role_id}/targets/groups", options)
       end
 
@@ -82,6 +86,7 @@ module Oktakit
       # @example
       #   Oktakit.add_group_target_to_user_admin_role('group_id', 'user_id', 'role_id')
       def add_group_target_to_user_admin_role(user_id, role_id, group_id, options = {})
+        validate_resource_ids(user_id, role_id, group_id)
         put("/users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
       end
 
@@ -100,6 +105,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_target_from_user_admin_role('group_id', 'user_id', 'role_id')
       def remove_group_target_from_user_admin_role(user_id, role_id, group_id, options = {})
+        validate_resource_ids(user_id, role_id, group_id)
         delete("/users/#{user_id}/roles/#{role_id}/targets/groups/#{group_id}", options)
       end
 
@@ -117,6 +123,7 @@ module Oktakit
       # @example
       #   Oktakit.list_app_targets_for_app_admin_role('user_id', 'role_id')
       def list_app_targets_for_app_admin_role(user_id, role_id, options = {})
+        validate_resource_ids(user_id, role_id)
         get("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps", options)
       end
 
@@ -135,6 +142,7 @@ module Oktakit
       # @example
       #   Oktakit.add_app_target_to_app_admin_role('user_id', 'role_id')
       def add_app_target_to_app_admin_role(user_id, role_id, app_name, options = {})
+        validate_resource_ids(user_id, role_id, app_name)
         put("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
       end
 
@@ -153,6 +161,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_app_target_from_app_admin_role('user_id', 'role_id')
       def remove_app_target_from_app_admin_role(user_id, role_id, app_name, options = {})
+        validate_resource_ids(user_id, role_id, app_name)
         delete("/users/#{user_id}/roles/#{role_id}/targets/catalog/apps/#{app_name}", options)
       end
     end

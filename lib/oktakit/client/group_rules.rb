@@ -29,6 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_group_rule('id')
       def get_group_rule(id, options = {})
+        validate_resource_ids(id)
         get("/groups/rules/#{id}", options)
       end
 
@@ -60,6 +61,7 @@ module Oktakit
       # @example
       #   Oktakit.update_group_rule('id')
       def update_group_rule(id, options = {})
+        validate_resource_ids(id)
         put("/groups/rules/#{id}", options)
       end
 
@@ -76,6 +78,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_group_rule('id')
       def remove_group_rule(id, options = {})
+        validate_resource_ids(id)
         delete("/groups/rules/#{id}", options)
       end
 
@@ -92,6 +95,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_group_rule('id')
       def activate_group_rule(id, options = {})
+        validate_resource_ids(id)
         post("/groups/rules/#{id}/lifecycle/activate", options)
       end
 
@@ -108,6 +112,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_group_rule('id')
       def deactivate_group_rule(id, options = {})
+        validate_resource_ids(id)
         post("/groups/rules/#{id}/lifecycle/deactivate", options)
       end
     end

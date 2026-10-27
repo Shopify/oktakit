@@ -15,6 +15,7 @@ module Oktakit
       # @example
       #   Oktakit.get_factor('user_id', 'factor_id')
       def get_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         get("/users/#{user_id}/factors/#{factor_id}", options)
       end
 
@@ -31,6 +32,7 @@ module Oktakit
       # @example
       #   Oktakit.list_enrolled_factors('user_id')
       def list_enrolled_factors(user_id, options = {})
+        validate_resource_ids(user_id)
         get("/users/#{user_id}/factors", options)
       end
 
@@ -47,6 +49,7 @@ module Oktakit
       # @example
       #   Oktakit.list_factors_to_enroll('user_id')
       def list_factors_to_enroll(user_id, options = {})
+        validate_resource_ids(user_id)
         get("/users/#{user_id}/factors/catalog", options)
       end
 
@@ -63,6 +66,7 @@ module Oktakit
       # @example
       #   Oktakit.list_security_questions('user_id')
       def list_security_questions(user_id, options = {})
+        validate_resource_ids(user_id)
         get("/users/#{user_id}/factors/questions", options)
       end
 
@@ -79,6 +83,7 @@ module Oktakit
       # @example
       #   Oktakit.enroll_factor('id')
       def enroll_factor(user_id, options = {})
+        validate_resource_ids(user_id)
         post("/users/#{user_id}/factors", options)
       end
 
@@ -96,6 +101,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_factor('user_id', 'factor_id')
       def activate_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/lifecycle/activate", options)
       end
 
@@ -113,6 +119,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_factor('user_id', 'factor_id')
       def reset_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         delete("/users/#{user_id}/factors/#{factor_id}", options)
       end
 
@@ -130,6 +137,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_security_question_factor('user_id', 'factor_id')
       def verify_security_question_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
@@ -147,6 +155,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_sms_factor('user_id', 'factor_id')
       def verify_sms_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
@@ -164,6 +173,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_totp_factor('user_id', 'factor_id')
       def verify_totp_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
@@ -181,6 +191,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_push_factor('user_id', 'factor_id')
       def verify_push_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/verify", options)
       end
 
@@ -199,6 +210,7 @@ module Oktakit
       # @example
       #   Oktakit.poll_for_verify_transaction_completion('user_id', 'factor_id', 'transaction_id')
       def poll_for_verify_transaction_completion(user_id, factor_id, transaction_id, options = {})
+        validate_resource_ids(user_id, factor_id, transaction_id)
         get("/users/#{user_id}/factors/#{factor_id}/transactions/#{transaction_id}", options)
       end
 
@@ -216,6 +228,7 @@ module Oktakit
       # @example
       #   Oktakit.verify_token_factor('user_id', 'factor_id')
       def verify_token_factor(user_id, factor_id, options = {})
+        validate_resource_ids(user_id, factor_id)
         post("/users/#{user_id}/factors/#{factor_id}/verify", options)
       end
     end

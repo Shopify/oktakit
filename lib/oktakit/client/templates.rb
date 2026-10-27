@@ -29,6 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_sms_template('id')
       def get_sms_template(id, options = {})
+        validate_resource_ids(id)
         get("/templates/sms/#{id}", options)
       end
 
@@ -60,6 +61,7 @@ module Oktakit
       # @example
       #   Oktakit.update_sms_template('id')
       def update_sms_template(id, options = {})
+        validate_resource_ids(id)
         put("/templates/sms/#{id}", options)
       end
 
@@ -76,6 +78,7 @@ module Oktakit
       # @example
       #   Oktakit.partial_sms_template_update('id')
       def partial_sms_template_update(id, options = {})
+        validate_resource_ids(id)
         post("/templates/sms/#{id}", options)
       end
 
@@ -92,6 +95,7 @@ module Oktakit
       # @example
       #   Oktakit.remove_sms_template('id')
       def remove_sms_template(id, options = {})
+        validate_resource_ids(id)
         delete("/templates/sms/#{id}", options)
       end
     end

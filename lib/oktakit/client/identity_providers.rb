@@ -29,6 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_identity_provider('id')
       def get_identity_provider(id, options = {})
+        validate_resource_ids(id)
         get("/idps/#{id}", options)
       end
 
@@ -60,6 +61,7 @@ module Oktakit
       # @example
       #   Oktakit.update_identity_provider('id')
       def update_identity_provider(id, options = {})
+        validate_resource_ids(id)
         put("/idps/#{id}", options)
       end
 
@@ -76,6 +78,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_identity_provider('id')
       def delete_identity_provider(id, options = {})
+        validate_resource_ids(id)
         delete("/idps/#{id}", options)
       end
 
@@ -92,6 +95,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_identity_provider('id')
       def activate_identity_provider(id, options = {})
+        validate_resource_ids(id)
         post("/idps/#{id}/lifecycle/activate", options)
       end
 
@@ -108,6 +112,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_identity_provider('id')
       def deactivate_identity_provider(id, options = {})
+        validate_resource_ids(id)
         post("/idps/#{id}/lifecycle/deactivate", options)
       end
 
@@ -124,6 +129,7 @@ module Oktakit
       # @example
       #   Oktakit.get_identity_provider_transaction('transaction_id')
       def get_identity_provider_transaction(transaction_id, options = {})
+        validate_resource_ids(transaction_id)
         get("/idps/tx/#{transaction_id}", options)
       end
 
@@ -140,6 +146,7 @@ module Oktakit
       # @example
       #   Oktakit.get_source_idp_user_for_idp_transaction('transaction_id')
       def get_source_idp_user_for_idp_transaction(transaction_id, options = {})
+        validate_resource_ids(transaction_id)
         get("/idps/tx/#{transaction_id}/source", options)
       end
 
@@ -156,6 +163,7 @@ module Oktakit
       # @example
       #   Oktakit.get_target_user_for_idp_provision_transaction('transaction_id')
       def get_target_user_for_idp_provision_transaction(transaction_id, options = {})
+        validate_resource_ids(transaction_id)
         get("/idps/tx/#{transaction_id}/target", options)
       end
 
@@ -172,6 +180,7 @@ module Oktakit
       # @example
       #   Oktakit.list_users_for_idp_link_transaction('transaction_id')
       def list_users_for_idp_link_transaction(transaction_id, options = {})
+        validate_resource_ids(transaction_id)
         get("/idps/tx/#{transaction_id}/users", options)
       end
 
@@ -188,6 +197,7 @@ module Oktakit
       # @example
       #   Oktakit.provision_idp_user('transaction_id')
       def provision_idp_user(transaction_id, options = {})
+        validate_resource_ids(transaction_id)
         post("/idps/tx/#{transaction_id}/lifecycle/provision", options)
       end
 
@@ -205,6 +215,7 @@ module Oktakit
       # @example
       #   Oktakit.link_idp_user('user_id', 'transaction_id')
       def link_idp_user(transaction_id, user_id, options = {})
+        validate_resource_ids(transaction_id, user_id)
         post("/idps/tx/#{transaction_id}/lifecycle/confirm/#{user_id}", options)
       end
 
@@ -236,6 +247,7 @@ module Oktakit
       # @example
       #   Oktakit.get_key('key_id')
       def get_key(key_id, options = {})
+        validate_resource_ids(key_id)
         get("/idps/credentials/keys/#{key_id}", options)
       end
 
@@ -267,6 +279,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_key('key_id')
       def delete_key(key_id, options = {})
+        validate_resource_ids(key_id)
         delete("/idps/credentials/keys/#{key_id}", options)
       end
     end

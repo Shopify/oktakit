@@ -1,3 +1,4 @@
+require "json"
 require 'sawyer'
 require 'oktakit/response/raise_error'
 require 'oktakit/client/admin_roles'
@@ -165,6 +166,14 @@ module Oktakit
     attr_reader :last_response
 
     private
+
+    def validate_resource_ids(*ids)
+      ids.each do |id|
+        if !id.is_a?(String) || id.empty? || [".", ".."].include?(id) || id.match?(%r{[/\\?#%;[:cntrl:]]})
+          raise ArgumentError, "id must be a non-empty, safe URL path segment"
+        end
+      end
+    end
 
     def request(method, path, data:, query:, headers:, accept:, content_type:, paginate: false)
       options = {}

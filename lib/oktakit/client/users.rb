@@ -29,10 +29,7 @@ module Oktakit
       # @example
       #   Oktakit.get_user('id')
       def get_user(id, options = {})
-        if !id.is_a?(String) || id.empty? || [".", ".."].include?(id) || id.match?(%r{[/\\?#%[:cntrl:]]})
-          raise ArgumentError, "id must be a non-empty, safe URL path segment"
-        end
-
+        validate_resource_ids(id)
         get("/users/#{id}", options)
       end
 
@@ -65,6 +62,7 @@ module Oktakit
       # @example
       #   Oktakit.update_user('id')
       def update_user(id, options = {})
+        validate_resource_ids(id)
         if options.delete(:partial)
           post("/users/#{id}", options)
         else
@@ -85,6 +83,7 @@ module Oktakit
       # @example
       #   Oktakit.update_profile('id')
       def update_profile(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}", options)
       end
 
@@ -100,6 +99,7 @@ module Oktakit
       # @example
       #   Oktakit.get_assigned_app_links('id')
       def get_assigned_app_links(id, options = {})
+        validate_resource_ids(id)
         get("/users/#{id}/appLinks", options)
       end
 
@@ -116,6 +116,7 @@ module Oktakit
       # @example
       #   Oktakit.get_member_groups('id')
       def get_member_groups(id, options = {})
+        validate_resource_ids(id)
         get("/users/#{id}/groups", options)
       end
 
@@ -132,6 +133,7 @@ module Oktakit
       # @example
       #   Oktakit.activate_user('id')
       def activate_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/activate", options)
       end
 
@@ -150,6 +152,7 @@ module Oktakit
       #   Oktakit.reactivate_user('id')
 
       def reactivate_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/reactivate", options)
       end
 
@@ -166,6 +169,7 @@ module Oktakit
       # @example
       #   Oktakit.deactivate_user('id')
       def deactivate_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/deactivate", options)
       end
 
@@ -184,6 +188,7 @@ module Oktakit
       # @example
       #   Oktakit.delete_user('id')
       def delete_user(id, options = {})
+        validate_resource_ids(id)
         delete("/users/#{id}", options)
       end
 
@@ -200,6 +205,7 @@ module Oktakit
       # @example
       #   Oktakit.suspend_user('id')
       def suspend_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/suspend", options)
       end
 
@@ -216,6 +222,7 @@ module Oktakit
       # @example
       #   Oktakit.unsuspend_user('id')
       def unsuspend_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/unsuspend", options)
       end
 
@@ -232,6 +239,7 @@ module Oktakit
       # @example
       #   Oktakit.unlock_user('id')
       def unlock_user(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/unlock", options)
       end
 
@@ -248,6 +256,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_password('id')
       def reset_password(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/reset_password", options)
       end
 
@@ -264,6 +273,7 @@ module Oktakit
       # @example
       #   Oktakit.expire_password('id')
       def expire_password(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/expire_password", options)
       end
 
@@ -280,6 +290,7 @@ module Oktakit
       # @example
       #   Oktakit.reset_factors('id')
       def reset_factors(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/lifecycle/reset_factors", options)
       end
 
@@ -296,6 +307,7 @@ module Oktakit
       # @example
       #   Oktakit.forgot_password('id')
       def forgot_password(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/credentials/forgot_password", options)
       end
 
@@ -312,6 +324,7 @@ module Oktakit
       # @example
       #   Oktakit.change_password('id')
       def change_password(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/credentials/change_password", options)
       end
 
@@ -328,6 +341,7 @@ module Oktakit
       # @example
       #   Oktakit.change_recovery_question('id')
       def change_recovery_question(id, options = {})
+        validate_resource_ids(id)
         post("/users/#{id}/credentials/change_recovery_question", options)
       end
 
@@ -343,6 +357,7 @@ module Oktakit
       # @see https://developer.okta.com/docs/api/resources/users#user-sessions
       #   Oktakit.clear_user_sessions('id')
       def clear_user_sessions(id, options = {})
+        validate_resource_ids(id)
         delete("/users/#{id}/sessions", options)
       end
     end
