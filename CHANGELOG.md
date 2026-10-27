@@ -1,6 +1,7 @@
 # Changelog
 
 ## [v1.0.1] - Unreleased
+- Breaking: Oktakit now requires Ruby 3.3 or later.
 - Security: resource helpers now validate and percent-encode every ID as a single URL path segment.
   Previously an ID containing `/`, `?`, `#`, `%`, or `;` could change which Okta endpoint or resource was
   called (for example, `get_user("00uX/factors")` requested `/users/00uX/factors`), and an ID of `..`
