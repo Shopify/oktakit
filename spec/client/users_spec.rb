@@ -27,6 +27,43 @@ describe Oktakit::Client::Users do
   end
 
   describe '#get_user' do
+    [
+      nil,
+      123,
+      "",
+      ".",
+      "..",
+      "#{USERS_USER_ID}/factors",
+      "#{USERS_USER_ID}/groups",
+      "#{USERS_USER_ID}/appLinks",
+      "../groups",
+      "#{USERS_USER_ID}\\factors",
+      "#{USERS_USER_ID}?expand=credentials",
+      "#{USERS_USER_ID}#fragment",
+      "#{USERS_USER_ID}%2ffactors",
+      "#{USERS_USER_ID}%2Ffactors",
+      "#{USERS_USER_ID}%252Ffactors",
+      "%2e%2e",
+      "#{USERS_USER_ID}\n",
+      "#{USERS_USER_ID}\0",
+    ].each do |id|
+      it "rejects #{id.inspect} before making a request" do
+        expect(client).not_to(receive(:get))
+
+        expect { client.get_user(id) }.to(raise_error(ArgumentError, "id must be a non-empty, safe URL path segment"))
+      end
+    end
+
+    [USERS_USER_ID, "me", "example", "example@example.com", "first.last+tag@example.com"].each do |id|
+      it "accepts #{id.inspect} and forwards options" do
+        options = { query: { expand: "credentials" } }
+        response = [double("user"), 200]
+        expect(client).to(receive(:get).with("/users/#{id}", options).and_return(response))
+
+        expect(client.get_user(id, options)).to(eq(response))
+      end
+    end
+
     it 'returns fetched user' do
       VCR.use_cassette('get_user') do
         resp, = client.get_user(USERS_USER_ID)

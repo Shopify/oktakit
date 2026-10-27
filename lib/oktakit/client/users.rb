@@ -29,6 +29,10 @@ module Oktakit
       # @example
       #   Oktakit.get_user('id')
       def get_user(id, options = {})
+        if !id.is_a?(String) || id.empty? || [".", ".."].include?(id) || id.match?(%r{[/\\?#%[:cntrl:]]})
+          raise ArgumentError, "id must be a non-empty, safe URL path segment"
+        end
+
         get("/users/#{id}", options)
       end
 
