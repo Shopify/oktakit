@@ -21,12 +21,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
+          fetch-depth: 0
           persist-credentials: false
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
         with:
           bundler-cache: true
+
+      - name: Validate release tag
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          git merge-base --is-ancestor HEAD origin/main || {
+            echo "::error::Release tags must point to a commit on main"
+            exit 1
+          }
+          ruby -Ilib -roktakit/version -e '
+            expected = "v#{Oktakit::VERSION}"
+            actual = ENV.fetch("RELEASE_TAG")
+            unless actual == expected
+              puts "::error::Release tag must be #{expected}, not #{actual}"
+              exit 1
+            end
+          '
 
       - name: Release gem on RubyGems.org
         uses: rubygems/release-gem@7f9650160c1a4e7989fdc9855807bdbd421d8b6b # v1.4.1
