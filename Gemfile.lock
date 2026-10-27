@@ -94,7 +94,6 @@ PLATFORMS
 
 DEPENDENCIES
   base64
-  bundler
   byebug
   oktakit!
   rake

@@ -7,13 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Configuration parameters: EnforcedStyle, AllowedGems.
-# SupportedStyles: Gemfile, gems.rb, gemspec
-Gemspec/DevelopmentDependencies:
-  Exclude:
-    - 'oktakit.gemspec'
-
-# Offense count: 1
 # This cop supports safe autocorrection (--autocorrect).
 Lint/RedundantCopDisableDirective:
   Exclude:
