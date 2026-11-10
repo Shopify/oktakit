@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://okta-test.okta.com/api/v1/authorizationServers/aus4wmezfewflnJvd5d7
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Oktakit v0.3.1
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Authorization:
+      - SSWS <<ACCESS_TOKEN>>
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      date:
+      - Tue, 03 May 2022 22:04:32 GMT
+      connection:
+      - keep-alive
+      server:
+      - nginx
+      x-okta-request-id:
+      - YnGm8PNb9ZR0EOG6oO1@2QAAB8Y
+      x-xss-protection:
+      - '0'
+      p3p:
+      - CP="HONK"
+      x-rate-limit-limit:
+      - '100'
+      x-rate-limit-remaining:
+      - '97'
+      x-rate-limit-reset:
+      - '1651615523'
+      cache-control:
+      - no-cache, no-store
+      pragma:
+      - no-cache
+      expires:
+      - '0'
+      expect-ct:
+      - report-uri="https://oktaexpectct.report-uri.com/r/t/ct/reportOnly", max-age=0
+      x-frame-options:
+      - SAMEORIGIN
+      strict-transport-security:
+      - max-age=315360000; includeSubDomains
+      set-cookie:
+      - sid=""; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, autolaunch_triggered="";
+        Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/, JSESSIONID=E802682186E78E46A710BAD3D5904E42;
+        Path=/; Secure; HttpOnly
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Tue, 03 May 2022 22:04:32 GMT
+recorded_with: VCR 6.0.0
